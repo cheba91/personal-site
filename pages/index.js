@@ -2,10 +2,19 @@ import { Box, Container } from '@mui/material';
 import ThemeToggler from '../components/ThemeToggler';
 export default function HomePage({ changeTheme }) {
    return (
-      <Box sx={{ zIndex: '2' }}>
+      <Container
+         className="contentBox"
+         sx={{
+            zIndex: '2',
+            maxWidth: '1200px',
+            width: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+         }}
+      >
          {/* Theme toggler */}
          <ThemeToggler changeTheme={changeTheme} />
-         <Container>
+         <Box>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
             repudiandae molestiae amet autem aliquam! Dolores repudiandae
             eligendi praesentium labore quos nisi id saepe nemo. Ad ea culpa
@@ -29,7 +38,7 @@ export default function HomePage({ changeTheme }) {
             recusandae assumenda nam facere explicabo ipsum? Hic voluptatibus
             ipsam amet quaerat similique officia dolor recusandae! Dolorem,
             accusamus unde.
-         </Container>
-      </Box>
+         </Box>
+      </Container>
    );
 }

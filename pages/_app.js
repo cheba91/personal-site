@@ -35,8 +35,8 @@ export default function App() {
    return (
       <ThemeProvider theme={changeTheme()}>
          <CssBaseline />
-         <Header mainClr={mainClr} />
          <Background color={mainClr}>
+            <Header mainClr={mainClr} />
             <HomePage changeTheme={changeTheme} />
          </Background>
       </ThemeProvider>

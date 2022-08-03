@@ -32,7 +32,12 @@ export default function Header({ window, mainClr }) {
          <List>
             {navItems.map((item) => (
                <ListItem key={item} disablePadding>
-                  <ListItemButton sx={{ textAlign: 'center' }}>
+                  <ListItemButton
+                     sx={{
+                        textAlign: 'center',
+                        '&:hover': { background: 'transparent' },
+                     }}
+                  >
                      <ListItemText primary={item} />
                   </ListItemButton>
                </ListItem>
@@ -47,15 +52,24 @@ export default function Header({ window, mainClr }) {
       <Box className="headerBox">
          <AppBar
             component="nav"
-            mx={3}
             sx={{
                paddingTop: '0.5rem',
                paddingBottom: '0.5rem',
-               background: 'rgba(0,0,0,.5)',
-               backdropFilter: 'saturate(180%) blur(5px)',
+               background: 'rgba(40,40,40,0.1)',
+               backdropFilter: 'saturate(180%) blur(3px)',
+               boxShadow: `0 0 10px ${mainClr}`,
+               borderRadius: '0 0 1rem 1rem',
             }}
          >
-            <Toolbar sx={{ justifyContent: 'space-between' }}>
+            <Toolbar
+               sx={{
+                  justifyContent: 'space-between',
+                  maxWidth: '1200px',
+                  width: '100%',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+               }}
+            >
                <Logo color={mainClr} />
                {/* Hamburger icon */}
                <IconButton
