@@ -18,7 +18,7 @@ export default function Background({ color, children }) {
             background: 'rgba(0,0,0,1) center center absolute',
          }}
       >
-         <css-doodle key={Math.random()}>
+         <css-doodle color="transparent" key={Math.random()}>
             {`
                 :doodle {
                 @grid: 1x3 / 98vmax;
