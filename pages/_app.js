@@ -1,23 +1,44 @@
 import { useState } from 'react';
-import { CssBaseline } from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { lightTheme, darkTheme } from '../styles/themes';
+import Background from '../components/layout/Background';
 import Header from '../components/layout/Header';
 import HomePage from './index';
-import Footer from '../components/layout/Footer';
 
+const primaryColor = '#ef5350';
+// Default theme
+const theme = {
+   palette: {
+      mode: 'dark',
+      primary: {
+         main: primaryColor,
+      },
+      light: {
+         main: '#efefef',
+         light: '#fff',
+      },
+      transparent: {
+         main: 'rgba(0,0,0,.5)',
+      },
+   },
+};
 export default function App() {
-   const [isDarkTheme, setIsDarkTheme] = useState(true);
-   const changeTheme = () => setIsDarkTheme(!isDarkTheme);
+   //Setting default theme & generating theme
+   const [mainClr, setMainClr] = useState(primaryColor);
+
+   const changeTheme = (selectedClr) => {
+      if (selectedClr) setMainClr(selectedClr);
+      theme.palette.primary.main = mainClr;
+      return createTheme(theme);
+   };
 
    return (
-      <ThemeProvider
-         theme={isDarkTheme ? createTheme(darkTheme) : createTheme(lightTheme)}
-      >
+      <ThemeProvider theme={changeTheme()}>
          <CssBaseline />
-         <Header changeTheme={changeTheme} isDarkTheme={isDarkTheme} />
-         <HomePage />
-         <Footer />
+         <Header mainClr={mainClr} />
+         <Background color={mainClr}>
+            <HomePage changeTheme={changeTheme} />
+         </Background>
       </ThemeProvider>
    );
 }

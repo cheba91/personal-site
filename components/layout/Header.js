@@ -1,8 +1,6 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -11,26 +9,26 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import ThemeToggler from '../ThemeToggler';
+import Logo from '../Logo';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
-export default function Header(props) {
-   const { window, changeTheme, isDarkTheme } = props;
+export default function Header({ window, mainClr }) {
    const [mobileOpen, setMobileOpen] = React.useState(false);
 
    const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
    // Drawer
    const drawer = (
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-         <Typography variant="h6" sx={{ my: 2 }}>
-            LOGO
-         </Typography>
-         <Divider />
+      <Box
+         onClick={handleDrawerToggle}
+         sx={{
+            textAlign: 'center',
+            paddingTop: '5rem',
+         }}
+      >
          <List>
             {navItems.map((item) => (
                <ListItem key={item} disablePadding>
@@ -45,18 +43,21 @@ export default function Header(props) {
 
    const container =
       window !== undefined ? () => window().document.body : undefined;
-
    return (
-      <Box mb={6} sx={{ display: 'flex' }}>
+      <Box className="headerBox">
          <AppBar
             component="nav"
-            position="sticky"
+            mx={3}
             sx={{
-               backgroundColor: 'headerColor.main',
-               color: 'primary.main',
+               paddingTop: '0.5rem',
+               paddingBottom: '0.5rem',
+               background: 'rgba(0,0,0,.5)',
+               backdropFilter: 'saturate(180%) blur(5px)',
             }}
          >
             <Toolbar sx={{ justifyContent: 'space-between' }}>
+               <Logo color={mainClr} />
+               {/* Hamburger icon */}
                <IconButton
                   aria-label="open drawer"
                   edge="start"
@@ -65,34 +66,37 @@ export default function Header(props) {
                >
                   <MenuIcon />
                </IconButton>
-               {/* Desktop logo */}
-               <Typography
-                  variant="h6"
-                  component="div"
+               {/* Desktop menu items */}
+               <Box
                   sx={{
-                     flexGrow: 1,
                      display: { xs: 'none', sm: 'block' },
+                     color: 'light.main',
                   }}
                >
-                  LOGO
-               </Typography>
-               {/* Desktop menu */}
-               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                   {navItems.map((item) => (
-                     <Button key={item}>{item}</Button>
+                     <Button
+                        sx={{
+                           textTransform: 'none',
+                           color: 'light.main',
+                           '&:hover': {
+                              color: 'light.light',
+                              background: 'none',
+                           },
+                        }}
+                        key={item}
+                     >
+                        {item}
+                     </Button>
                   ))}
                </Box>
-               {/* Theme toggler */}
-               <ThemeToggler
-                  changeTheme={changeTheme}
-                  isDarkTheme={isDarkTheme}
-               />
             </Toolbar>
          </AppBar>
+         {/* Drawer */}
          <Box component="nav">
             <Drawer
                container={container}
                variant="temporary"
+               anchor="right"
                open={mobileOpen}
                onClose={handleDrawerToggle}
                ModalProps={{
@@ -103,6 +107,8 @@ export default function Header(props) {
                   '& .MuiDrawer-paper': {
                      boxSizing: 'border-box',
                      width: drawerWidth,
+                     backgroundImage: 'none',
+                     background: 'rgba(0,0,0,.9)',
                   },
                }}
             >

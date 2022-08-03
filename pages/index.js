@@ -1,13 +1,11 @@
-import { Container } from '@mui/material';
-export default function HomePage() {
+import { Box, Container } from '@mui/material';
+import ThemeToggler from '../components/ThemeToggler';
+export default function HomePage({ changeTheme }) {
    return (
-      <>
-         <Container
-            style={{
-               height: '100vh',
-            }}
-            sx={{ color: 'headerColor' }}
-         >
+      <Box sx={{ zIndex: '2' }}>
+         {/* Theme toggler */}
+         <ThemeToggler changeTheme={changeTheme} />
+         <Container>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
             repudiandae molestiae amet autem aliquam! Dolores repudiandae
             eligendi praesentium labore quos nisi id saepe nemo. Ad ea culpa
@@ -32,6 +30,6 @@ export default function HomePage() {
             ipsam amet quaerat similique officia dolor recusandae! Dolorem,
             accusamus unde.
          </Container>
-      </>
+      </Box>
    );
 }
