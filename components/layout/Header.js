@@ -56,12 +56,13 @@ export default function Header({ window, mainClr }) {
                paddingTop: '0.5rem',
                paddingBottom: '0.5rem',
                background: 'rgba(40,40,40,0.1)',
-               backdropFilter: 'saturate(180%) blur(3px)',
-               boxShadow: `0 0 10px ${mainClr}`,
+               backdropFilter: 'saturate(180%) blur(5px)',
+               boxShadow: `0px 1px 1px ${mainClr}, 0px 1px 2px ${mainClr}, 0px 1px 5px ${mainClr}, 0px 1px 10px ${mainClr}`,
                borderRadius: '0 0 1rem 1rem',
             }}
          >
             <Toolbar
+               id="back-to-top-anchor"
                sx={{
                   justifyContent: 'space-between',
                   maxWidth: '1200px',
@@ -70,7 +71,7 @@ export default function Header({ window, mainClr }) {
                   marginRight: 'auto',
                }}
             >
-               <Logo color={mainClr} />
+               <Logo color={mainClr} width={100} />
                {/* Hamburger icon */}
                <IconButton
                   aria-label="open drawer"

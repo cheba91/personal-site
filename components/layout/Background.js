@@ -11,7 +11,8 @@ export default function Background({ color, children }) {
                position: 'relative',
                overflow: 'hidden',
                minHeight: '100vh',
-               background: 'rgba(0,0,0,.5)',
+               // background: 'rgba(0,0,0,.1)',
+               background: 'transparent',
             }}
          >
             <css-doodle style={{ color: 'transparent' }} key={Math.random()}>

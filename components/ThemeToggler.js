@@ -1,6 +1,15 @@
 import Box from '@mui/material/Box';
+import EditLocationIcon from '@mui/icons-material/EditLocation';
+import { useState } from 'react';
+import { invertColor } from '../utils/colorInverter';
 
 export default function ThemeToggler({ changeTheme }) {
+   const pinWidth = 35;
+
+   const [pinPosX, setPinPosX] = useState('0');
+   const [pinPosY, setPinPosY] = useState('0');
+   const [pinColor, setPinColor] = useState('#fff');
+
    const componentToHex = (c) => {
       let hex = c.toString(16);
       return hex.length == 1 ? '0' + hex : hex;
@@ -22,6 +31,7 @@ export default function ThemeToggler({ changeTheme }) {
       //Compute cartesian coordinates as if the circle radius was 1
       let x = (2 * (e.clientX - rect.left)) / (rect.right - rect.left) - 1;
       let y = 1 - (2 * (e.clientY - rect.top)) / (rect.bottom - rect.top);
+
       //Compute the angle in degrees with 0 at the top and turning clockwise as expected by css conic gradient
       let a = ((Math.PI / 2 - Math.atan2(y, x)) / Math.PI) * 180;
       if (a < 0) a += 360;
@@ -50,21 +60,93 @@ export default function ThemeToggler({ changeTheme }) {
       color.g = Math.round(color.g * cw + 255 * ww);
       color.b = Math.round(color.b * cw + 255 * ww);
       const finalColor = rgbToHex(color.r, color.g, color.b);
-      // const finalColor = `rgba(${color.r},${color.g},${color.b}, 0.7)`;
-      console.log('Final clr:', finalColor);
+      // Edit Pin
+      setPinPosY(e.pageY - pinWidth);
+      setPinPosX(e.pageX - pinWidth / 2);
+      setPinColor(invertColor(finalColor));
       changeTheme(finalColor);
    };
    return (
       <Box
-         onClick={handleChangeTheme}
          sx={{
-            cursor: 'crosshair',
-            width: 150,
-            height: 150,
-            background:
-               'radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)',
-            borderRadius: '50%',
+            width: '300px',
+            height: '300px',
+            display: 'inline-block',
          }}
-      ></Box>
+      >
+         <Box
+            onClick={handleChangeTheme}
+            sx={{
+               display: 'inline-block',
+               cursor: 'pointer',
+               width: '100%',
+               height: '100%',
+               margin: '0',
+               borderRadius: '50%',
+               position: 'relative',
+               background:
+                  'radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)',
+               '&::before': {
+                  content: "''",
+                  position: 'absolute',
+                  background:
+                     'radial-gradient(circle at 50% 120%,  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%)',
+                  borderRadius: '50%',
+                  bottom: '2.5%',
+                  left: '5%',
+                  opacity: '0.6',
+                  height: '100%',
+                  width: '90%',
+                  filter: 'blur(5px)',
+                  zIndex: '2',
+               },
+               '&::after': {
+                  width: '100%',
+                  height: '100%',
+                  content: "''",
+                  position: 'absolute',
+                  top: '5%',
+                  left: '10%',
+                  borderRadius: '50%',
+                  background:
+                     'radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%)',
+                  filter: 'blur(10px)',
+                  transform:
+                     'translateX(-80px) translateY(-90px) skewX(-20deg)',
+               },
+            }}
+         >
+            <Box
+               sx={{
+                  marginLeft: '123px',
+                  marginTop: '266px',
+                  width: '300px',
+                  height: '40px',
+                  background:
+                     'radial-gradient(rgba(255,255,255, 0.4),#fff0 72%)',
+                  borderRadius: '50%',
+                  filter: 'blur(20px)',
+               }}
+            />
+         </Box>
+
+         <EditLocationIcon
+            sx={{
+               position: 'absolute',
+               color: pinColor,
+               top: pinPosY + 'px',
+               left: pinPosX + 'px',
+               fontSize: `${pinWidth}px`,
+               animation: 'bounce 1.5s infinite linear',
+               '@keyframes bounce': {
+                  '0%': { top: pinPosY },
+                  '25%': { top: pinPosY - 7 + 'px' },
+                  '50%': { top: pinPosY - 14 + 'px' },
+                  '75%': { top: pinPosY - 7 + 'px' },
+                  '100%': { top: pinPosY },
+               },
+            }}
+         />
+      </Box>
    );
 }
