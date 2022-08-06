@@ -4,7 +4,15 @@ import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 35;
+   const ballSize = 300;
 
+   // Setting initial pin position
+   const ball = document.getElementById('themeBall');
+   if (ball) {
+      const ballPos = ball.getBoundingClientRect();
+      console.log(ballPos.bottom - ballSize / 3);
+   }
+   const [showPin, setShowPin] = useState('none');
    const [pinPosX, setPinPosX] = useState(538);
    const [pinPosY, setPinPosY] = useState(865);
 
@@ -60,15 +68,16 @@ export default function ThemeToggler({ changeTheme }) {
       // Edit Pin
       setPinPosY(e.pageY - pinWidth);
       setPinPosX(e.pageX - pinWidth / 2);
-      console.log('x: ', e.pageX, ' y: ', e.pageY);
+      setShowPin('inline-block');
       // Change theme
       changeTheme(finalColor);
    };
    return (
       <Box
+         id="themeBall"
          sx={{
-            width: '300px',
-            height: '300px',
+            width: `${ballSize}px`,
+            height: `${ballSize}px`,
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
          }}
@@ -118,6 +127,7 @@ export default function ThemeToggler({ changeTheme }) {
 
          <EditLocationIcon
             sx={{
+               display: showPin,
                position: 'absolute',
                color: '#464646',
                top: pinPosY + 'px',
