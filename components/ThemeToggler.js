@@ -1,15 +1,12 @@
 import Box from '@mui/material/Box';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import { useState } from 'react';
-// import { invertColor } from '../utils/invertColor';
-// import { darkenMarker, lightenDarkenColor } from '../utils/lightenDarkenColor';
 
 export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 35;
 
-   const [pinPosX, setPinPosX] = useState('0');
-   const [pinPosY, setPinPosY] = useState('0');
-   // const [pinColor, setPinColor] = useState('#fff');
+   const [pinPosX, setPinPosX] = useState(538);
+   const [pinPosY, setPinPosY] = useState(865);
 
    const componentToHex = (c) => {
       let hex = c.toString(16);
@@ -32,7 +29,6 @@ export default function ThemeToggler({ changeTheme }) {
       //Compute cartesian coordinates as if the circle radius was 1
       let x = (2 * (e.clientX - rect.left)) / (rect.right - rect.left) - 1;
       let y = 1 - (2 * (e.clientY - rect.top)) / (rect.bottom - rect.top);
-
       //Compute the angle in degrees with 0 at the top and turning clockwise as expected by css conic gradient
       let a = ((Math.PI / 2 - Math.atan2(y, x)) / Math.PI) * 180;
       if (a < 0) a += 360;
@@ -64,9 +60,7 @@ export default function ThemeToggler({ changeTheme }) {
       // Edit Pin
       setPinPosY(e.pageY - pinWidth);
       setPinPosX(e.pageX - pinWidth / 2);
-      // setPinColor(`rgb(${color.r},${color.g},${color.b})`);
-      // setPinColor(darkenMarker(color.r, color.g, color.b));
-      // setPinColor(lightenDarkenColor(finalColor));
+      console.log('x: ', e.pageX, ' y: ', e.pageY);
       // Change theme
       changeTheme(finalColor);
    };
@@ -125,7 +119,7 @@ export default function ThemeToggler({ changeTheme }) {
          <EditLocationIcon
             sx={{
                position: 'absolute',
-               color: '#707070',
+               color: '#464646',
                top: pinPosY + 'px',
                left: pinPosX + 'px',
                fontSize: `${pinWidth}px`,

@@ -18,13 +18,16 @@ export default function Hero({ changeTheme, mainClr }) {
          >
             <Grid>
                <Typography
-                  variant="h2"
+                  // variant="h2"
+
                   textAlign="center"
                   component="h1"
-                  sx={{ fontWeight: 800 }}
+                  sx={{
+                     fontWeight: 800,
+                     fontSize: { md: '4.2rem', sm: '3.7rem', xs: '2.6rem' },
+                  }}
                >
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Nostrum, ad.
                </Typography>
             </Grid>
             <Grid textAlign="center">
