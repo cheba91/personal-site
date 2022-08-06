@@ -1,21 +1,28 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import 'css-doodle';
+// import BgImage from '../../public/80s-neon-grid.svg';
+// import 'css-doodle';
 
 export default function Background({ color, children }) {
    return (
       <>
          <Box
             className="backgroundBox"
-            sx={{
-               position: 'relative',
-               overflow: 'hidden',
-               minHeight: '100vh',
-               // background: 'rgba(0,0,0,.1)',
-               background: 'transparent',
-            }}
+            sx={
+               {
+                  // position: 'relative',
+                  // overflow: 'hidden',
+                  // height: '100vh',
+                  // background: 'rgba(0,0,0,.1)',
+                  // background: 'transparent',
+                  // background: `url(${BgImage.src})`,
+                  // backgroundRepeat: 'no-repeat',
+                  // backgroundPosition: 'center bottom',
+                  // backgroundAttachment: 'fixed',
+               }
+            }
          >
-            <css-doodle style={{ color: 'transparent' }} key={Math.random()}>
+            {/* <css-doodle style={{ color: 'transparent' }} key={Math.random()}>
                {`
                 :doodle {
                 @grid: 1x3 / 98vmax;
@@ -39,7 +46,7 @@ export default function Background({ color, children }) {
                 to { transform: translateY(100%) }
                 }
                 `}
-            </css-doodle>
+            </css-doodle> */}
             <Box pt={13} />
             {children}
          </Box>

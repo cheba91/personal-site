@@ -18,7 +18,7 @@ export function colorSwitcher2(color, percent) {
 }
 
 // ???
-export function colorSwitcher(col, amt) {
+export function lightenDarkenColor(col, amt) {
    let usePound = false;
 
    if (col[0] == '#') {
@@ -48,4 +48,16 @@ export function colorSwitcher(col, amt) {
       (usePound ? '#' : '') +
       String('000000' + (g | (b << 8) | (r << 16)).toString(16)).slice(-6)
    );
+}
+
+export function darkenMarker(r, g, b) {
+   const minDark = 100;
+   const darkenBy = 90;
+   const newColors = [r, g, b].map((clr) =>
+      clr - darkenBy < minDark ? minDark : clr - darkenBy
+   );
+   console.log(newColors);
+
+   return `rgb(${newColors[0]},${newColors[1]},${newColors[2]})`;
+   // return `rgb(${minDark},${minDark},${minDark})`;
 }

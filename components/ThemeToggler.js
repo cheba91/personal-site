@@ -1,14 +1,15 @@
 import Box from '@mui/material/Box';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import { useState } from 'react';
-import { invertColor } from '../utils/colorInverter';
+// import { invertColor } from '../utils/invertColor';
+// import { darkenMarker, lightenDarkenColor } from '../utils/lightenDarkenColor';
 
 export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 35;
 
    const [pinPosX, setPinPosX] = useState('0');
    const [pinPosY, setPinPosY] = useState('0');
-   const [pinColor, setPinColor] = useState('#fff');
+   // const [pinColor, setPinColor] = useState('#fff');
 
    const componentToHex = (c) => {
       let hex = c.toString(16);
@@ -63,7 +64,10 @@ export default function ThemeToggler({ changeTheme }) {
       // Edit Pin
       setPinPosY(e.pageY - pinWidth);
       setPinPosX(e.pageX - pinWidth / 2);
-      setPinColor(invertColor(finalColor));
+      // setPinColor(`rgb(${color.r},${color.g},${color.b})`);
+      // setPinColor(darkenMarker(color.r, color.g, color.b));
+      // setPinColor(lightenDarkenColor(finalColor));
+      // Change theme
       changeTheme(finalColor);
    };
    return (
@@ -72,6 +76,7 @@ export default function ThemeToggler({ changeTheme }) {
             width: '300px',
             height: '300px',
             display: 'inline-block',
+            WebkitTapHighlightColor: 'transparent',
          }}
       >
          <Box
@@ -115,25 +120,12 @@ export default function ThemeToggler({ changeTheme }) {
                      'translateX(-80px) translateY(-90px) skewX(-20deg)',
                },
             }}
-         >
-            <Box
-               sx={{
-                  marginLeft: '123px',
-                  marginTop: '266px',
-                  width: '300px',
-                  height: '40px',
-                  background:
-                     'radial-gradient(rgba(255,255,255, 0.4),#fff0 72%)',
-                  borderRadius: '50%',
-                  filter: 'blur(20px)',
-               }}
-            />
-         </Box>
+         ></Box>
 
          <EditLocationIcon
             sx={{
                position: 'absolute',
-               color: pinColor,
+               color: '#707070',
                top: pinPosY + 'px',
                left: pinPosX + 'px',
                fontSize: `${pinWidth}px`,
