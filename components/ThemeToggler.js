@@ -2,16 +2,16 @@ import Box from '@mui/material/Box';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import { useState } from 'react';
 
-export default function ThemeToggler({ changeTheme }) {
+export default function ThemeToggler({ changeTheme, document }) {
    const pinWidth = 35;
    const ballSize = 300;
 
    // Setting initial pin position
-   const ball = document.getElementById('themeBall');
-   if (ball) {
-      const ballPos = ball.getBoundingClientRect();
-      console.log(ballPos.bottom - ballSize / 3);
-   }
+   // const ball = document.getElementById('themeBall');
+   // if (ball) {
+   //    const ballPos = ball.getBoundingClientRect();
+   //    console.log(ballPos.bottom - ballSize / 3);
+   // }
    const [showPin, setShowPin] = useState('none');
    const [pinPosX, setPinPosX] = useState(538);
    const [pinPosY, setPinPosY] = useState(865);
