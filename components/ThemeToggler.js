@@ -4,14 +4,7 @@ import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme, document }) {
    const pinWidth = 35;
-   const ballSize = 300;
-
-   // Setting initial pin position
-   // const ball = document.getElementById('themeBall');
-   // if (ball) {
-   //    const ballPos = ball.getBoundingClientRect();
-   //    console.log(ballPos.bottom - ballSize / 3);
-   // }
+   const ballSize = 200;
    const [showPin, setShowPin] = useState('none');
    const [pinPosX, setPinPosX] = useState(538);
    const [pinPosY, setPinPosY] = useState(865);
@@ -74,12 +67,18 @@ export default function ThemeToggler({ changeTheme, document }) {
    };
    return (
       <Box
-         id="themeBall"
          sx={{
             width: `${ballSize}px`,
             height: `${ballSize}px`,
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
+            marginBottom: '3rem',
+            animation: 'moveBall 1s infinite linear',
+            '@keyframes moveBall': {
+               '0%': { marginBottom: '3rem' },
+               '50%': { marginBottom: '3.2rem' },
+               '100%': { marginBottom: '3rem' },
+            },
          }}
       >
          <Box
@@ -113,14 +112,20 @@ export default function ThemeToggler({ changeTheme, document }) {
                   height: '100%',
                   content: "''",
                   position: 'absolute',
-                  top: '5%',
-                  left: '10%',
+                  top: '25%',
+                  left: '25%',
                   borderRadius: '50%',
                   background:
                      'radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%)',
                   filter: 'blur(10px)',
                   transform:
                      'translateX(-80px) translateY(-90px) skewX(-20deg)',
+                  animation: 'moveReflection 0.4s infinite linear',
+                  '@keyframes moveReflection': {
+                     '0%': { left: '25%', top: '25%' },
+                     '50%': { left: '27%', top: '26%' },
+                     '100%': { left: '25%', top: '25%' },
+                  },
                },
             }}
          ></Box>
@@ -141,6 +146,16 @@ export default function ThemeToggler({ changeTheme, document }) {
                   '75%': { top: pinPosY - 7 + 'px' },
                   '100%': { top: pinPosY },
                },
+            }}
+         />
+         <Box
+            sx={{
+               marginLeft: '25px',
+               marginTop: '-40px',
+               width: '600px',
+               height: '70px',
+               background: 'radial-gradient(#000f, #fff0 72%)',
+               borderRadius: '50%',
             }}
          />
       </Box>
