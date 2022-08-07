@@ -71,7 +71,7 @@ export default function Header({ window, mainClr }) {
                   marginRight: 'auto',
                }}
             >
-               <Logo color={mainClr} width={100} />
+               <Logo color={mainClr} width={120} />
                {/* Hamburger icon */}
                <IconButton
                   aria-label="open drawer"
