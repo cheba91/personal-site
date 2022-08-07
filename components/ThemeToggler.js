@@ -75,9 +75,9 @@ export default function ThemeToggler({ changeTheme, document }) {
 
             animation: 'moveBall 1s infinite linear',
             '@keyframes moveBall': {
-               '0%': { marginBottom: '3rem' },
-               '50%': { marginBottom: '3.2rem' },
-               '100%': { marginBottom: '3rem' },
+               '0%': { marginBottom: '3rem', marginLeft: '0' },
+               '50%': { marginBottom: '3.2rem', marginLeft: '0.5rem' },
+               '100%': { marginBottom: '3rem', marginLeft: '0' },
             },
          }}
       >

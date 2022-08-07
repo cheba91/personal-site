@@ -20,16 +20,16 @@ export default function NeonGrid({ mainClr }) {
                backgroundSize: '30px 30px',
                transform:
                   'translate3D(0, 0, 0) perspective(150px) rotateX(55deg)',
-               // perspectiveOrigin: 'top',
-               // animation: 'movement 25s infinite linear',
-               // '@keyframes movement': {
-               //    '0%': {
-               //       backgroundPosition: '0% 0%',
-               //    },
-               //    '100%': {
-               //       backgroundPosition: '0% 100%',
-               //    },
-               // },
+               perspectiveOrigin: 'top',
+               animation: 'movement 25s infinite linear',
+               '@keyframes movement': {
+                  '0%': {
+                     backgroundPosition: '0% 0%',
+                  },
+                  '100%': {
+                     backgroundPosition: '0% 100%',
+                  },
+               },
                '&::after': {
                   content: '""',
                   position: 'absolute',
@@ -37,7 +37,7 @@ export default function NeonGrid({ mainClr }) {
                   left: '0',
                   width: '100%',
                   height: '100%',
-                  background: 'linear-gradient(to top, transparent, black)',
+                  background: 'linear-gradient(to top, transparent, #121212)',
                },
             }}
          />
