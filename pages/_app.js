@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Box, CssBaseline } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Background from '../components/layout/Background';
 import Header from '../components/layout/Header';
 import ScrollToTop from '../components/layout/ScrollToTop';
 import HomePage from './index';
@@ -19,6 +18,9 @@ const theme = {
          main: primaryColor,
          lighter: lightenDarkenColor(primaryColor, 40),
          darker: lightenDarkenColor(primaryColor, -50),
+      },
+      dark: {
+         main: '#121212',
       },
       light: {
          main: '#efefef',
@@ -47,11 +49,9 @@ export default function App() {
    return (
       <ThemeProvider theme={changeTheme()}>
          <CssBaseline />
-         <Background color={mainClr}>
-            <Header mainClr={mainClr} />
-            <HomePage changeTheme={changeTheme} mainClr={mainClr} />
-            <ScrollToTop mainClr={mainClr} />
-         </Background>
+         <Header mainClr={mainClr} />
+         <HomePage changeTheme={changeTheme} mainClr={mainClr} />
+         <ScrollToTop mainClr={mainClr} />
       </ThemeProvider>
    );
 }

@@ -72,7 +72,7 @@ export default function ThemeToggler({ changeTheme, document }) {
             height: `${ballSize}px`,
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
-            marginBottom: '3rem',
+
             animation: 'moveBall 1s infinite linear',
             '@keyframes moveBall': {
                '0%': { marginBottom: '3rem' },

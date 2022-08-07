@@ -1,25 +1,27 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Box } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import NeonGrid from './ui/NeonGrid';
 
-export default function Hero({ changeTheme, mainClr }) {
+export default function Hero({ changeTheme, mainClr, heroSectionHeight }) {
    return (
-      <>
+      <Box
+         pt={25}
+         className="heroWrap"
+         sx={{ position: 'relative', overflow: 'hidden' }}
+      >
          <NeonGrid mainClr={mainClr} />
          <Grid
             container
             gap="5rem"
             flexWrap="nowrap"
-            height="86vh"
+            height={heroSectionHeight}
             flexDirection="column"
             alignItems="center"
             justifyContent="space-between"
-            pt={8}
+            paddingBottom="2rem"
          >
             <Grid>
                <Typography
-                  // variant="h2"
-
                   textAlign="center"
                   component="h1"
                   sx={{
@@ -34,6 +36,6 @@ export default function Hero({ changeTheme, mainClr }) {
                <ThemeToggler changeTheme={changeTheme} />
             </Grid>
          </Grid>
-      </>
+      </Box>
    );
 }

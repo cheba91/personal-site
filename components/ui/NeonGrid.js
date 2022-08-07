@@ -4,32 +4,32 @@ import { lightenDarkenColor } from '../../utils/lightenDarkenColor';
 export default function NeonGrid({ mainClr }) {
    const darkerMainClr = lightenDarkenColor(mainClr, -80);
    return (
-      <Box sx={{}}>
+      <>
          <Box
             className="NeonGrid"
             sx={{
                zIndex: '-1',
                margin: '0 auto',
-               position: 'fixed',
-               bottom: '0',
+               position: 'absolute',
+               top: '15vh',
                left: '-50%',
+               width: '200vw',
+               height: '100%',
                backgroundColor: 'rgba(20 30 40 0.4)',
                backgroundImage: `linear-gradient(90deg, transparent 0%, transparent 85%, ${darkerMainClr} 90%, transparent 95%), linear-gradient(0deg, transparent 0%, transparent 85%, ${darkerMainClr} 90%, transparent 95%)`,
-               backgroundSize: '12px 12px',
-               width: '200vw',
-               height: '80vh',
+               backgroundSize: '30px 30px',
                transform:
-                  'translate3D(0, 0, 0) perspective(150px) rotateX(45deg)',
-               perspectiveOrigin: 'top',
-               animation: 'movement 25s infinite linear',
-               '@keyframes movement': {
-                  '0%': {
-                     backgroundPosition: '0% 0%',
-                  },
-                  '100%': {
-                     backgroundPosition: '0% 100%',
-                  },
-               },
+                  'translate3D(0, 0, 0) perspective(150px) rotateX(55deg)',
+               // perspectiveOrigin: 'top',
+               // animation: 'movement 25s infinite linear',
+               // '@keyframes movement': {
+               //    '0%': {
+               //       backgroundPosition: '0% 0%',
+               //    },
+               //    '100%': {
+               //       backgroundPosition: '0% 100%',
+               //    },
+               // },
                '&::after': {
                   content: '""',
                   position: 'absolute',
@@ -41,6 +41,6 @@ export default function NeonGrid({ mainClr }) {
                },
             }}
          />
-      </Box>
+      </>
    );
 }
