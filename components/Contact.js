@@ -43,7 +43,7 @@ export default function Contact() {
                         name="message"
                         margin="normal"
                         multiline
-                        rowsMax="7"
+                        rowsmax="7"
                         rows={6}
                      />
                   </Grid>

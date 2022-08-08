@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import { useState } from 'react';
 
-export default function ThemeToggler({ changeTheme, document }) {
+export default function ThemeToggler({ changeTheme, fromTop }) {
    const pinWidth = 35;
    const ballSize = 200;
    const [showPin, setShowPin] = useState('none');
@@ -72,12 +72,16 @@ export default function ThemeToggler({ changeTheme, document }) {
             height: `${ballSize}px`,
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
+            position: 'absolute',
+            top: `66%`,
+            left: `50%`,
+            transform: 'translate(-50%, 0)',
 
-            animation: 'moveBall 1s infinite linear',
+            animation: 'moveBall 1s infinite alternate',
             '@keyframes moveBall': {
-               '0%': { marginBottom: '3rem', marginLeft: '0' },
-               '50%': { marginBottom: '3.2rem', marginLeft: '0.5rem' },
-               '100%': { marginBottom: '3rem', marginLeft: '0' },
+               '0%': { marginBottom: '0', marginLeft: '0' },
+               '50%': { marginBottom: '0.2rem', marginLeft: '0.2rem' },
+               '100%': { marginBottom: '0', marginLeft: '0' },
             },
          }}
       >
@@ -120,7 +124,7 @@ export default function ThemeToggler({ changeTheme, document }) {
                   filter: 'blur(10px)',
                   transform:
                      'translateX(-80px) translateY(-90px) skewX(-20deg)',
-                  animation: 'moveReflection 0.4s infinite linear',
+                  animation: 'moveReflection 0.4s infinite alternate',
                   '@keyframes moveReflection': {
                      '0%': { left: '25%', top: '25%' },
                      '50%': { left: '27%', top: '26%' },
