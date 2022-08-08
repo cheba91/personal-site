@@ -57,20 +57,12 @@ export default function NeonGrid({ mainClr, changeTheme }) {
                         '@keyframes animate-lines': {
                            '0%': {
                               transform: 'rotate(0deg)',
-                              // borderColor: darkerMainClr,
                            },
-                           // '25%': {
-                           //    transform: 'translate3D(0,0px,0) rotate(45deg)',
-                           // },
                            '50%': {
                               transform: 'rotate(90deg)scaleY(1.5)skewY(10deg)',
                            },
-                           // '75%': {
-                           //    transform: 'translate3D(0,0px,0) rotate(135deg)',
-                           // },
                            '100%': {
                               transform: 'rotate(180deg)',
-                              // borderColor: 'transparent',
                            },
                         },
                      }}

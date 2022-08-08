@@ -73,7 +73,7 @@ export default function ThemeToggler({ changeTheme, fromTop }) {
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
             position: 'absolute',
-            top: `66%`,
+            top: { sm: `66%`, xs: '63%' },
             left: `50%`,
             transform: 'translate(-50%, 0)',
 
