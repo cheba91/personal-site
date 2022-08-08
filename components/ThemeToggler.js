@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import { useState } from 'react';
 
-export default function ThemeToggler({ changeTheme, fromTop }) {
+export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 35;
    const ballSize = 200;
    const [showPin, setShowPin] = useState('none');
@@ -59,22 +59,26 @@ export default function ThemeToggler({ changeTheme, fromTop }) {
       color.b = Math.round(color.b * cw + 255 * ww);
       const finalColor = rgbToHex(color.r, color.g, color.b);
       // Edit Pin
-      setPinPosY(e.pageY - pinWidth);
-      setPinPosX(e.pageX - pinWidth / 2);
+      setPinPosY(e.screenY - pinWidth);
+      setPinPosX(e.screenX - pinWidth / 2);
+      console.log(e);
       setShowPin('inline-block');
       // Change theme
       changeTheme(finalColor);
    };
    return (
+      // Outer Ball
+
       <Box
          sx={{
             width: `${ballSize}px`,
             height: `${ballSize}px`,
             display: 'inline-block',
-            WebkitTapHighlightColor: 'transparent',
+            // WebkitTapHighlightColor: 'transparent',
             position: 'absolute',
-            top: { sm: `66%`, xs: '63%' },
+            // top: { sm: `66%`, xs: '63%' },
             left: `50%`,
+            bottom: '10%',
             transform: 'translate(-50%, 0)',
 
             animation: 'moveBall 1s infinite alternate',
@@ -85,6 +89,7 @@ export default function ThemeToggler({ changeTheme, fromTop }) {
             },
          }}
       >
+         {/* Inner ball, coloring etc. */}
          <Box
             onClick={handleChangeTheme}
             sx={{
@@ -111,6 +116,7 @@ export default function ThemeToggler({ changeTheme, fromTop }) {
                   filter: 'blur(5px)',
                   zIndex: '2',
                },
+               // White Reflection
                '&::after': {
                   width: '100%',
                   height: '100%',
@@ -134,8 +140,21 @@ export default function ThemeToggler({ changeTheme, fromTop }) {
             }}
          ></Box>
 
-         <EditLocationIcon
+         {/* Ball Shadow */}
+         <Box
             sx={{
+               marginLeft: '25px',
+               marginTop: '-40px',
+               width: '600px',
+               height: '70px',
+               background: 'radial-gradient(#000f, #fff0 72%)',
+               borderRadius: '50%',
+            }}
+         />
+         {/* Color Pin */}
+         {/* <EditLocationIcon
+            sx={{
+               zIndex: '10',
                display: showPin,
                position: 'absolute',
                color: '#464646',
@@ -151,17 +170,7 @@ export default function ThemeToggler({ changeTheme, fromTop }) {
                   '100%': { top: pinPosY },
                },
             }}
-         />
-         <Box
-            sx={{
-               marginLeft: '25px',
-               marginTop: '-40px',
-               width: '600px',
-               height: '70px',
-               background: 'radial-gradient(#000f, #fff0 72%)',
-               borderRadius: '50%',
-            }}
-         />
+         /> */}
       </Box>
    );
 }

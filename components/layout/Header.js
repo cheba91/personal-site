@@ -49,7 +49,7 @@ export default function Header({ window, mainClr }) {
    const container =
       window !== undefined ? () => window().document.body : undefined;
    return (
-      <Box className="headerBox">
+      <>
          <AppBar
             component="nav"
             sx={{
@@ -130,6 +130,6 @@ export default function Header({ window, mainClr }) {
                {drawer}
             </Drawer>
          </Box>
-      </Box>
+      </>
    );
 }

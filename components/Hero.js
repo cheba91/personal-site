@@ -1,28 +1,26 @@
 import { Grid, Typography, Box, Container } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
-import NeonGrid from './ui/NeonGrid';
+import NeonGrid3D from './ui/NeonGrid3D';
+import NeonGridFlat from './ui/NeonGridFlat.js';
 
-export default function Hero({ changeTheme, mainClr, heroSectionHeight }) {
+export default function Hero({ changeTheme, mainClr }) {
    return (
-      <Box
-         className="heroWrap"
-         sx={{
-            position: 'relative',
-            overflow: 'hidden',
-            paddingTop: { xs: 16, sm: 23 },
-         }}
-      >
-         <NeonGrid mainClr={mainClr} changeTheme={changeTheme} />
+      <>
          <Grid
             container
+            zIndex="5"
             gap="5rem"
             flexWrap="nowrap"
-            height={heroSectionHeight}
             flexDirection="column"
+            height="100vh"
             alignItems="center"
             justifyContent="space-between"
-            paddingBottom="2rem"
+            sx={{
+               // position: 'relative',
+               paddingTop: { xs: 16, sm: 18, md: 23 },
+            }}
          >
+            {/* TOP hero part */}
             <Grid>
                <Container>
                   <Typography
@@ -31,9 +29,9 @@ export default function Hero({ changeTheme, mainClr, heroSectionHeight }) {
                      sx={{
                         fontWeight: 800,
                         fontSize: {
-                           md: '4.2rem',
-                           sm: '3.7rem',
                            xs: '2.6rem',
+                           sm: '3.7rem',
+                           md: '4.2rem',
                         },
                      }}
                   >
@@ -41,8 +39,18 @@ export default function Hero({ changeTheme, mainClr, heroSectionHeight }) {
                   </Typography>
                </Container>
             </Grid>
-            <Grid textAlign="center"></Grid>
+
+            {/* BOTTOM hero part */}
+            <Grid
+               position="relative"
+               width="100%"
+               height="100%"
+               overflow="hidden"
+            >
+               <NeonGridFlat mainClr={mainClr} />
+               <ThemeToggler changeTheme={changeTheme} />
+            </Grid>
          </Grid>
-      </Box>
+      </>
    );
 }
