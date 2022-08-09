@@ -8,16 +8,20 @@ export default function Hero({ changeTheme, mainClr }) {
       <>
          <Grid
             container
+            spacing={2}
+            margin="0"
             zIndex="5"
-            gap="5rem"
             flexWrap="nowrap"
             flexDirection="column"
+            width="100%"
             height="100vh"
+            // gap="3rem"
             alignItems="center"
             justifyContent="space-between"
             sx={{
                // position: 'relative',
                paddingTop: { xs: 16, sm: 18, md: 23 },
+               // gap: { xs: '2rem', sm: '2rem', lg: '3rem' },
             }}
          >
             {/* TOP hero part */}

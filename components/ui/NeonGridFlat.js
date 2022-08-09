@@ -24,7 +24,7 @@ export default function NeonGrid({ mainClr }) {
                 linear-gradient( 90deg, transparent, transparent, rgba(0,0,0,1)), 
                 linear-gradient( 90deg, rgba(0,0,0,1), transparent, transparent)`,
                backgroundSize: '30px 17px',
-               animation: 'moveGrid 10s linear infinite',
+               animation: 'moveGrid 15s linear infinite',
                '@keyframes moveGrid': {
                   '0%': {
                      backgroundPosition: '0% 0%',

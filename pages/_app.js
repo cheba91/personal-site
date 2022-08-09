@@ -6,7 +6,7 @@ import ScrollToTop from '../components/layout/ScrollToTop';
 import HomePage from './index';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 
-const primaryColor = '#ef5350';
+const primaryColor = '#91bcff';
 // Default theme
 const theme = {
    typography: {
@@ -30,6 +30,20 @@ const theme = {
          main: 'rgba(0,0,0,.5)',
       },
    },
+   shape: {
+      borderRadius: 15,
+   },
+   components: {
+      MuiButton: {
+         styleOverrides: {
+            root: {
+               '&:hover': {
+                  background: 'none',
+               },
+            },
+         },
+      },
+   },
 };
 
 console.log(lightenDarkenColor(primaryColor, 30));
@@ -45,7 +59,7 @@ export default function App() {
 
       return createTheme(theme);
    };
-
+   console.log(createTheme(theme));
    return (
       <ThemeProvider theme={changeTheme()}>
          <CssBaseline />

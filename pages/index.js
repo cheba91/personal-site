@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import Background from '../components/layout/Background';
@@ -6,10 +7,13 @@ export default function HomePage({ changeTheme, mainClr }) {
    return (
       <>
          <Hero changeTheme={changeTheme} mainClr={mainClr} />
-         {/* <Background> */}
-         <StackInfoList />
-         <Contact />
-         {/* </Background> */}
+         <Container
+            sx={{ maxWidth: '1200px', py: 7 }}
+            className="wrapContainer"
+         >
+            <StackInfoList />
+            <Contact />
+         </Container>
       </>
    );
 }

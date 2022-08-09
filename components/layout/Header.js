@@ -35,7 +35,6 @@ export default function Header({ window, mainClr }) {
                   <ListItemButton
                      sx={{
                         textAlign: 'center',
-                        '&:hover': { background: 'transparent' },
                      }}
                   >
                      <ListItemText primary={item} />
@@ -55,9 +54,9 @@ export default function Header({ window, mainClr }) {
             sx={{
                paddingTop: '0.5rem',
                paddingBottom: '0.5rem',
-               background: 'rgba(40,40,40,0.1)',
+               background: 'rgba(40,40,40,0.2)',
                backdropFilter: 'saturate(180%) blur(5px)',
-               boxShadow: `0px 1px 1px ${mainClr}, 0px 1px 2px ${mainClr}, 0px 1px 5px ${mainClr}, 0px 1px 10px ${mainClr}`,
+               boxShadow: `0px 1px 1px ${mainClr}, 0px 2px 5px ${mainClr}, 0px 4px 10px ${mainClr}`,
                borderRadius: '0 0 1rem 1rem',
             }}
          >
@@ -95,7 +94,6 @@ export default function Header({ window, mainClr }) {
                            color: 'light.main',
                            '&:hover': {
                               color: 'light.light',
-                              background: 'none',
                            },
                         }}
                         key={item}

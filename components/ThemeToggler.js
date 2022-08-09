@@ -61,7 +61,7 @@ export default function ThemeToggler({ changeTheme }) {
       // Edit Pin
       setPinPosY(e.screenY - pinWidth);
       setPinPosX(e.screenX - pinWidth / 2);
-      console.log(e);
+      console.log(finalColor);
       setShowPin('inline-block');
       // Change theme
       changeTheme(finalColor);
