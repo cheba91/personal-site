@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { Grid } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 export default function StackInfoCard({ stack }) {
    const [longDescVisible, setLongDescVisible] = useState(false);
@@ -38,12 +40,18 @@ export default function StackInfoCard({ stack }) {
 
                <Typography>{stack.desc}</Typography>
             </CardContent>
-            <CardActions>
+            <CardActions sx={{ justifyContent: 'flex-end' }}>
                <Button
                   onClick={toggleLongDesc}
-                  sx={{ '&:hover': { color: 'primary.lighter' } }}
+                  // startIcon={<ExpandMoreIcon />}
+                  endIcon={
+                     longDescVisible ? <ExpandLessIcon /> : <ExpandMoreIcon />
+                  }
+                  sx={{
+                     '&:hover': { color: 'primary.lighter' },
+                  }}
                >
-                  {longDescVisible ? 'Hide' : 'Show'}
+                  {longDescVisible ? 'Hide ' : 'View '} longer description
                </Button>
             </CardActions>
             {longDescVisible ? (

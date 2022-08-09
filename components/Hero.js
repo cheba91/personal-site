@@ -14,12 +14,10 @@ export default function Hero({ changeTheme, mainClr }) {
             flexWrap="nowrap"
             flexDirection="column"
             width="100%"
-            height="100vh"
-            // gap="3rem"
             alignItems="center"
             justifyContent="space-between"
             sx={{
-               // position: 'relative',
+               height: { xs: '95vh', sm: '100vh' }, //phones have browser tab on top
                paddingTop: { xs: 16, sm: 18, md: 23 },
                // gap: { xs: '2rem', sm: '2rem', lg: '3rem' },
             }}

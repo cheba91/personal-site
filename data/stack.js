@@ -1,7 +1,7 @@
 export const stackData = [
    {
       key: 1,
-      title: 'Stack 1',
+      title: 'Web apps',
       usedTechnologies: ['MongoDB', 'React', 'Express'],
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus cumque asperiores, cupiditate placeat est vero praesentium reiciendis blanditiis ullam.',
       longDesc:
@@ -9,7 +9,7 @@ export const stackData = [
    },
    {
       key: 2,
-      title: 'Stack 1',
+      title: "API's",
       usedTechnologies: ['MongoDB', 'React', 'Express'],
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus cumque asperiores, cupiditate placeat est vero praesentium reiciendis blanditiis ullam.',
       longDesc:
@@ -17,7 +17,7 @@ export const stackData = [
    },
    {
       key: 3,
-      title: 'Stack 1',
+      title: 'Static websites',
       usedTechnologies: ['MongoDB', 'React', 'Express'],
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus cumque asperiores, cupiditate placeat est vero praesentium reiciendis blanditiis ullam.',
       longDesc:

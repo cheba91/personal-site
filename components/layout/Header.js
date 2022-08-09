@@ -90,7 +90,6 @@ export default function Header({ window, mainClr }) {
                   {navItems.map((item) => (
                      <Button
                         sx={{
-                           textTransform: 'none',
                            color: 'light.main',
                            '&:hover': {
                               color: 'light.light',

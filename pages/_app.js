@@ -37,6 +37,7 @@ const theme = {
       MuiButton: {
          styleOverrides: {
             root: {
+               textTransform: 'none',
                '&:hover': {
                   background: 'none',
                },
