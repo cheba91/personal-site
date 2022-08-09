@@ -19,6 +19,9 @@ const theme = {
          lighter: lightenDarkenColor(primaryColor, 40),
          darker: lightenDarkenColor(primaryColor, -50),
       },
+      text: {
+         primary: '#f1f1f1',
+      },
       dark: {
          main: '#121212',
       },

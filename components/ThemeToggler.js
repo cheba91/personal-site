@@ -74,7 +74,7 @@ export default function ThemeToggler({ changeTheme }) {
             width: `${ballSize}px`,
             height: `${ballSize}px`,
             display: 'inline-block',
-            // WebkitTapHighlightColor: 'transparent',
+            WebkitTapHighlightColor: 'transparent',
             position: 'absolute',
             // top: { sm: `66%`, xs: '63%' },
             left: `50%`,

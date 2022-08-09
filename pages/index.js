@@ -1,4 +1,5 @@
 import { Container } from '@mui/material';
+import About from '../components/About';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import Background from '../components/layout/Background';
@@ -11,7 +12,8 @@ export default function HomePage({ changeTheme, mainClr }) {
             sx={{ maxWidth: '1200px', py: 7 }}
             className="wrapContainer"
          >
-            <StackInfoList />
+            <StackInfoList mainClr={mainClr} />
+            <About />
             <Contact />
          </Container>
       </>

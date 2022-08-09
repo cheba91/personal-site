@@ -1,15 +1,12 @@
 import { Box } from '@mui/material';
 
-export default function NeonBox({ children, color }) {
+export default function NeonShadow({ children, mainClr, radius }) {
    return (
       <Box
          sx={{
+            borderRadius: radius,
             boxShadow: `
-            2px 2px 3px 1px ${color},
-            0px 2px 4px ${color},
-            0px 4px 8px ${color},
-            0px 8px 16px ${color}`,
-            borderRadius: '50%',
+            1px 3px 5px 0px ${mainClr}`,
          }}
       >
          {children}
