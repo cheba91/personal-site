@@ -7,7 +7,6 @@ export default function Hero({ changeTheme, mainClr }) {
    return (
       <>
          <Grid
-            md={10}
             container
             spacing={2}
             margin="0"
@@ -24,7 +23,7 @@ export default function Hero({ changeTheme, mainClr }) {
             }}
          >
             {/* TOP hero part */}
-            <Grid md={4}>
+            <Grid>
                <Container>
                   <Typography
                      textAlign="center"
@@ -45,7 +44,6 @@ export default function Hero({ changeTheme, mainClr }) {
 
             {/* BOTTOM hero part */}
             <Grid
-               md={6}
                position="relative"
                width="100%"
                height="100%"

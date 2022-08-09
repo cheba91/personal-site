@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 35;
-   const ballSize = 200;
+   const ballSize = 170;
    const [showPin, setShowPin] = useState('none');
    const [pinPosX, setPinPosX] = useState(538);
    const [pinPosY, setPinPosY] = useState(865);
