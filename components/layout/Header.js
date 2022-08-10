@@ -14,7 +14,12 @@ import Logo from '../Logo';
 import { Link, useTheme } from '@mui/material';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+// const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+   ['What I Do', 'whatIDo'],
+   ['About', 'about'],
+   ['Contact', 'contact'],
+];
 
 export default function Header({ window }) {
    const mainClr = useTheme().palette.primary.main;
@@ -33,15 +38,21 @@ export default function Header({ window }) {
       >
          <List>
             {navItems.map((item) => (
-               <ListItem key={item} disablePadding>
-                  <ListItemButton
-                     sx={{
-                        textAlign: 'center',
-                     }}
-                  >
-                     <ListItemText primary={item} />
-                  </ListItemButton>
-               </ListItem>
+               <Link underline="none" key={item[1]} href={`#${item[1]}`}>
+                  <ListItem key={item[1]} disablePadding>
+                     <ListItemButton
+                        sx={{
+                           textAlign: 'center',
+                           color: 'light.main',
+                           '&:hover': {
+                              background: 'transparent',
+                           },
+                        }}
+                     >
+                        <ListItemText primary={item[0]} />
+                     </ListItemButton>
+                  </ListItem>
+               </Link>
             ))}
          </List>
       </Box>
@@ -90,7 +101,7 @@ export default function Header({ window }) {
                   }}
                >
                   {navItems.map((item) => (
-                     <Link underline="none" key={item} href={`#${item}`}>
+                     <Link underline="none" key={item[1]} href={`#${item[1]}`}>
                         <Button
                            sx={{
                               color: 'light.main',
@@ -99,7 +110,7 @@ export default function Header({ window }) {
                               },
                            }}
                         >
-                           {item}
+                           {item[0]}
                         </Button>
                      </Link>
                   ))}

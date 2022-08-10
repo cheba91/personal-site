@@ -1,5 +1,6 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
 import myImage from '../public/myImage.png';
+import AnchorId from './ui/AnchorId';
 import DizzyEyes from './ui/DizzyEyes';
 import NeonHeading from './ui/NeonHeading';
 export default function About() {
@@ -12,8 +13,8 @@ export default function About() {
    } = useTheme();
    return (
       <>
+         <AnchorId id={'about'} />
          <Grid
-            id="About"
             mb={7}
             container
             rows={2}

@@ -1,4 +1,4 @@
-export const primaryColor = '#91bcff';
+export const primaryColor = 'rgb(157,181,255)';
 
 export const theme = {
    typography: {
