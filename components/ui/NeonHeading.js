@@ -10,19 +10,21 @@ const Dot = () => {
             verticalAlign: 'middle',
             marginRight: '0.8rem',
             marginLeft: '0.8rem',
-            color: mainClr,
-            background: mainClr,
+            border: 'none',
+            // color: mainClr,
+            // background: mainClr,
             borderRadius: '50%',
             animation: 'pulseDot 1s infinite alternate ease-in',
-            animationDelay: '1.4s',
-            '@keyframes pulseDot': {
-               '0%': {
-                  boxShadow: `0 0 0px 0px ${mainClr}`,
-               },
-               '100%': {
-                  boxShadow: `0 0 0.5rem 0.1rem ${mainClr}`,
-               },
-            },
+            boxShadow: `1px 1px 0px 0px ${mainClr}`,
+            // animationDelay: '1.4s',
+            // '@keyframes pulseDot': {
+            //    '0%': {
+            //       boxShadow: `1px 2px 0px 0px ${mainClr}`,
+            //    },
+            //    '100%': {
+            //       boxShadow: `1px 2px 2px 1px ${mainClr}`,
+            //    },
+            // },
          }}
       />
    );
@@ -35,7 +37,6 @@ export default function NeonHeading({ text }) {
          variant="h4"
          component="h2"
          sx={{
-            // width: 'fit-content',
             whiteSpace: 'nowrap',
             textAlign: 'center',
          }}
