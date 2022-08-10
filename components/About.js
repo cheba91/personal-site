@@ -1,10 +1,12 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
 import myImage from '../public/myImage.png';
+import DizzyEyes from './ui/DizzyEyes';
 import NeonHeading from './ui/NeonHeading';
 export default function About() {
    const {
       palette: {
          primary: { main: mainClr },
+         dark: { cardBg },
       },
       shape: { borderRadius },
    } = useTheme();
@@ -17,7 +19,6 @@ export default function About() {
             rows={2}
             sx={{
                position: 'relative',
-               // background: 'red',
                zIndex: '0',
                borderRadius: `${borderRadius}px`,
                overflow: 'hidden',
@@ -43,13 +44,11 @@ export default function About() {
                   content: "''",
                   position: 'absolute',
                   zIndex: '-1',
-                  // opacity: 1,
                   left: '3px',
                   top: '3px',
                   width: 'calc(100% - 6px)',
                   height: 'calc(100% - 6px)',
-                  background: `linear-gradient(to right, rgb(30, 30, 30), rgb(20, 20, 20))`,
-                  // background: lightDark,
+                  background: cardBg,
                   borderRadius: `${borderRadius}px`,
                },
                '@keyframes rotate': {
@@ -77,27 +76,51 @@ export default function About() {
                   nesciunt reiciendis?
                </Typography>
             </Grid>
-            {/* Image */}
+            {/* Image Section */}
             <Grid item xs={12} sm={5} textAlign="center">
+               {/* Wrap */}
                <Box
-                  component="img"
-                  alt="My image"
-                  src={myImage.src}
+                  className="imgEyesWrap"
                   sx={{
-                     borderRadius: '50%',
-                     borderRight: `1px ${mainClr} red`,
-                     marginTop: { xs: '2rem', sm: '0' },
-                     marginLeft: { xs: '0', sm: '1rem' },
-                     height: 190,
-                     width: 190,
-                     maxWidth: '100%',
-                     maxHeight: '100%',
-                     transition: 'transform 1s ease 0s',
-                     '&:hover': {
-                        transform: 'perspective(500px) rotateY(-20deg)',
-                     },
+                     width: '100%',
+                     height: '100%',
+                     position: 'relative',
+
+                     paddingTop: { xs: '2rem', sm: '0' },
+                     paddingLeft: { xs: '0', sm: '1rem' },
                   }}
-               ></Box>
+               >
+                  {/* Profile Pic */}
+                  <Box
+                     component="img"
+                     alt="My image"
+                     src={myImage.src}
+                     sx={{
+                        // position: 'absolute',
+                        // marginLeft: 'auto',
+                        // marginRight: 'auto',
+                        borderRadius: '50%',
+                        boxShadow: `0 2px 7px ${mainClr}`,
+                        height: 190,
+                        width: 190,
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        transition: 'transform 1.5s ease 0s',
+                        '&:hover': {
+                           transform: 'rotateY(-20deg)',
+                        },
+                     }}
+                  />
+                  {/* Dizzy Eyes */}
+                  {/* <DizzyEyes
+                     sx={{
+                        zIndex: '5',
+                        position: 'absolute',
+                        top: '27%',
+                        left: '50%',
+                     }}
+                  /> */}
+               </Box>
             </Grid>
          </Grid>
       </>

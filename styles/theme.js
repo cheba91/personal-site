@@ -15,6 +15,7 @@ export const theme = {
       dark: {
          main: 'rgb(18, 18, 18)',
          light: 'rgb(30, 30, 30)',
+         cardBg: `linear-gradient(to right, rgb(25, 25, 25), rgb(35, 35, 35))`,
       },
       light: {
          main: '#efefef',

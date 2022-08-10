@@ -9,15 +9,25 @@ import { Grid } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import NeonShadow from './ui/NeonShadow';
+import { useTheme } from '@mui/material';
 
 export default function StackInfoCard({ stack }) {
+   const {
+      primary: { main: mainClr },
+      dark: { cardBg },
+   } = useTheme().palette;
    const [longDescVisible, setLongDescVisible] = useState(false);
    const toggleLongDesc = () => setLongDescVisible((current) => !current);
    // console.log(stack);
    return (
       <Grid item>
          <NeonShadow radius={'15px'}>
-            <Card sx={{ padding: '0.2rem 0.4rem' }}>
+            <Card
+               sx={{
+                  padding: '0.2rem 0.4rem',
+                  background: cardBg,
+               }}
+            >
                <CardContent>
                   <Typography
                      sx={{ paddingBottom: '0.8rem' }}
