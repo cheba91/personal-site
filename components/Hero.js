@@ -3,7 +3,7 @@ import ThemeToggler from './ThemeToggler';
 import NeonGrid3D from './ui/NeonGrid3D';
 import NeonGridFlat from './ui/NeonGridFlat.js';
 
-export default function Hero({ changeTheme, mainClr }) {
+export default function Hero({ changeTheme }) {
    return (
       <>
          <Grid
@@ -49,7 +49,7 @@ export default function Hero({ changeTheme, mainClr }) {
                height="100%"
                overflow="hidden"
             >
-               <NeonGridFlat mainClr={mainClr} />
+               <NeonGridFlat />
                <ThemeToggler changeTheme={changeTheme} />
             </Grid>
          </Grid>

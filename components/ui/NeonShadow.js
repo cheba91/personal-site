@@ -1,6 +1,9 @@
 import { Box } from '@mui/material';
+import { useTheme } from '@mui/material';
 
-export default function NeonShadow({ children, mainClr, radius }) {
+export default function NeonShadow({ children, radius }) {
+   const mainClr = useTheme().palette.primary.main;
+
    return (
       <Box
          sx={{

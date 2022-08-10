@@ -12,7 +12,7 @@ const handleClick = () => {
       });
    }
 };
-export default function BackToTop({ mainClr }) {
+export default function BackToTop() {
    const trigger = useScrollTrigger({
       disableHysteresis: true,
       threshold: 100,

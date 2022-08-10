@@ -1,6 +1,6 @@
 import { Box, Container } from '@mui/material';
 
-export default function Background({ color, children, heroSectionHeight }) {
+export default function Background({ children, heroSectionHeight }) {
    return (
       <>
          <Container

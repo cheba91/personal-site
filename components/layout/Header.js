@@ -11,11 +11,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../Logo';
+import { Link, useTheme } from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
-export default function Header({ window, mainClr }) {
+export default function Header({ window }) {
+   const mainClr = useTheme().palette.primary.main;
    const [mobileOpen, setMobileOpen] = React.useState(false);
 
    const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
@@ -70,7 +72,7 @@ export default function Header({ window, mainClr }) {
                   marginRight: 'auto',
                }}
             >
-               <Logo color={mainClr} width={120} />
+               <Logo width={120} />
                {/* Hamburger icon */}
                <IconButton
                   aria-label="open drawer"
@@ -88,17 +90,18 @@ export default function Header({ window, mainClr }) {
                   }}
                >
                   {navItems.map((item) => (
-                     <Button
-                        sx={{
-                           color: 'light.main',
-                           '&:hover': {
-                              color: 'light.light',
-                           },
-                        }}
-                        key={item}
-                     >
-                        {item}
-                     </Button>
+                     <Link underline="none" key={item} href={`#${item}`}>
+                        <Button
+                           sx={{
+                              color: 'light.main',
+                              '&:hover': {
+                                 color: 'light.light',
+                              },
+                           }}
+                        >
+                           {item}
+                        </Button>
+                     </Link>
                   ))}
                </Box>
             </Toolbar>

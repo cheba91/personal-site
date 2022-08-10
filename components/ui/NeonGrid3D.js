@@ -1,9 +1,12 @@
 import { Box } from '@mui/material';
 import { lightenDarkenColor } from '../../utils/lightenDarkenColor';
 import ThemeToggler from '../ThemeToggler';
+import { useTheme } from '@mui/material';
 
-export default function NeonGrid({ mainClr, changeTheme }) {
-   const darkerMainClr = lightenDarkenColor(mainClr, -80);
+export default function NeonGrid({ changeTheme }) {
+   const mainClr = useTheme().palette.primary.main;
+
+   const darkerMainClr = lightenDarkenColor(-0.8, mainClr);
    const animationSize = 1200;
    const fromTop = 80;
    const fromLeft = 50;

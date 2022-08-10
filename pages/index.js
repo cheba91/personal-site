@@ -8,10 +8,7 @@ export default function HomePage({ changeTheme, mainClr }) {
    return (
       <>
          <Hero changeTheme={changeTheme} mainClr={mainClr} />
-         <Container
-            sx={{ maxWidth: '1200px', py: 7 }}
-            className="wrapContainer"
-         >
+         <Container sx={{ py: 10 }} className="wrapContainer">
             <StackInfoList mainClr={mainClr} />
             <About />
             <Contact />

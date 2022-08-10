@@ -57,8 +57,11 @@ export default function ThemeToggler({ changeTheme }) {
       color.r = Math.round(color.r * cw + 255 * ww);
       color.g = Math.round(color.g * cw + 255 * ww);
       color.b = Math.round(color.b * cw + 255 * ww);
+      console.log(`rgb(${color.r},${color.g},${color.b})`);
       const finalColor = rgbToHex(color.r, color.g, color.b);
       // Edit Pin
+      changeTheme(`rgb(${color.r},${color.g},${color.b})`);
+      return;
       setPinPosY(e.screenY - pinWidth);
       setPinPosX(e.screenX - pinWidth / 2);
       console.log(finalColor);
@@ -124,6 +127,8 @@ export default function ThemeToggler({ changeTheme }) {
                   position: 'absolute',
                   top: '25%',
                   left: '25%',
+                  paddingLeft: '100%',
+                  paddingTop: '100%',
                   borderRadius: '50%',
                   background:
                      'radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%)',

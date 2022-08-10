@@ -1,4 +1,7 @@
-export default function Logo({ color, width }) {
+import { useTheme } from '@mui/material';
+
+export default function Logo({ width }) {
+   const mainClr = useTheme().palette.primary.main;
    return (
       <>
          <svg
@@ -6,7 +9,7 @@ export default function Logo({ color, width }) {
             className="Logo"
             width={width}
             viewBox="0 0 550 470"
-            fill={color}
+            fill={mainClr}
             xmlns="http://www.w3.org/2000/svg"
          >
             <path d="M65,234.92962c0,13.79357 11.96381,24.63137 25.89812,24.63137h62.00067v-7.67091h-62.00067c-10.13405,0 -17.80496,-8.16354 -17.80496,-16.96046c0.07038,-1.05563 0.14075,-1.82976 0.35188,-2.60389l0.21113,-0.98525c1.75938,-7.67091 9.07842,-13.23056 16.74933,-13.23056c0.14075,0 0.2815,0 0.42225,0h62.00067v-7.74129h-62.00067c-13.72319,0 -25.82775,10.76743 -25.82775,24.56099z"></path>

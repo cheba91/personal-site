@@ -10,13 +10,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import NeonShadow from './ui/NeonShadow';
 
-export default function StackInfoCard({ stack, mainClr }) {
+export default function StackInfoCard({ stack }) {
    const [longDescVisible, setLongDescVisible] = useState(false);
    const toggleLongDesc = () => setLongDescVisible((current) => !current);
    // console.log(stack);
    return (
       <Grid item>
-         <NeonShadow mainClr={mainClr} radius={'15px'}>
+         <NeonShadow radius={'15px'}>
             <Card sx={{ padding: '0.2rem 0.4rem' }}>
                <CardContent>
                   <Typography

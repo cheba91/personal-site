@@ -1,55 +1,41 @@
-const commonSettings = {
-   border: 'inset 0 -1px 0 0 hsla(0,0%,100%,.1)',
-   'backdrop-filter': 'saturate(180%) blur(5px)',
-};
-export const defaultTheme = {
+export const primaryColor = '#91bcff';
+
+export const theme = {
+   typography: {
+      fontFamily: ['Inter', 'Roboto', 'sans-serif'].join(','),
+   },
    palette: {
       mode: 'dark',
       primary: {
-         main: '#fff',
+         main: primaryColor,
       },
-      secondary: {
-         main: '#d32f2f',
+      text: {
+         primary: '#f1f1f1',
       },
-      themeColor: {
-         main: '#ef5350',
+      dark: {
+         main: '#121212',
       },
-      headerColor: {
-         main: '#000',
+      light: {
+         main: '#efefef',
+         light: '#fff',
       },
-   },
-};
-export const darkTheme = {
-   palette: {
-      mode: 'dark',
-      primary: {
-         main: '#fff',
-      },
-      secondary: {
-         main: '#d32f2f',
-      },
-      themeColor: {
-         main: '#ef5350',
-      },
-      headerColor: {
-         main: '#000',
+      transparent: {
+         main: 'rgba(0,0,0,.5)',
       },
    },
-};
-export const lightTheme = {
-   palette: {
-      mode: 'light',
-      primary: {
-         main: '#808080',
-      },
-      themeColor: {
-         main: '#ef5350',
-      },
-      secondary: {
-         main: '#d32f2f',
-      },
-      headerColor: {
-         main: '#fff',
+   shape: {
+      borderRadius: 15,
+   },
+   components: {
+      MuiButton: {
+         styleOverrides: {
+            root: {
+               textTransform: 'none',
+               '&:hover': {
+                  background: 'none',
+               },
+            },
+         },
       },
    },
 };

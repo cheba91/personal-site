@@ -1,8 +1,11 @@
 import { Box } from '@mui/material';
 import { lightenDarkenColor } from '../../utils/lightenDarkenColor';
+import { useTheme } from '@mui/material';
 
-export default function NeonGrid({ mainClr }) {
-   const darkerMainClr = lightenDarkenColor(mainClr, -80);
+export default function NeonGrid() {
+   const mainClr = useTheme().palette.primary.main;
+
+   const darkerMainClr = lightenDarkenColor(-0.8, mainClr);
 
    return (
       <>
@@ -10,7 +13,6 @@ export default function NeonGrid({ mainClr }) {
             className="NeonGrid"
             sx={{
                zIndex: '-1',
-               //    margin: '0 auto',
                position: 'relative',
                width: '200%',
                height: '80%',
@@ -19,8 +21,8 @@ export default function NeonGrid({ mainClr }) {
                transform:
                   'translate3D(0,50px,0) perspective(150px) rotateX(60deg)',
                //    backgroundColor: 'rgba(20 30 40 0.4)',
-               backgroundImage: `linear-gradient(90deg, transparent 0%, transparent 85%, ${darkerMainClr} 90%, transparent 95%),
-                linear-gradient(0deg, transparent 0%, transparent 85%, ${darkerMainClr} 90%, transparent 95%), 
+               backgroundImage: `linear-gradient(90deg, transparent 0%, transparent 85%, ${mainClr} 90%, transparent 95%),
+                linear-gradient(0deg, transparent 0%, transparent 85%, ${mainClr} 90%, transparent 95%), 
                 linear-gradient( 90deg, transparent, transparent, rgba(0,0,0,1)), 
                 linear-gradient( 90deg, rgba(0,0,0,1), transparent, transparent)`,
                backgroundSize: '30px 17px',
