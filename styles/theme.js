@@ -13,7 +13,8 @@ export const theme = {
          primary: '#f1f1f1',
       },
       dark: {
-         main: '#121212',
+         main: 'rgb(18, 18, 18)',
+         light: 'rgb(30, 30, 30)',
       },
       light: {
          main: '#efefef',

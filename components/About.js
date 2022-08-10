@@ -4,11 +4,8 @@ import NeonHeading from './ui/NeonHeading';
 export default function About() {
    const {
       palette: {
-         primary: { main, lighter, darker },
-         text: { primary: textClr },
-         dark: { main: darkMain },
+         primary: { main: mainClr },
       },
-
       shape: { borderRadius },
    } = useTheme();
    return (
@@ -20,12 +17,8 @@ export default function About() {
             rows={2}
             sx={{
                position: 'relative',
-               // background: darkMain,
+               // background: 'red',
                zIndex: '0',
-               // width: '400px',
-               // height: '300px',
-               // width: '100%',
-               // height: '100%',
                borderRadius: `${borderRadius}px`,
                overflow: 'hidden',
                padding: '2rem',
@@ -37,19 +30,14 @@ export default function About() {
                   top: '-150%',
                   width: '400%',
                   height: '400%',
-
-                  // backgroundColor: '#399953',
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: '50% 50%, 50% 50%',
                   backgroundPosition: '0 0, 100% 0, 100% 100%, 0 100%',
-                  backgroundImage: `linear-gradient(to  left, ${main} 1%, rgba(0,0,0, 0) 5%),
+                  backgroundImage: `linear-gradient(to  left, ${mainClr} 1%, rgba(0,0,0, 0) 5%),
                   linear-gradient(transparent, transparent),
-                     linear-gradient(to right, ${main} 1%, rgba(0,0,0,0) 5% ),
+                     linear-gradient(to right, ${mainClr} 1%, rgba(0,0,0,0) 5% ),
                      linear-gradient(transparent, transparent)`,
                   animation: 'rotate 8s linear infinite',
-                  // backdropFilter: 'sepia(90%)',
-                  // filter: 'blur(5px)',
-                  // opacity: 0.8,
                },
                '&::after': {
                   content: "''",
@@ -60,24 +48,13 @@ export default function About() {
                   top: '3px',
                   width: 'calc(100% - 6px)',
                   height: 'calc(100% - 6px)',
-                  background: darkMain,
+                  background: `linear-gradient(to right, rgb(30, 30, 30), rgb(20, 20, 20))`,
+                  // background: lightDark,
                   borderRadius: `${borderRadius}px`,
-                  // animation: 'opacityChange 3s infinite alternate',
                },
                '@keyframes rotate': {
                   '100%': { transform: 'rotate(1turn)' },
                },
-               // '@keyframes opacityChange': {
-               //    '50%': { opacity: 1 },
-               //    '100%': { opacity: 0.5 },
-               // },
-               // boxShadow: `
-               //  1px 2px 4px 1px ${textClr},
-               //  inset 1px 2px 4px 1px ${main},
-               //  inset 1px 2px 4px 1px ${main},
-               //  1px 2px 4px 1px ${textClr}
-               // `,
-               // border: 'inset 1px solid #fff',
                borderRadius: `${borderRadius}px`,
                padding: '1rem 1rem 1.5rem 1rem',
             }}
@@ -108,12 +85,17 @@ export default function About() {
                   src={myImage.src}
                   sx={{
                      borderRadius: '50%',
+                     borderRight: `1px ${mainClr} red`,
                      marginTop: { xs: '2rem', sm: '0' },
                      marginLeft: { xs: '0', sm: '1rem' },
                      height: 190,
                      width: 190,
                      maxWidth: '100%',
                      maxHeight: '100%',
+                     transition: 'transform 1s ease 0s',
+                     '&:hover': {
+                        transform: 'perspective(500px) rotateY(-20deg)',
+                     },
                   }}
                ></Box>
             </Grid>
