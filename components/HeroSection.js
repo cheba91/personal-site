@@ -49,7 +49,7 @@ export default function HeroSection({ changeTheme }) {
                   // transform: 'rotate(20deg)',
                   transform: 'skewY(20deg)',
                   // filter: `drop-shadow(1px 1px 1px red)`,
-                  filter: `drop-shadow(0 0 1px #FFF)`,
+                  // filter: `drop-shadow(0 0 1px #FFF)`,
                   backgroundImage: `
                   repeating-conic-gradient(#FFF 0%, transparent .0002%, transparent .45%, transparent .045%)
                   `,
