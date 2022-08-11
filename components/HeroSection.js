@@ -15,7 +15,7 @@ export default function HeroSection({ changeTheme }) {
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
    const darkMainClr2 = lightenDarkenColor(-0.95, mainClr);
    const mainTransClr = editClrTransparency(mainClr, 0.1);
-   const blurPlanets = '20px';
+   const blurPlanets = '3px';
    // const darkTransClr1 = editClrTransparency(darkMainClr1, 0.7);
    // const darkTransClr2 = editClrTransparency(darkMainClr2, 0.8);
    return (
@@ -31,12 +31,6 @@ export default function HeroSection({ changeTheme }) {
                   position: 'relative',
                   overflow: 'hidden',
                }, //phones have browser tab on top
-
-               // filter: `drop-shadow(0 0 .2vmin #FFF) drop-shadow(0 0 .2vmin #FFF) drop-shadow(0 0 .2vmin #FFF)`,
-               // backgroundImage: `
-               // repeating-conic-gradient(#FFF2 0%, transparent .0002%, transparent .0045%, transparent .045%),
-               // repeating-conic-gradient(#FFF9 0%, transparent .0002%, transparent .0090%, transparent .090%),
-               // repeating-conic-gradient(#FFF6 0%, transparent .0002%, transparent .0075%, transparent .075%)`,
                backgroundImage: `
                   linear-gradient(to bottom, ${mainDarkClr} 20%, ${mainTransClr}, ${mainDarkClr})
                   `,
@@ -44,6 +38,7 @@ export default function HeroSection({ changeTheme }) {
          >
             {/* BACKGROUND */}
             <Box
+               className="BG"
                sx={{
                   width: '200%',
                   zIndex: '-2',
@@ -51,11 +46,15 @@ export default function HeroSection({ changeTheme }) {
                   position: 'absolute',
                   top: '10%',
                   left: '-30%',
+                  // transform: 'rotate(20deg)',
+                  transform: 'skewY(20deg)',
+                  // filter: `drop-shadow(1px 1px 1px red)`,
+                  filter: `drop-shadow(0 0 1px #FFF)`,
                   backgroundImage: `
-                  repeating-conic-gradient(#FFF 0%, transparent .0002%, transparent .45%, transparent .045%),
                   repeating-conic-gradient(#FFF 0%, transparent .0002%, transparent .45%, transparent .045%)
                   `,
-                  transform: 'rotate(10deg)',
+
+                  // backgroundImage: `repeating-conic-gradient(#fff, #000, #fff 0.1deg)`,
                }}
                // repeating-conic-gradient(${mainClr} 0%, transparent .0002%, transparent .75%, transparent .075%)
             />
@@ -63,16 +62,12 @@ export default function HeroSection({ changeTheme }) {
             <Box
                sx={{
                   zIndex: '-1',
-                  width: '10vh',
-                  height: '10vh',
-                  top: '-10vh',
-                  right: '-10vw',
                   position: 'absolute',
                   borderRadius: '50%',
                   background: `linear-gradient(to right, ${darkMainClr1} , ${darkMainClr2})`,
-                  opacity: 1,
+                  filter: `blur(${blurPlanets})`,
                   animation: 'movePlanet1 10s infinite linear',
-                  // filter: 'blur(blurPlanets)',
+
                   '@keyframes movePlanet1': {
                      '0%': {
                         width: '10vh',
@@ -81,8 +76,8 @@ export default function HeroSection({ changeTheme }) {
                         right: '-10vw',
                      },
                      '100%': {
-                        width: '50vh',
-                        height: '50vh',
+                        width: '70vh',
+                        height: '70vh',
                         top: '100vh',
                         right: '150vw',
                      },
@@ -97,33 +92,28 @@ export default function HeroSection({ changeTheme }) {
                   height: { xs: '60vw', sm: '40vw', md: '30vw' },
                   position: 'absolute',
                   borderRadius: '50%',
-                  bottom: '25vh',
-                  right: '-10vw',
-                  background: `radial-gradient(#976f00, #000000  70%)`,
-                  opacity: 1,
+                  bottom: '-25vh',
+                  right: '-50vw',
+                  background: `radial-gradient(#6e540a , ${mainDarkClr})`,
+                  filter: `blur(${blurPlanets})`,
                   animation: 'movePlanet2 7s infinite alternate',
+                  transitionTimingFunction: 'cubic-bezier(0, 0.76, 0.66, 0.99)',
                   '@keyframes movePlanet2': {
-                     '0%': {
-                        bottom: '25vh',
+                     '100%': {
+                        bottom: '20vh',
                         right: '-10vw',
                      },
-                     '100%': {
-                        bottom: '5vh',
-                        right: '0vw',
-                     },
                   },
-                  // filter: 'blur(blurPlanets)',
                   '&::before': {
                      content: "''",
                      position: 'absolute',
-                     width: '130%',
-                     height: '4vw',
-                     top: '50%',
-                     left: '-15%',
+                     width: '180%',
+                     height: '2.5rem',
+                     top: '45%',
+                     left: '-40%',
                      background: `linear-gradient(#0c0c0c 60%, ${darkMainClr1})`,
                      borderRadius: '45%',
-                     transform: 'skewY(22deg)',
-                     filter: 'blur(blurPlanets)',
+                     transform: 'skewY(12deg)',
                   },
                }}
             />
@@ -135,27 +125,24 @@ export default function HeroSection({ changeTheme }) {
                   height: { xs: '17vw', sm: '11vw', md: '7vw' },
                   position: 'absolute',
                   borderRadius: '50%',
-                  bottom: '50%',
-                  right: '50%',
+                  top: '40%',
+                  right: '20%',
                   background: `radial-gradient(#663741, ${mainDarkClr}  70%)`,
-                  opacity: 1,
-                  // animation: 'movePlanet3 5s infinite linear',
+                  filter: `blur(${blurPlanets})`,
+                  animation: 'movePlanet3 5s infinite alternate',
                   '@keyframes movePlanet3': {
-                     '0%': {},
-                     '25%': {},
-                     '250%': {},
-                     '100%': {},
+                     '100%': {
+                        top: '55%',
+                        right: '40%',
+                     },
                   },
-                  // filter: 'blur(blurPlanets)',
+
                   '&::before': {
                      content: "''",
                      position: 'absolute',
-                     // transform: 'skewY(10deg)',
-
                      background: `radial-gradient( ${darkMainClr1}, #000 )`,
                      borderRadius: '50%',
-                     // transform: 'skewY(22deg)',
-                     // filter: 'blur(blurPlanets)',
+                     filter: `blur(${blurPlanets})`,
                      animation: 'movePlanet3moon 5s infinite linear',
                      '@keyframes movePlanet3moon': {
                         '0%': {
@@ -167,13 +154,13 @@ export default function HeroSection({ changeTheme }) {
                         '50%': {
                            width: '25px',
                            height: '25px',
-                           top: '60%',
+                           top: '30%',
                            left: '45%',
                         },
                         '100%': {
                            width: '10px',
                            height: '10px',
-                           top: '50%',
+                           top: '20%',
                            left: '100%',
                         },
                      },
