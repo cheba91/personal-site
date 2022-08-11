@@ -74,6 +74,7 @@ export default function ThemeToggler({ changeTheme }) {
 
       <Box
          sx={{
+            zIndex: 20,
             width: `${ballSize}px`,
             height: `${ballSize}px`,
             display: 'inline-block',
@@ -84,12 +85,12 @@ export default function ThemeToggler({ changeTheme }) {
             bottom: '10%',
             transform: 'translate(-50%, 0)',
 
-            animation: 'moveBall 1s infinite alternate',
-            '@keyframes moveBall': {
-               '0%': { marginBottom: '0', marginLeft: '0' },
-               '50%': { marginBottom: '0.2rem', marginLeft: '0.2rem' },
-               '100%': { marginBottom: '0', marginLeft: '0' },
-            },
+            // animation: 'moveBall 1s infinite alternate',
+            // '@keyframes moveBall': {
+            //    '0%': { marginBottom: '0', marginLeft: '0' },
+            //    '50%': { marginBottom: '0.2rem', marginLeft: '0.2rem' },
+            //    '100%': { marginBottom: '0', marginLeft: '0' },
+            // },
          }}
       >
          {/* Inner ball, coloring etc. */}
@@ -120,33 +121,33 @@ export default function ThemeToggler({ changeTheme }) {
                   zIndex: '2',
                },
                // White Reflection
-               '&::after': {
-                  width: '100%',
-                  height: '100%',
-                  content: "''",
-                  position: 'absolute',
-                  top: '25%',
-                  left: '25%',
-                  paddingLeft: '100%',
-                  paddingTop: '100%',
-                  borderRadius: '50%',
-                  background:
-                     'radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%)',
-                  filter: 'blur(10px)',
-                  transform:
-                     'translateX(-80px) translateY(-90px) skewX(-20deg)',
-                  animation: 'moveReflection 0.4s infinite alternate',
-                  '@keyframes moveReflection': {
-                     '0%': { left: '25%', top: '25%' },
-                     '50%': { left: '27%', top: '26%' },
-                     '100%': { left: '25%', top: '25%' },
-                  },
-               },
+               // '&::after': {
+               //    width: '100%',
+               //    height: '100%',
+               //    content: "''",
+               //    position: 'absolute',
+               //    top: '25%',
+               //    left: '25%',
+               //    paddingLeft: '100%',
+               //    paddingTop: '100%',
+               //    borderRadius: '50%',
+               //    background:
+               //       'radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%)',
+               //    filter: 'blur(10px)',
+               //    transform:
+               //       'translateX(-80px) translateY(-90px) skewX(-20deg)',
+               //    animation: 'moveReflection 0.4s infinite alternate',
+               //    '@keyframes moveReflection': {
+               //       '0%': { left: '25%', top: '25%' },
+               //       '50%': { left: '27%', top: '26%' },
+               //       '100%': { left: '25%', top: '25%' },
+               //    },
+               // },
             }}
          ></Box>
 
          {/* Ball Shadow */}
-         <Box
+         {/* <Box
             sx={{
                marginLeft: '25px',
                marginTop: '-40px',
@@ -155,7 +156,7 @@ export default function ThemeToggler({ changeTheme }) {
                background: 'radial-gradient(#000f, #fff0 72%)',
                borderRadius: '50%',
             }}
-         />
+         /> */}
          {/* Color Pin */}
          {/* <EditLocationIcon
             sx={{

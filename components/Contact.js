@@ -23,8 +23,6 @@ export default function Contact() {
             sx={{
                borderRadius: `${borderRadius}px`,
                background: cardBg,
-               // background: `radial-gradient( ${darkClrLighter}, transparent)`,
-               boxShadow: `inset 0px -50px 50px -50px ${mainClr}`,
                padding: '1rem 1rem 0 1rem',
                position: 'relative',
                width: '100%',
@@ -41,7 +39,7 @@ export default function Contact() {
                   transformOrigin: '-20% 110%',
                   transform: 'rotate(30deg)',
                   background: darkClr,
-                  boxShadow: ` -2px 0 50px ${mainClr}`,
+                  boxShadow: `inset -2px 0 20px ${mainClr}`,
                },
                '&:after': {
                   position: 'absolute',
@@ -53,7 +51,7 @@ export default function Contact() {
                   transformOrigin: '120% 110%',
                   transform: 'rotate(-30deg)',
                   background: darkClr,
-                  boxShadow: ` 2px 0 50px ${mainClr}`,
+                  boxShadow: `inset 2px 0 20px ${mainClr}`,
                },
             }}
          >
@@ -139,8 +137,8 @@ export default function Contact() {
             </Grid>
             <SocialIcons
                addStyles={{
-                  mt: '3rem',
-                  mb: '4rem',
+                  mt: '5rem',
+                  mb: '2rem',
                }}
             />
          </Box>
