@@ -2,6 +2,7 @@ import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import NeonGrid3D from './ui/NeonGrid3D';
 import NeonGridFlat from './ui/NeonGridFlat.js';
+import imgBg from '../public/starsBg.png';
 import {
    editClrTransparency,
    lightenDarkenColor,
@@ -47,11 +48,11 @@ export default function HeroSection({ changeTheme }) {
                   top: '10%',
                   left: '-30%',
                   // transform: 'rotate(20deg)',
-                  transform: 'skewY(20deg)',
+                  // transform: 'skewY(20deg)',
                   // filter: `drop-shadow(1px 1px 1px red)`,
                   // filter: `drop-shadow(0 0 1px #FFF)`,
                   // backgroundImage: `repeating-conic-gradient(#FFF 0%, transparent .0002%, transparent .45%, transparent .045%)`,
-                  background: `transparent url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center`,
+                  background: `transparent url(${imgBg.src}) repeat top center`,
 
                   // backgroundImage: `repeating-conic-gradient(#fff, #000, #fff 0.1deg)`,
                }}
