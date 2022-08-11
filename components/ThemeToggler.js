@@ -57,7 +57,7 @@ export default function ThemeToggler({ changeTheme }) {
       color.r = Math.round(color.r * cw + 255 * ww);
       color.g = Math.round(color.g * cw + 255 * ww);
       color.b = Math.round(color.b * cw + 255 * ww);
-      console.log(`rgb(${color.r},${color.g},${color.b})`);
+      // console.log(`rgb(${color.r},${color.g},${color.b})`);
       const finalColor = rgbToHex(color.r, color.g, color.b);
       // Edit Pin
       changeTheme(`rgb(${color.r},${color.g},${color.b})`);

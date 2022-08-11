@@ -15,7 +15,7 @@ export default function HeroSection({ changeTheme }) {
    } = useTheme().palette;
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
    const darkMainClr2 = lightenDarkenColor(-0.95, mainClr);
-   const mainTransClr = editClrTransparency(mainClr, 0.1);
+   const mainTransClr = editClrTransparency(mainClr, 0.03);
    const blurPlanets = '3px';
    // const darkTransClr1 = editClrTransparency(darkMainClr1, 0.7);
    // const darkTransClr2 = editClrTransparency(darkMainClr2, 0.8);
@@ -33,7 +33,7 @@ export default function HeroSection({ changeTheme }) {
                   overflow: 'hidden',
                }, //phones have browser tab on top
                backgroundImage: `
-                  linear-gradient(to bottom, ${mainDarkClr} 20%, ${mainTransClr}, ${mainDarkClr})
+                  linear-gradient(to bottom, ${mainDarkClr} 40%, ${mainTransClr}, ${mainDarkClr})
                   `,
             }}
          >
