@@ -88,20 +88,22 @@ export default function HeroSection({ changeTheme }) {
             <Box
                sx={{
                   zIndex: '-1',
-                  width: { xs: '60vw', sm: '40vw', md: '30vw' },
-                  height: { xs: '60vw', sm: '40vw', md: '30vw' },
+                  width: { xs: '40vw', sm: '30vw', md: '20vw' },
+                  height: { xs: '40vw', sm: '30vw', md: '20vw' },
                   position: 'absolute',
                   borderRadius: '50%',
-                  bottom: '-25vh',
-                  right: '-50vw',
+                  bottom: '65vh',
+                  right: '-60vw',
                   background: `radial-gradient(#6e540a , ${mainDarkClr})`,
                   filter: `blur(${blurPlanets})`,
-                  animation: 'movePlanet2 7s infinite alternate',
-                  transitionTimingFunction: 'cubic-bezier(0, 0.76, 0.66, 0.99)',
+                  animation: 'movePlanet2 12s infinite',
+                  transitionTimingFunction:
+                     'cubic-bezier(0.04, 1.07, 0.62, 1.07)',
                   '@keyframes movePlanet2': {
                      '100%': {
-                        bottom: '20vh',
-                        right: '-10vw',
+                        bottom: '-55vh',
+                        right: '60vw',
+                        transform: 'scale(1.8)',
                      },
                   },
                   '&::before': {
@@ -126,14 +128,15 @@ export default function HeroSection({ changeTheme }) {
                   position: 'absolute',
                   borderRadius: '50%',
                   top: '40%',
-                  right: '20%',
+                  right: '35%',
                   background: `radial-gradient(#663741, ${mainDarkClr}  70%)`,
                   filter: `blur(${blurPlanets})`,
-                  animation: 'movePlanet3 5s infinite alternate',
+                  animation: 'movePlanet3 4s infinite alternate ease-in-out',
                   '@keyframes movePlanet3': {
                      '100%': {
-                        top: '55%',
+                        top: '42%',
                         right: '40%',
+                        transform: 'scale(1.4)',
                      },
                   },
 
