@@ -4,7 +4,7 @@ export function darkenFixed(r, g, b) {
    const newColors = [r, g, b].map((clr) =>
       clr - darkenBy < minDark ? minDark : clr - darkenBy
    );
-   console.log(newColors);
+   // console.log(newColors);
 
    return `rgb(${newColors[0]},${newColors[1]},${newColors[2]})`;
 }

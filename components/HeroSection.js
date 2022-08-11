@@ -51,6 +51,7 @@ export default function HeroSection({ changeTheme }) {
                   // transform: 'skewY(20deg)',
                   // filter: `drop-shadow(1px 1px 1px red)`,
                   // filter: `drop-shadow(0 0 1px #FFF)`,
+                  filter: 'blur(1px)',
                   // backgroundImage: `repeating-conic-gradient(#FFF 0%, transparent .0002%, transparent .45%, transparent .045%)`,
                   background: `transparent url(${imgBg.src}) repeat top center`,
 
@@ -92,13 +93,12 @@ export default function HeroSection({ changeTheme }) {
                   height: { xs: '40vw', sm: '30vw', md: '20vw' },
                   position: 'absolute',
                   borderRadius: '50%',
-                  bottom: '65vh',
+                  bottom: '95vh',
                   right: '-60vw',
-                  background: `radial-gradient(#6e540a , ${mainDarkClr})`,
+                  background: `radial-gradient(#2c2206 , ${mainDarkClr})`,
                   filter: `blur(${blurPlanets})`,
-                  animation: 'movePlanet2 12s infinite',
-                  transitionTimingFunction:
-                     'cubic-bezier(0.04, 1.07, 0.62, 1.07)',
+                  animation: 'movePlanet2 5s infinite',
+                  transitionTimingFunction: 'cubic-bezier(0.46, 0.6, 0, 1.31)',
                   '@keyframes movePlanet2': {
                      '100%': {
                         bottom: '-55vh',
