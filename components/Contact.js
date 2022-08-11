@@ -3,6 +3,7 @@ import NeonHeading from './ui/NeonHeading';
 import { useTheme } from '@mui/material';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 import AnchorId from './ui/AnchorId';
+import SocialIcons from './SocialIcons';
 
 export default function Contact() {
    const {
@@ -22,7 +23,38 @@ export default function Contact() {
             sx={{
                borderRadius: `${borderRadius}px`,
                background: cardBg,
-               padding: '1rem 1rem 1.5rem 1rem',
+               // background: `radial-gradient( ${darkClrLighter}, transparent)`,
+               boxShadow: `inset 0px -50px 50px -50px ${mainClr}`,
+               padding: '1rem 1rem 0 1rem',
+               position: 'relative',
+               width: '100%',
+               height: '100%',
+               overflow: 'hidden',
+
+               '&:before': {
+                  position: 'absolute',
+                  content: "''",
+                  right: 0,
+                  bottom: 0,
+                  width: '30%',
+                  height: '150%',
+                  transformOrigin: '-20% 110%',
+                  transform: 'rotate(30deg)',
+                  background: darkClr,
+                  boxShadow: ` -2px 0 50px ${mainClr}`,
+               },
+               '&:after': {
+                  position: 'absolute',
+                  content: "''",
+                  left: 0,
+                  bottom: 0,
+                  height: '150%',
+                  width: '30%',
+                  transformOrigin: '120% 110%',
+                  transform: 'rotate(-30deg)',
+                  background: darkClr,
+                  boxShadow: ` 2px 0 50px ${mainClr}`,
+               },
             }}
          >
             <NeonHeading text={'Contact Me'}></NeonHeading>
@@ -36,6 +68,7 @@ export default function Contact() {
                direction="column"
                justify="center"
                alignItems="center"
+               sx={{}}
             >
                <Grid item>
                   <form id="contact-form">
@@ -88,12 +121,12 @@ export default function Contact() {
                                  color: textClr,
                                  border: `none`,
                                  fontWeight: 'bold',
-                                 boxShadow: `-4px -4px 12px ${darkClr}, 1px 2px 6px ${mainClr}`,
+                                 boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 6px ${mainClr}`,
                                  padding: '0.7rem 1.9rem',
                                  '&:hover': {
                                     border: `none`,
                                     background: darkClrLighter,
-                                    boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
+                                    boxShadow: `-6px -6px 16px ${darkClr}, 3px 3px 7px ${mainClr}`,
                                  },
                               }}
                            >
@@ -104,6 +137,12 @@ export default function Contact() {
                   </form>
                </Grid>
             </Grid>
+            <SocialIcons
+               addStyles={{
+                  mt: '3rem',
+                  mb: '4rem',
+               }}
+            />
          </Box>
       </>
    );

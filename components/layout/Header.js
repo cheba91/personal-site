@@ -12,6 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Logo from '../Logo';
 import { Link, useTheme } from '@mui/material';
+import SocialIcons from '../SocialIcons';
 
 const drawerWidth = 240;
 // const navItems = ['Home', 'About', 'Contact'];
@@ -55,6 +56,7 @@ export default function Header({ window }) {
                </Link>
             ))}
          </List>
+         <SocialIcons />
       </Box>
    );
 

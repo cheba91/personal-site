@@ -3,6 +3,7 @@ import { stackData } from '../data/stack';
 import { Grid } from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
 import AnchorId from './ui/AnchorId';
+import SocialIcons from './SocialIcons';
 
 export default function StackInfoList() {
    return (

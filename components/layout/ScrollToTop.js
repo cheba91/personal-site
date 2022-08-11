@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import Fade from '@mui/material/Fade';
+import { useTheme } from '@mui/material';
 
 const handleClick = () => {
    const anchor = document.querySelector('#top');
@@ -13,6 +14,12 @@ const handleClick = () => {
    }
 };
 export default function BackToTop() {
+   const {
+      light: darkClrLighter,
+      main: darkClr,
+      cardBg,
+   } = useTheme().palette.dark;
+
    const trigger = useScrollTrigger({
       disableHysteresis: true,
       threshold: 100,
@@ -27,14 +34,15 @@ export default function BackToTop() {
             <Fab
                sx={{
                   color: 'text.disabled',
-                  background: 'rgba(40,40,40,0.2)',
+                  background: cardBg,
                   boxShadow: `
-                  2px 2px 5px 1px rgba(255,255,255,0.2), -2px -2px 3px 1px rgba(0,0,0,0.3)`,
-                  backdropFilter: 'saturate(180%) blur(2px)',
+                    -1px -1px 2px 1px ${darkClr},
+                     1px 1px 2px 1px rgba(255,255,255,0.2)`,
+                  // backdropFilter: 'saturate(180%) blur(2px)',
                   '&:hover': {
-                     backdropFilter: 'saturate(180%) blur(2px)',
+                     // backdropFilter: 'saturate(180%) blur(2px)',
                      color: 'text.disabled',
-                     background: 'rgba(40,40,40,0.2)',
+                     background: darkClrLighter,
                   },
                }}
                size="small"
@@ -46,3 +54,6 @@ export default function BackToTop() {
       </Fade>
    );
 }
+
+// 2px 2px 5px 1px rgba(255,255,255,0.2),
+// -2px -2px 3px 1px rgba(0,0,0,0.3),
