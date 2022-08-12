@@ -14,7 +14,8 @@ export default function NeonShadow({ children, radius }) {
          sx={{
             borderRadius: radius,
             // boxShadow: `1px 3px 5px 0px ${mainClr}`,
-            boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
+            boxShadow: `-6px -6px 100px ${darkClr}, 3px 3px 0px 1px ${mainClr}`,
+            // boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
          }}
       >
          {children}
