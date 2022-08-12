@@ -82,15 +82,12 @@ export default function ThemeToggler({ changeTheme }) {
             position: 'absolute',
             // top: { sm: `66%`, xs: '63%' },
             left: `50%`,
-            bottom: '10%',
+            bottom: '15%',
             transform: 'translate(-50%, 0)',
-
-            // animation: 'moveBall 1s infinite alternate',
-            // '@keyframes moveBall': {
-            //    '0%': { marginBottom: '0', marginLeft: '0' },
-            //    '50%': { marginBottom: '0.2rem', marginLeft: '0.2rem' },
-            //    '100%': { marginBottom: '0', marginLeft: '0' },
-            // },
+            animation: 'moveBall 6s infinite alternate',
+            '@keyframes moveBall': {
+               '100%': { left: `48%`, bottom: '17%' },
+            },
          }}
       >
          {/* Inner ball, coloring etc. */}
@@ -98,51 +95,57 @@ export default function ThemeToggler({ changeTheme }) {
             onClick={handleChangeTheme}
             sx={{
                display: 'inline-block',
-               cursor: 'pointer',
+               cursor: 'crosshair',
                width: '100%',
                height: '100%',
                margin: '0',
                borderRadius: '50%',
                position: 'relative',
-               background:
-                  'radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)',
+               // filter: 'blur(1px)',
+               background: `radial-gradient(rgba(255,255,255,0.2),transparent 70%), conic-gradient(#cc3a00, #e1cb05, #40a22a, #0099e6, #4f02ca, #c10b6f, #cc3a00)`,
+               // background: `radial-gradient(rgba(255,255,255,0.3),transparent), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
+               // background: `radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
                '&::before': {
                   content: "''",
                   position: 'absolute',
-                  background:
-                     'radial-gradient(circle at 50% 120%,  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%)',
+                  // boxShadow: `inset -50px -50px 30px rgba(0,0,0,.5)`,
+                  //background: `linear-gradient(120deg, rgba(255,255,255,0.1),  rgba(0,0,0,0.3))`,
+                  background: `linear-gradient(120deg, transparent 20%,
+                     rgba(0,0,0,0.8)), radial-gradient(circle at 19% 30%, rgba(255, 255, 255, 0.6) 1%, rgba(240, 240, 240, 0.3) 10%, rgba(0, 0, 0, 0.7) 65%)`,
+                  // background: `radial-gradient(circle at 19% 30%, rgba(255, 255, 255, 0.6) 1%, rgba(240, 240, 240, 0.1) 10%, rgba(0, 0, 0, 0.7) 65%)`,
+                  // background: `radial-gradient(circle at 0% 30%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3) 65%)`,
                   borderRadius: '50%',
-                  bottom: '2.5%',
-                  left: '5%',
-                  opacity: '0.6',
+                  bottom: '0',
+                  left: '0',
+                  // opacity: '0.6',
                   height: '100%',
-                  width: '90%',
-                  filter: 'blur(5px)',
+                  width: '100.6%',
+                  // filter: 'blur(1px)',
                   zIndex: '2',
                },
                // White Reflection
-               // '&::after': {
-               //    width: '100%',
-               //    height: '100%',
-               //    content: "''",
-               //    position: 'absolute',
-               //    top: '25%',
-               //    left: '25%',
-               //    paddingLeft: '100%',
-               //    paddingTop: '100%',
-               //    borderRadius: '50%',
-               //    background:
-               //       'radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%)',
-               //    filter: 'blur(10px)',
-               //    transform:
-               //       'translateX(-80px) translateY(-90px) skewX(-20deg)',
-               //    animation: 'moveReflection 0.4s infinite alternate',
-               //    '@keyframes moveReflection': {
-               //       '0%': { left: '25%', top: '25%' },
-               //       '50%': { left: '27%', top: '26%' },
-               //       '100%': { left: '25%', top: '25%' },
-               //    },
-               // },
+               '&::after': {
+                  width: '100%',
+                  height: '100%',
+                  content: "''",
+                  position: 'absolute',
+                  top: '27%',
+                  left: '23%',
+                  // paddingLeft: '100%',
+                  // paddingTop: '100%',
+                  borderRadius: '50%',
+                  // background: `radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.6) 3%, rgba(255, 255, 255, 0) 24%)`,
+                  background: `radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.4),  rgba(255, 255, 255, 0) 24%)`,
+                  filter: 'blur(1px)',
+                  transform:
+                     'translateX(-80px) translateY(-90px) skewX(-20deg)',
+                  animation: 'moveReflection 4s infinite alternate',
+                  '@keyframes moveReflection': {
+                     '0%': { top: '27%', left: '23%' },
+                     '50%': { left: '26%', top: '28%' },
+                     '100%': { top: '27%', left: '23%' },
+                  },
+               },
             }}
          ></Box>
 
@@ -158,7 +161,7 @@ export default function ThemeToggler({ changeTheme }) {
             }}
          /> */}
          {/* Color Pin */}
-         {/* <EditLocationIcon
+         <EditLocationIcon
             sx={{
                zIndex: '10',
                display: showPin,
@@ -167,7 +170,7 @@ export default function ThemeToggler({ changeTheme }) {
                top: pinPosY + 'px',
                left: pinPosX + 'px',
                fontSize: `${pinWidth}px`,
-               animation: 'bounce 1.5s infinite linear',
+               // animation: 'bounce 1.5s infinite linear',
                '@keyframes bounce': {
                   '0%': { top: pinPosY },
                   '25%': { top: pinPosY - 7 + 'px' },
@@ -176,7 +179,7 @@ export default function ThemeToggler({ changeTheme }) {
                   '100%': { top: pinPosY },
                },
             }}
-         /> */}
+         />
       </Box>
    );
 }
