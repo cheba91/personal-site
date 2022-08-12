@@ -172,7 +172,7 @@ export default function ThemeToggler({ changeTheme }) {
                   paddingRight: '2px',
                   fontWeight: 600,
                   fontSize: 'smaller',
-                  fontFamily: 'cursive',
+                  fontFamily: 'Inter',
                   textAlign: 'right',
                   color: 'rgb(30, 30, 30)',
                   position: 'absolute',
