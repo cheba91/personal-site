@@ -1,7 +1,5 @@
 import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
-import NeonGrid3D from './ui/NeonGrid3D';
-import NeonGridFlat from './ui/NeonGridFlat.js';
 import imgBg from '../public/starsBg.png';
 import {
    editClrTransparency,
@@ -177,6 +175,7 @@ export default function HeroSection({ changeTheme }) {
                         component="h1"
                         sx={{
                            fontWeight: 800,
+                           paddingTop: '5rem',
                            fontSize: {
                               xs: '2.3rem',
                               sm: '3.7rem',

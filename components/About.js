@@ -1,9 +1,44 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
+import { useState } from 'react';
 import myImage from '../public/myImage.png';
 import AnchorId from './ui/AnchorId';
 import DizzyEyes from './ui/DizzyEyes';
+import dizzyEye from '../public/dizzyEye.svg';
 import NeonHeading from './ui/NeonHeading';
+
 export default function About() {
+   const spinTime = 1.5;
+   // const [isNormalPic, setIsNormalPic] = useState(true);
+   // const [isSpinning, setIsSpinning] = useState(false);
+
+   // const handleClickedPic = (e) =>
+   //    isNormalPic ? showDizzyPic(e) : showNormalPic(e);
+
+   // const showNormalPic = (e) => {
+   //    const img = e.target.parentElement.querySelector('#profilePic');
+
+   //    if (isSpinning || !img) return;
+   //    setIsSpinning(true);
+   //    // img.style.transform = 'rotateY(180deg)';
+
+   //    setIsNormalPic(true);
+   //    resetTimer();
+   // };
+   // const showDizzyPic = (e) => {
+   //    const img = e.target.parentElement.querySelector('#profilePic');
+
+   //    if (isSpinning || !img) return;
+   //    setIsSpinning(true);
+   //    // img.style.transform = 'rotateY(-180deg)';
+   //    setIsNormalPic(false);
+   //    resetTimer();
+   // };
+
+   // const resetTimer = () =>
+   //    setTimeout(() => {
+   //       setIsSpinning(false);
+   //    }, spinTime * 1000);
+
    const {
       palette: {
          primary: { main: mainClr },
@@ -79,9 +114,7 @@ export default function About() {
             </Grid>
             {/* Image Section */}
             <Grid item xs={12} sm={5} textAlign="center">
-               {/* Wrap */}
                <Box
-                  className="imgEyesWrap"
                   sx={{
                      width: '100%',
                      height: '100%',
@@ -91,36 +124,59 @@ export default function About() {
                      paddingLeft: { xs: '0', sm: '1rem' },
                   }}
                >
-                  {/* Profile Pic */}
+                  {/* Pic wrap */}
                   <Box
-                     component="img"
-                     alt="My image"
-                     src={myImage.src}
+                     // onClick={(e) => handleClickedPic(e)}
+                     // onMouseOver={(e) => showDizzyPic(e)}
+                     // onMouseOut={(e) => showNormalPic(e)}
                      sx={{
-                        // position: 'absolute',
-                        // marginLeft: 'auto',
-                        // marginRight: 'auto',
-                        borderRadius: '50%',
-                        boxShadow: `0 2px 7px ${mainClr}`,
                         height: 190,
                         width: 190,
-                        maxWidth: '100%',
-                        maxHeight: '100%',
-                        transition: 'transform 1.5s ease 0s',
-                        '&:hover': {
-                           transform: 'rotateY(-20deg)',
-                        },
+                        margin: '0 auto',
                      }}
-                  />
-                  {/* Dizzy Eyes */}
-                  {/* <DizzyEyes
-                     sx={{
-                        zIndex: '5',
-                        position: 'absolute',
-                        top: '27%',
-                        left: '50%',
-                     }}
-                  /> */}
+                  >
+                     {/* Profile Pic */}
+                     <Box
+                        id="profilePic"
+                        component="img"
+                        alt="My image"
+                        src={myImage.src}
+                        sx={{
+                           // position: 'absolute',
+                           // marginLeft: 'auto',
+                           // marginRight: 'auto',
+                           borderRadius: '50%',
+                           boxShadow: `0 2px 7px ${mainClr}`,
+                           height: 190,
+                           width: 190,
+                           maxWidth: '100%',
+                           maxHeight: '100%',
+                           transition: `transform ${spinTime}s ease`,
+                           '&:hover': {
+                              transform: 'rotateY(-20deg)',
+                           },
+                           // transform: isNormalPic
+                           //    ? 'rotateY(0deg)'
+                           //    : 'rotateY(180deg)',
+                        }}
+                     />
+                     {/* Dizzy pic */}
+                     {/* {!isNormalPic && (
+                        <Box
+                           sx={{
+                              // zIndex: 100,
+                              position: 'absolute',
+                              backgroundImage: `url(${dizzyEye.src})`,
+                              backgroundColor: 'red',
+                              top: '0',
+                              left: '50%',
+                              width: '20px',
+                              height: '20px',
+                              '&::after': {},
+                           }}
+                        />
+                     )} */}
+                  </Box>
                </Box>
             </Grid>
          </Grid>

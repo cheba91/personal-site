@@ -13,9 +13,13 @@ import { useTheme } from '@mui/material';
 
 export default function StackInfoCard({ stack }) {
    const {
-      primary: { main: mainClr },
-      dark: { cardBg },
-   } = useTheme().palette;
+      palette: {
+         primary: { main: mainClr },
+         dark: { cardBg, main: darkClr, lighter: darkClrLighter },
+         text: { primary: textClr },
+      },
+      shape: { borderRadius },
+   } = useTheme();
    const [longDescVisible, setLongDescVisible] = useState(false);
    const toggleLongDesc = () => setLongDescVisible((current) => !current);
    // console.log(stack);
@@ -64,7 +68,19 @@ export default function StackInfoCard({ stack }) {
                         )
                      }
                      sx={{
-                        '&:hover': { color: 'primary.lighter' },
+                        color: textClr,
+                        border: `none`,
+                        background: cardBg,
+                        borderRadius: `11px`,
+                        boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 6px ${mainClr}`,
+                        marginBottom: '5px',
+                        padding: '0.4rem 1.2rem',
+                        '&:hover': {
+                           border: `none`,
+                           background: darkClrLighter,
+                           background: cardBg,
+                           boxShadow: `-6px -6px 16px ${darkClr}, 3px 3px 7px ${mainClr}`,
+                        },
                      }}
                   >
                      {longDescVisible ? 'Hide ' : 'View '} longer description

@@ -1,7 +1,6 @@
 import { Box, Button, Grid, TextField, Typography } from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
 import { useTheme } from '@mui/material';
-import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 import AnchorId from './ui/AnchorId';
 import SocialIcons from './SocialIcons';
 
@@ -14,8 +13,13 @@ export default function Contact() {
       },
       shape: { borderRadius },
    } = useTheme();
-   const lighterMainClr = lightenDarkenColor(0.2, mainClr);
 
+   const inputStyles = {
+      boxShadow: `inset -8px -2px 10px ${darkClr}, inset 8px 2px 15px ${darkClr}`,
+      borderRadius: '15px',
+      background: cardBg,
+      // boxShadow: `inset 5px 5px 5px ${darkClrLighter}`,
+   };
    return (
       <>
          <AnchorId id={'contact'} />
@@ -69,7 +73,6 @@ export default function Contact() {
                direction="column"
                justify="center"
                alignItems="center"
-               sx={{}}
             >
                <Grid item>
                   <form id="contact-form">
@@ -81,6 +84,7 @@ export default function Contact() {
                            label="Name"
                            name="userName"
                            margin="normal"
+                           sx={{ ...inputStyles }}
                         />
                      </Grid>
                      <Grid item>
@@ -91,6 +95,7 @@ export default function Contact() {
                            label="Email"
                            name="email"
                            margin="normal"
+                           sx={{ ...inputStyles }}
                         />
                      </Grid>
                      <Grid item>
@@ -104,6 +109,7 @@ export default function Contact() {
                            multiline
                            rowsmax="7"
                            rows={6}
+                           sx={{ ...inputStyles }}
                         />
                      </Grid>
                      <Grid
@@ -119,6 +125,7 @@ export default function Contact() {
                               size="large"
                               type="submit"
                               sx={{
+                                 background: cardBg,
                                  color: textClr,
                                  border: `none`,
                                  fontWeight: 'bold',
@@ -126,7 +133,7 @@ export default function Contact() {
                                  padding: '0.7rem 1.9rem',
                                  '&:hover': {
                                     border: `none`,
-                                    background: darkClrLighter,
+                                    background: cardBg,
                                     boxShadow: `-6px -6px 16px ${darkClr}, 3px 3px 7px ${mainClr}`,
                                  },
                               }}

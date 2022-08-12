@@ -1,6 +1,4 @@
 import Box from '@mui/material/Box';
-import ThemeFlag from './ui/ThemeFlag';
-import TourIcon from '@mui/icons-material/Tour';
 import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
@@ -148,28 +146,6 @@ export default function ThemeToggler({ changeTheme }) {
                },
             }}
          ></Box>
-         {/* Color Pin */}
-         {/* <TourIcon
-            sx={{
-               zIndex: '10',
-               // display: 'inline-block',
-               position: 'absolute',
-               color: '#f1f1f1',
-               top: pinPosY + 'px',
-               left: pinPosX + 'px',
-               // fontSize: `${pinWidth}px`,
-               width: `${pinWidth}px`,
-               height: `${pinWidth}px`,
-               // animation: 'bounce 1.5s infinite linear',
-               '@keyframes bounce': {
-                  '0%': { top: pinPosY },
-                  '25%': { top: pinPosY - 7 + 'px' },
-                  '50%': { top: pinPosY - 14 + 'px' },
-                  '75%': { top: pinPosY - 7 + 'px' },
-                  '100%': { top: pinPosY },
-               },
-            }}
-         /> */}
          <Box
             className="flag"
             sx={{
@@ -206,8 +182,7 @@ export default function ThemeToggler({ changeTheme }) {
                   top: '2px',
                   background:
                      'linear-gradient( to left, #fff, rgb(60, 60, 60))',
-                  // background: '#f1f1f1',
-                  // transform: 'skewY(0)',
+
                   animation: 'moveFlag 0.2s infinite alternate',
                   '@keyframes moveFlag': {
                      '100%': {
@@ -217,19 +192,7 @@ export default function ThemeToggler({ changeTheme }) {
                   },
                },
             }}
-         >
-            {/* <Box
-               sx={{
-                  color: 'rgb(18, 18, 18)',
-                  zIndex: 20,
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-               }}
-            >
-               PICK
-            </Box> */}
-         </Box>
+         ></Box>
       </Box>
    );
 }
