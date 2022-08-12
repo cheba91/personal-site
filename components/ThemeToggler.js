@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
-import EditLocationIcon from '@mui/icons-material/EditLocation';
+import ThemeFlag from './ui/ThemeFlag';
 import TourIcon from '@mui/icons-material/Tour';
 import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
-   const pinWidth = 35;
+   const pinWidth = 40;
    const ballSize = 170;
    const [pinPosX, setPinPosX] = useState(98.5);
    const [pinPosY, setPinPosY] = useState(-26);
@@ -61,7 +61,7 @@ export default function ThemeToggler({ changeTheme }) {
       const finalColor = rgbToHex(color.r, color.g, color.b);
       // Edit Pin
       setPinPosY(e.clientY - rect.top - pinWidth - 2);
-      setPinPosX(e.clientX - rect.left - 8);
+      setPinPosX(e.clientX - rect.left - 2);
       console.log('pin x: ', pinPosX);
       console.log('pin y: ', pinPosY);
       changeTheme(`rgb(${color.r},${color.g},${color.b})`);
@@ -84,7 +84,7 @@ export default function ThemeToggler({ changeTheme }) {
             left: `50%`,
             bottom: '15%',
             transform: 'translate(-50%, 0)',
-            // animation: 'moveBall 6s infinite alternate',
+            animation: 'moveBall 6s infinite alternate',
             '@keyframes moveBall': {
                '100%': { left: `48%`, bottom: '17%' },
             },
@@ -149,7 +149,7 @@ export default function ThemeToggler({ changeTheme }) {
             }}
          ></Box>
          {/* Color Pin */}
-         <TourIcon
+         {/* <TourIcon
             sx={{
                zIndex: '10',
                // display: 'inline-block',
@@ -169,7 +169,67 @@ export default function ThemeToggler({ changeTheme }) {
                   '100%': { top: pinPosY },
                },
             }}
-         />
+         /> */}
+         <Box
+            className="flag"
+            sx={{
+               zIndex: '3',
+               position: 'absolute',
+               width: `${pinWidth}px`,
+               height: `${pinWidth}px`,
+               top: pinPosY + 'px',
+               left: pinPosX + 'px',
+
+               // pole
+               '&::after': {
+                  content: "''",
+                  position: 'absolute',
+                  height: `${pinWidth}px`,
+                  width: '4px',
+                  boxShadow: '0px 2px 2px #000',
+                  background:
+                     'linear-gradient( to bottom, #fff, rgb(60, 60, 60))',
+               },
+               // flag
+               '&::before': {
+                  content: '"PICK"',
+                  paddingRight: '2px',
+                  fontWeight: 600,
+                  fontSize: 'smaller',
+                  fontFamily: 'cursive',
+                  textAlign: 'right',
+                  color: 'rgb(30, 30, 30)',
+                  position: 'absolute',
+                  height: `${pinWidth / 2}px`,
+                  width: `${pinWidth}px`,
+                  left: '1px',
+                  top: '2px',
+                  background:
+                     'linear-gradient( to left, #fff, rgb(60, 60, 60))',
+                  // background: '#f1f1f1',
+                  // transform: 'skewY(0)',
+                  animation: 'moveFlag 0.2s infinite alternate',
+                  '@keyframes moveFlag': {
+                     '100%': {
+                        // width: `${pinWidth - 5}px`,
+                        transform: 'skewX(9deg)',
+                     },
+                  },
+               },
+            }}
+         >
+            {/* <Box
+               sx={{
+                  color: 'rgb(18, 18, 18)',
+                  zIndex: 20,
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+               }}
+            >
+               PICK
+            </Box> */}
+         </Box>
       </Box>
    );
 }
