@@ -1,13 +1,13 @@
 import Box from '@mui/material/Box';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
+import TourIcon from '@mui/icons-material/Tour';
 import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 35;
    const ballSize = 170;
-   const [showPin, setShowPin] = useState('none');
-   const [pinPosX, setPinPosX] = useState(538);
-   const [pinPosY, setPinPosY] = useState(865);
+   const [pinPosX, setPinPosX] = useState(98.5);
+   const [pinPosY, setPinPosY] = useState(-26);
 
    const componentToHex = (c) => {
       let hex = c.toString(16);
@@ -60,12 +60,12 @@ export default function ThemeToggler({ changeTheme }) {
       // console.log(`rgb(${color.r},${color.g},${color.b})`);
       const finalColor = rgbToHex(color.r, color.g, color.b);
       // Edit Pin
+      setPinPosY(e.clientY - rect.top - pinWidth - 2);
+      setPinPosX(e.clientX - rect.left - 8);
+      console.log('pin x: ', pinPosX);
+      console.log('pin y: ', pinPosY);
       changeTheme(`rgb(${color.r},${color.g},${color.b})`);
       return;
-      setPinPosY(e.screenY - pinWidth);
-      setPinPosX(e.screenX - pinWidth / 2);
-      console.log(finalColor);
-      setShowPin('inline-block');
       // Change theme
       changeTheme(finalColor);
    };
@@ -84,7 +84,7 @@ export default function ThemeToggler({ changeTheme }) {
             left: `50%`,
             bottom: '15%',
             transform: 'translate(-50%, 0)',
-            animation: 'moveBall 6s infinite alternate',
+            // animation: 'moveBall 6s infinite alternate',
             '@keyframes moveBall': {
                '100%': { left: `48%`, bottom: '17%' },
             },
@@ -148,28 +148,18 @@ export default function ThemeToggler({ changeTheme }) {
                },
             }}
          ></Box>
-
-         {/* Ball Shadow */}
-         {/* <Box
-            sx={{
-               marginLeft: '25px',
-               marginTop: '-40px',
-               width: '600px',
-               height: '70px',
-               background: 'radial-gradient(#000f, #fff0 72%)',
-               borderRadius: '50%',
-            }}
-         /> */}
          {/* Color Pin */}
-         <EditLocationIcon
+         <TourIcon
             sx={{
                zIndex: '10',
-               display: showPin,
+               // display: 'inline-block',
                position: 'absolute',
-               color: '#464646',
+               color: '#f1f1f1',
                top: pinPosY + 'px',
                left: pinPosX + 'px',
-               fontSize: `${pinWidth}px`,
+               // fontSize: `${pinWidth}px`,
+               width: `${pinWidth}px`,
+               height: `${pinWidth}px`,
                // animation: 'bounce 1.5s infinite linear',
                '@keyframes bounce': {
                   '0%': { top: pinPosY },
