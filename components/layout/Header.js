@@ -71,7 +71,8 @@ export default function Header({ window }) {
                paddingBottom: '0.5rem',
                background: 'rgba(40,40,40,0.2)',
                backdropFilter: 'saturate(180%) blur(5px)',
-               boxShadow: `0px 1px 1px ${mainClr}, 0px 2px 5px ${mainClr}, 0px 4px 10px ${mainClr}`,
+               boxShadow: `0px 4px 10px ${mainClr}`,
+               // boxShadow: `0px 1px 1px ${mainClr}, 0px 2px 5px ${mainClr}, 0px 4px 10px ${mainClr}`,
                borderRadius: '0 0 1rem 1rem',
             }}
          >

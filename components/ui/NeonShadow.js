@@ -2,14 +2,19 @@ import { Box } from '@mui/material';
 import { useTheme } from '@mui/material';
 
 export default function NeonShadow({ children, radius }) {
-   const mainClr = useTheme().palette.primary.main;
+   const {
+      palette: {
+         primary: { main: mainClr },
+         dark: { cardBg, main: darkClr },
+      },
+   } = useTheme();
 
    return (
       <Box
          sx={{
             borderRadius: radius,
-            boxShadow: `
-            1px 3px 5px 0px ${mainClr}`,
+            // boxShadow: `1px 3px 5px 0px ${mainClr}`,
+            boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
          }}
       >
          {children}

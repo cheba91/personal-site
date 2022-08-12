@@ -180,6 +180,8 @@ export default function HeroSection({ changeTheme }) {
                               xs: '2.3rem',
                               sm: '3.7rem',
                               md: '4.2rem',
+                              textShadow:
+                                 '0px 0px 50px #000, 0px 0px 50px #000, 0px 0px 50px #000',
                            },
                         }}
                      >

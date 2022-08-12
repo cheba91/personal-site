@@ -25,7 +25,7 @@ export default function StackInfoCard({ stack }) {
    // console.log(stack);
    return (
       <Grid item>
-         <NeonShadow radius={'15px'}>
+         <NeonShadow radius={`${borderRadius}px`}>
             <Card
                sx={{
                   padding: '0.2rem 0.4rem',
@@ -72,14 +72,14 @@ export default function StackInfoCard({ stack }) {
                         border: `none`,
                         background: cardBg,
                         borderRadius: `11px`,
-                        boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 6px ${mainClr}`,
+                        boxShadow: `-4px -4px 12px ${darkClr}, 1px 2px 6px ${mainClr}`,
                         marginBottom: '5px',
                         padding: '0.4rem 1.2rem',
                         '&:hover': {
                            border: `none`,
                            background: darkClrLighter,
                            background: cardBg,
-                           boxShadow: `-6px -6px 16px ${darkClr}, 3px 3px 7px ${mainClr}`,
+                           boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
                         },
                      }}
                   >

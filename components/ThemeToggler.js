@@ -183,7 +183,7 @@ export default function ThemeToggler({ changeTheme }) {
                   background:
                      'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
-                  animation: 'moveFlag 0.2s infinite alternate',
+                  animation: 'moveFlag 0.5s infinite alternate',
                   '@keyframes moveFlag': {
                      '100%': {
                         // width: `${pinWidth - 5}px`,

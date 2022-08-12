@@ -15,9 +15,9 @@ export default function Contact() {
    } = useTheme();
 
    const inputStyles = {
-      boxShadow: `inset -8px -2px 10px ${darkClr}, inset 8px 2px 15px ${darkClr}`,
+      boxShadow: `inset -9px -9px 9px ${darkClr}, inset 3px 3px 10px ${darkClr}`,
       borderRadius: '15px',
-      background: cardBg,
+      // background: cardBg,
       // boxShadow: `inset 5px 5px 5px ${darkClrLighter}`,
    };
    return (
