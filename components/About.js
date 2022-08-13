@@ -23,7 +23,7 @@ export default function About() {
    const scroll = useRef(false);
    useEffect(() => {
       window.addEventListener('scroll', handleLaser);
-      return () => window.removeEventListener('scroll', handleLaser);
+      // return () => window.removeEventListener('scroll', handleLaser);
    }, [scroll]);
 
    const handleLaser = (e, setLaser) => {
