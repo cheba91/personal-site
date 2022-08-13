@@ -179,10 +179,10 @@ export default function HeroSection({ changeTheme }) {
                         component="h1"
                         sx={{
                            fontWeight: 800,
-                           paddingTop: '5rem',
+                           paddingTop: { xs: '3.7rem', sm: '5rem' },
                            fontSize: {
-                              xs: '2.3rem',
-                              sm: '3.7rem',
+                              xs: '3rem',
+                              sm: '3.4rem',
                               md: '4.2rem',
                               textShadow: '4px 4px 1px #000',
                            },
