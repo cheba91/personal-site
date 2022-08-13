@@ -13,7 +13,7 @@ export default function HeroSection({ changeTheme }) {
    } = useTheme().palette;
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
    const darkMainClr2 = lightenDarkenColor(-0.95, mainClr);
-   const mainTransClr = editClrTransparency(darkMainClr1, 0.3);
+   const mainTransClr = editClrTransparency(darkMainClr1, 0.7);
    // const darkTransClr1 = editClrTransparency(darkMainClr1, 0.7);
    // const darkTransClr2 = editClrTransparency(darkMainClr2, 0.8);
    return (
@@ -22,6 +22,9 @@ export default function HeroSection({ changeTheme }) {
             className="outer"
             pt={11}
             sx={{
+               backgroundImage: `linear-gradient(to bottom, ${mainDarkClr} 40%, ${mainTransClr}, ${mainDarkClr})`,
+
+               // backgroundImage: `linear-gradient(to bottom, ${mainDarkClr} 20%, ${mainTransClr}, ${mainDarkClr})`,
                height: {
                   xs: '95vh', //phones have browser tab on top
                   sm: '100vh',
@@ -29,10 +32,9 @@ export default function HeroSection({ changeTheme }) {
                   position: 'relative',
                   overflow: 'hidden',
                },
-               backgroundImage: `linear-gradient(to bottom, ${mainDarkClr} 20%, ${mainTransClr}, ${mainDarkClr})`,
             }}
          >
-            {/* BACKGROUND */}
+            {/* BACKGROUND IMAGE */}
             <Box
                className="BG"
                sx={{
@@ -57,7 +59,7 @@ export default function HeroSection({ changeTheme }) {
                   right: '-10vw',
                   background: `linear-gradient(to right, ${darkMainClr1} , ${darkMainClr2})`,
                   filter: `blur(10px)`,
-                  animation: 'movePlanet1 10s infinite linear',
+                  // animation: 'movePlanet1 10s infinite linear',
                   '@keyframes movePlanet1': {
                      '100%': {
                         width: '80vh',
@@ -80,7 +82,7 @@ export default function HeroSection({ changeTheme }) {
                   right: '-60vw',
                   background: `radial-gradient(#2c2206 , ${mainDarkClr})`,
                   filter: `blur(6px)`,
-                  animation: 'movePlanet2 12s infinite alternate',
+                  // animation: 'movePlanet2 12s infinite alternate',
                   transitionTimingFunction: 'cubic-bezier(0.46, 0.6, 0, 1.31)',
                   '@keyframes movePlanet2': {
                      '100%': {
@@ -114,7 +116,7 @@ export default function HeroSection({ changeTheme }) {
                   right: '35%',
                   background: `radial-gradient(#663741, ${mainDarkClr}  70%)`,
                   filter: `blur(3px)`,
-                  animation: 'movePlanet3 5s infinite alternate linear',
+                  // animation: 'movePlanet3 5s infinite alternate linear',
 
                   '@keyframes movePlanet3': {
                      '100%': {
@@ -123,14 +125,14 @@ export default function HeroSection({ changeTheme }) {
                         transform: 'scale(1.4)',
                      },
                   },
-
+                  // 3rd planet moon
                   '&::before': {
                      content: "''",
                      position: 'absolute',
                      background: `radial-gradient( ${darkMainClr1}, #000 )`,
                      borderRadius: '50%',
                      filter: `blur(2px)`,
-                     animation: 'movePlanet3moon 7s infinite linear',
+                     // animation: 'movePlanet3moon 7s infinite linear',
                      '@keyframes movePlanet3moon': {
                         '0%': {
                            width: '10px',
@@ -180,8 +182,7 @@ export default function HeroSection({ changeTheme }) {
                               xs: '2.3rem',
                               sm: '3.7rem',
                               md: '4.2rem',
-                              textShadow:
-                                 '0px 0px 50px #000, 0px 0px 50px #000, 0px 0px 50px #000',
+                              textShadow: '4px 4px 1px #000',
                            },
                         }}
                      >

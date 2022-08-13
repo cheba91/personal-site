@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import SwipeDownAltIcon from '@mui/icons-material/SwipeDownAlt';
 import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
@@ -82,7 +83,7 @@ export default function ThemeToggler({ changeTheme }) {
             left: `50%`,
             bottom: '15%',
             transform: 'translate(-50%, 0)',
-            animation: 'moveBall 6s infinite alternate',
+            // animation: 'moveBall 6s infinite alternate',
             '@keyframes moveBall': {
                '100%': { left: `48%`, bottom: '17%' },
             },
@@ -100,24 +101,25 @@ export default function ThemeToggler({ changeTheme }) {
                borderRadius: '50%',
                position: 'relative',
                // filter: 'blur(1px)',
-               background: `radial-gradient(rgba(255,255,255,0.2),transparent 70%), conic-gradient(#cc3a00, #e1cb05, #40a22a, #0099e6, #4f02ca, #c10b6f, #cc3a00)`,
+               boxShadow: `0px 0px 30px -4px #6e7072`,
+               // background: `radial-gradient(rgba(255,255,255,0.2),transparent 70%), conic-gradient(#cc3a00, #e1cb05, #40a22a, #0099e6, #4f02ca, #c10b6f, #cc3a00)`,
                // background: `radial-gradient(rgba(255,255,255,0.3),transparent), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
-               // background: `radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
+               background: `radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
                '&::before': {
                   content: "''",
                   position: 'absolute',
                   // boxShadow: `inset -50px -50px 30px rgba(0,0,0,.5)`,
                   //background: `linear-gradient(120deg, rgba(255,255,255,0.1),  rgba(0,0,0,0.3))`,
-                  background: `linear-gradient(120deg, transparent 20%,
-                     rgba(0,0,0,0.8)), radial-gradient(circle at 19% 30%, rgba(255, 255, 255, 0.6) 1%, rgba(240, 240, 240, 0.3) 10%, rgba(0, 0, 0, 0.7) 65%)`,
-                  // background: `radial-gradient(circle at 19% 30%, rgba(255, 255, 255, 0.6) 1%, rgba(240, 240, 240, 0.1) 10%, rgba(0, 0, 0, 0.7) 65%)`,
+                  // background: `linear-gradient(120deg, transparent 20%,
+                  //    rgba(0,0,0,0.8)), radial-gradient(circle at 19% 30%, rgba(255, 255, 255, 0.6) 1%, rgba(240, 240, 240, 0.3) 10%, rgba(0, 0, 0, 0.7) 65%)`,
+                  background: `radial-gradient(circle at 19% 30%, rgba(255, 255, 255, 0.6) 1%, rgba(240, 240, 240, 0.1) 10%, rgba(0, 0, 0, 0.7) 65%)`,
                   // background: `radial-gradient(circle at 0% 30%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3) 65%)`,
                   borderRadius: '50%',
                   bottom: '0',
                   left: '0',
                   // opacity: '0.6',
                   height: '100%',
-                  width: '100.6%',
+                  width: '100%',
                   // filter: 'blur(1px)',
                   zIndex: '2',
                },
@@ -129,15 +131,13 @@ export default function ThemeToggler({ changeTheme }) {
                   position: 'absolute',
                   top: '27%',
                   left: '23%',
-                  // paddingLeft: '100%',
-                  // paddingTop: '100%',
                   borderRadius: '50%',
                   // background: `radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.4) 2px, rgba(255, 255, 255, 0.6) 3%, rgba(255, 255, 255, 0) 24%)`,
-                  background: `radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.4),  rgba(255, 255, 255, 0) 24%)`,
+                  // background: `radial-gradient(circle at 50% 50%,  rgba(255, 255, 255, 0.4),  rgba(255, 255, 255, 0) 24%)`,
                   filter: 'blur(1px)',
                   transform:
                      'translateX(-80px) translateY(-90px) skewX(-20deg)',
-                  animation: 'moveReflection 4s infinite alternate',
+                  // animation: 'moveReflection 4s infinite alternate',
                   '@keyframes moveReflection': {
                      '0%': { top: '27%', left: '23%' },
                      // '50%': { left: '26%', top: '28%' },
@@ -162,18 +162,21 @@ export default function ThemeToggler({ changeTheme }) {
                   position: 'absolute',
                   height: `${pinWidth}px`,
                   width: '4px',
-                  boxShadow: '0px 2px 2px #000',
+                  boxShadow: '0px 3px 3px #000',
                   background:
-                     'linear-gradient( to bottom, #fff, rgb(60, 60, 60))',
+                     'linear-gradient( to left, #fff, rgb(60, 60, 60))',
                },
                // flag
                '&::before': {
-                  content: '"PICK"',
-                  paddingRight: '2px',
+                  // content: <SwipeDownAltIcon />,
+                  content: '"👇"',
+                  borderTopRightRadius: '5px',
+                  borderBottomRightRadius: '5px',
+                  paddingLeft: '3px',
                   fontWeight: 600,
                   fontSize: 'smaller',
                   fontFamily: 'Inter',
-                  textAlign: 'right',
+                  textAlign: 'center',
                   color: 'rgb(30, 30, 30)',
                   position: 'absolute',
                   height: `${pinWidth / 2}px`,
@@ -183,7 +186,7 @@ export default function ThemeToggler({ changeTheme }) {
                   background:
                      'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
-                  animation: 'moveFlag 0.5s infinite alternate',
+                  // animation: 'moveFlag 0.5s infinite alternate',
                   '@keyframes moveFlag': {
                      '100%': {
                         // width: `${pinWidth - 5}px`,
