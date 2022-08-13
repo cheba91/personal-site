@@ -1,44 +1,12 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
 import { useState } from 'react';
 import myImage from '../public/myImage.png';
+import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 import AnchorId from './ui/AnchorId';
-import DizzyEyes from './ui/DizzyEyes';
-import dizzyEye from '../public/dizzyEye.svg';
 import NeonHeading from './ui/NeonHeading';
 
 export default function About() {
-   const spinTime = 1.5;
-   // const [isNormalPic, setIsNormalPic] = useState(true);
-   // const [isSpinning, setIsSpinning] = useState(false);
-
-   // const handleClickedPic = (e) =>
-   //    isNormalPic ? showDizzyPic(e) : showNormalPic(e);
-
-   // const showNormalPic = (e) => {
-   //    const img = e.target.parentElement.querySelector('#profilePic');
-
-   //    if (isSpinning || !img) return;
-   //    setIsSpinning(true);
-   //    // img.style.transform = 'rotateY(180deg)';
-
-   //    setIsNormalPic(true);
-   //    resetTimer();
-   // };
-   // const showDizzyPic = (e) => {
-   //    const img = e.target.parentElement.querySelector('#profilePic');
-
-   //    if (isSpinning || !img) return;
-   //    setIsSpinning(true);
-   //    // img.style.transform = 'rotateY(-180deg)';
-   //    setIsNormalPic(false);
-   //    resetTimer();
-   // };
-
-   // const resetTimer = () =>
-   //    setTimeout(() => {
-   //       setIsSpinning(false);
-   //    }, spinTime * 1000);
-
+   const imgSize = 190;
    const {
       palette: {
          primary: { main: mainClr },
@@ -46,6 +14,21 @@ export default function About() {
       },
       shape: { borderRadius },
    } = useTheme();
+   // const mainClrLight = lightenDarkenColor(0.9, mainClr);
+   //Laser
+   const [laserVisible, setLaserVisible] = useState(false);
+   const [laserX, setLaserX] = useState(false);
+   const [laserY, setLaserY] = useState(false);
+
+   const handleLaser = (e, setLaser) => {
+      const rect = e.target.getBoundingClientRect();
+      setLaserX(rect.left + imgSize / 2 - 10);
+      setLaserY(rect.top + imgSize / 2 - 25);
+      setLaserVisible(setLaser);
+      console.log(rect);
+      console.log('x: ', laserX, 'y: ', laserY);
+   };
+
    return (
       <>
          <AnchorId id={'about'} />
@@ -119,64 +102,82 @@ export default function About() {
                      width: '100%',
                      height: '100%',
                      position: 'relative',
-
+                     display: 'flex',
+                     justifyContent: 'center',
+                     alignItems: 'center',
                      paddingTop: { xs: '2rem', sm: '0' },
                      paddingLeft: { xs: '0', sm: '1rem' },
                   }}
                >
                   {/* Pic wrap */}
                   <Box
-                     // onClick={(e) => handleClickedPic(e)}
-                     // onMouseOver={(e) => showDizzyPic(e)}
-                     // onMouseOut={(e) => showNormalPic(e)}
                      sx={{
-                        height: 190,
-                        width: 190,
-                        margin: '0 auto',
+                        height: imgSize,
+                        width: imgSize,
+                        // margin: '0 auto',
                      }}
                   >
                      {/* Profile Pic */}
                      <Box
+                        onMouseEnter={(e) => handleLaser(e, true)}
+                        onMouseLeave={(e) => handleLaser(e, false)}
                         id="profilePic"
                         component="img"
                         alt="My image"
                         src={myImage.src}
                         sx={{
-                           // position: 'absolute',
-                           // marginLeft: 'auto',
-                           // marginRight: 'auto',
                            borderRadius: '50%',
                            boxShadow: `2px 2px 0px 1px ${mainClr}`,
-                           height: 190,
-                           width: 190,
+                           height: imgSize,
+                           width: imgSize,
                            maxWidth: '100%',
                            maxHeight: '100%',
-                           transition: `transform ${spinTime}s ease`,
-                           '&:hover': {
-                              transform: 'rotateY(-20deg)',
-                           },
-                           // transform: isNormalPic
-                           //    ? 'rotateY(0deg)'
-                           //    : 'rotateY(180deg)',
                         }}
                      />
-                     {/* Dizzy pic */}
-                     {/* {!isNormalPic && (
-                        <Box
-                           sx={{
-                              // zIndex: 100,
-                              position: 'absolute',
-                              backgroundImage: `url(${dizzyEye.src})`,
-                              backgroundColor: 'red',
-                              top: '0',
-                              left: '50%',
-                              width: '20px',
-                              height: '20px',
-                              '&::after': {},
-                           }}
-                        />
-                     )} */}
                   </Box>
+                  {laserVisible && laserX && laserY && (
+                     <Box
+                        className="LASER"
+                        sx={{
+                           position: 'fixed',
+                           zIndex: 10000,
+                           top: laserY,
+                           left: laserX,
+                           width: '28px',
+                           height: '100vh',
+                           background: 'none',
+
+                           borderLeft: `4px solid ${mainClr}`,
+                           borderRight: `4px solid ${mainClr}`,
+                           boxShadow: `inset 0px -20px 20px 1px ${mainClr}, 0px 10px 30px 1px ${mainClr}`,
+
+                           transformOrigin: 'top right',
+                           transform: 'rotate(40deg) skewY(-40deg)',
+                           '&::before': {
+                              content: '""',
+                              position: 'absolute',
+                              width: '5px',
+                              height: '5px',
+                              background: '#fff',
+                              boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
+                              borderRadius: '50%',
+                              left: '-5px',
+                              top: '1px',
+                           },
+                           '&::after': {
+                              content: '""',
+                              position: 'absolute',
+                              width: '5px',
+                              height: '5px',
+                              background: '#fff',
+                              boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
+                              borderRadius: '50%',
+                              left: '18px',
+                              top: '1px',
+                           },
+                        }}
+                     />
+                  )}
                </Box>
             </Grid>
          </Grid>

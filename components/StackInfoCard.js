@@ -48,7 +48,7 @@ export default function StackInfoCard({ stack }) {
                   },
                }}
             >
-               {longDescVisible ? 'Hide ' : 'View '} longer description
+               {longDescVisible ? 'Show less' : 'View more'}
             </Button>
          </CardActions>
       );
@@ -69,7 +69,11 @@ export default function StackInfoCard({ stack }) {
                   </Typography>
 
                   {/* Used tech */}
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                  <Typography
+                     my={1}
+                     sx={{ fontSize: 14 }}
+                     color="text.secondary"
+                  >
                      Used:{' '}
                      {stack.usedTechnologies &&
                         stack.usedTechnologies.map((tech) => (
@@ -80,16 +84,12 @@ export default function StackInfoCard({ stack }) {
                   </Typography>
 
                   {/* Short desc */}
-                  <Typography sx={{ paddingBottom: '1rem' }}>
-                     {stack.desc}
-                  </Typography>
+                  <Typography pb={4}>{stack.desc}</Typography>
                   {!longDescVisible && <ToggleDescBtn />}
                   {longDescVisible ? (
                      <>
                         {/* Long desc */}
-                        <Typography sx={{ paddingBottom: '1rem' }}>
-                           {stack.longDesc}
-                        </Typography>
+                        <Typography pb={4}>{stack.longDesc}</Typography>
                         {longDescVisible && <ToggleDescBtn />}
                      </>
                   ) : (
