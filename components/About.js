@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import myImage from '../public/myImage.png';
-import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 import AnchorId from './ui/AnchorId';
 import NeonHeading from './ui/NeonHeading';
 
@@ -14,19 +14,25 @@ export default function About() {
       },
       shape: { borderRadius },
    } = useTheme();
-   // const mainClrLight = lightenDarkenColor(0.9, mainClr);
-   //Laser
+
+   // Laser
    const [laserVisible, setLaserVisible] = useState(false);
    const [laserX, setLaserX] = useState(false);
    const [laserY, setLaserY] = useState(false);
 
+   const scroll = useRef(false);
+   useEffect(() => {
+      window.addEventListener('scroll', handleLaser);
+      return () => window.removeEventListener('scroll', handleLaser);
+   }, [scroll]);
+
    const handleLaser = (e, setLaser) => {
+      if (!setLaser) return setLaserVisible(setLaser);
+      if (e.relatedTarget.id === 'laser') return; //Prevent blinking on laser hover
       const rect = e.target.getBoundingClientRect();
       setLaserX(rect.left + imgSize / 2 - 10);
       setLaserY(rect.top + imgSize / 2 - 25);
       setLaserVisible(setLaser);
-      console.log(rect);
-      console.log('x: ', laserX, 'y: ', laserY);
    };
 
    return (
@@ -121,6 +127,7 @@ export default function About() {
                      <Box
                         onMouseEnter={(e) => handleLaser(e, true)}
                         onMouseLeave={(e) => handleLaser(e, false)}
+                        onScroll={(e) => handleLaser(e, false)}
                         id="profilePic"
                         component="img"
                         alt="My image"
@@ -134,50 +141,50 @@ export default function About() {
                            maxHeight: '100%',
                         }}
                      />
+                     {laserVisible && laserX && laserY && (
+                        <Box
+                           id="laser"
+                           sx={{
+                              position: 'fixed',
+                              zIndex: 10000,
+                              top: laserY,
+                              left: laserX,
+                              width: '28px',
+                              height: '100vh',
+                              background: 'none',
+
+                              borderLeft: `4px solid ${mainClr}`,
+                              borderRight: `4px solid ${mainClr}`,
+                              boxShadow: `inset 0px -20px 20px 1px ${mainClr}, 0px 10px 30px 1px ${mainClr}`,
+
+                              transformOrigin: 'top right',
+                              transform: 'rotate(40deg) skewY(-40deg)',
+                              '&::before': {
+                                 content: '""',
+                                 position: 'absolute',
+                                 width: '5px',
+                                 height: '5px',
+                                 background: '#fff',
+                                 boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
+                                 borderRadius: '50%',
+                                 left: '-5px',
+                                 top: '1px',
+                              },
+                              '&::after': {
+                                 content: '""',
+                                 position: 'absolute',
+                                 width: '5px',
+                                 height: '5px',
+                                 background: '#fff',
+                                 boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
+                                 borderRadius: '50%',
+                                 left: '18px',
+                                 top: '1px',
+                              },
+                           }}
+                        />
+                     )}
                   </Box>
-                  {laserVisible && laserX && laserY && (
-                     <Box
-                        className="LASER"
-                        sx={{
-                           position: 'fixed',
-                           zIndex: 10000,
-                           top: laserY,
-                           left: laserX,
-                           width: '28px',
-                           height: '100vh',
-                           background: 'none',
-
-                           borderLeft: `4px solid ${mainClr}`,
-                           borderRight: `4px solid ${mainClr}`,
-                           boxShadow: `inset 0px -20px 20px 1px ${mainClr}, 0px 10px 30px 1px ${mainClr}`,
-
-                           transformOrigin: 'top right',
-                           transform: 'rotate(40deg) skewY(-40deg)',
-                           '&::before': {
-                              content: '""',
-                              position: 'absolute',
-                              width: '5px',
-                              height: '5px',
-                              background: '#fff',
-                              boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
-                              borderRadius: '50%',
-                              left: '-5px',
-                              top: '1px',
-                           },
-                           '&::after': {
-                              content: '""',
-                              position: 'absolute',
-                              width: '5px',
-                              height: '5px',
-                              background: '#fff',
-                              boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
-                              borderRadius: '50%',
-                              left: '18px',
-                              top: '1px',
-                           },
-                        }}
-                     />
-                  )}
                </Box>
             </Grid>
          </Grid>
