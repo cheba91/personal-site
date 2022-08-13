@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import SwipeDownAltIcon from '@mui/icons-material/SwipeDownAlt';
 import { useState } from 'react';
 
 export default function ThemeToggler({ changeTheme }) {
@@ -79,13 +78,15 @@ export default function ThemeToggler({ changeTheme }) {
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
             position: 'absolute',
-            // top: { sm: `66%`, xs: '63%' },
-            left: `50%`,
+            left: `51%`,
             bottom: '15%',
             transform: 'translate(-50%, 0)',
-            // animation: 'moveBall 6s infinite alternate',
+            animation: 'moveBall 3s infinite alternate ease-in-out',
             '@keyframes moveBall': {
-               '100%': { left: `48%`, bottom: '17%' },
+               '100%': {
+                  left: `50%`,
+                  bottom: '14%',
+               },
             },
          }}
       >
@@ -101,7 +102,8 @@ export default function ThemeToggler({ changeTheme }) {
                borderRadius: '50%',
                position: 'relative',
                // filter: 'blur(1px)',
-               boxShadow: `0px 0px 30px -4px #6e7072`,
+               boxShadow: `0px 0px 35px -4px #6e7072`,
+               // boxShadow: `0px 0px 35px 4px #6e7072`,
                // background: `radial-gradient(rgba(255,255,255,0.2),transparent 70%), conic-gradient(#cc3a00, #e1cb05, #40a22a, #0099e6, #4f02ca, #c10b6f, #cc3a00)`,
                // background: `radial-gradient(rgba(255,255,255,0.3),transparent), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
                background: `radial-gradient(white, transparent 80%), conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00)`,
@@ -168,7 +170,6 @@ export default function ThemeToggler({ changeTheme }) {
                },
                // flag
                '&::before': {
-                  // content: <SwipeDownAltIcon />,
                   content: '"👇"',
                   borderTopRightRadius: '5px',
                   borderBottomRightRadius: '5px',
@@ -186,7 +187,7 @@ export default function ThemeToggler({ changeTheme }) {
                   background:
                      'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
-                  // animation: 'moveFlag 0.5s infinite alternate',
+                  animation: 'moveFlag 0.7s infinite alternate',
                   '@keyframes moveFlag': {
                      '100%': {
                         // width: `${pinWidth - 5}px`,
