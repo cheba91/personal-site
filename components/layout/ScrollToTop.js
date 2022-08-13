@@ -8,6 +8,7 @@ import { useTheme } from '@mui/material';
 const handleClick = () => {
    const anchor = document.querySelector('#top');
    if (anchor) {
+      if (window.location.hash) window.location.hash = '';
       anchor.scrollIntoView({
          block: 'center',
       });

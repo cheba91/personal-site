@@ -20,11 +20,11 @@ export default function About() {
    const [laserX, setLaserX] = useState(false);
    const [laserY, setLaserY] = useState(false);
 
-   const scroll = useRef(false);
+   // const scroll = useRef(false);
    useEffect(() => {
       window.addEventListener('scroll', handleLaser);
       // return () => window.removeEventListener('scroll', handleLaser);
-   }, [scroll]);
+   }, []);
 
    const handleLaser = (e, setLaser) => {
       if (!setLaser) return setLaserVisible(setLaser);
@@ -127,14 +127,13 @@ export default function About() {
                      <Box
                         onMouseEnter={(e) => handleLaser(e, true)}
                         onMouseLeave={(e) => handleLaser(e, false)}
-                        onScroll={(e) => handleLaser(e, false)}
                         id="profilePic"
                         component="img"
                         alt="My image"
                         src={myImage.src}
                         sx={{
                            borderRadius: '50%',
-                           boxShadow: `2px 2px 0px 1px ${mainClr}`,
+                           boxShadow: `3px 2px 0px 1px ${mainClr}`,
                            height: imgSize,
                            width: imgSize,
                            maxWidth: '100%',
@@ -167,7 +166,7 @@ export default function About() {
                                  background: '#fff',
                                  boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
                                  borderRadius: '50%',
-                                 left: '-5px',
+                                 left: '-3px',
                                  top: '1px',
                               },
                               '&::after': {
