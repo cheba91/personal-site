@@ -3,6 +3,7 @@ import NeonHeading from './ui/NeonHeading';
 import { useTheme } from '@mui/material';
 import AnchorId from './ui/AnchorId';
 import SocialIcons from './SocialIcons';
+import NeonShadow from './ui/NeonShadow';
 
 export default function Contact() {
    const {
@@ -16,12 +17,12 @@ export default function Contact() {
 
    const inputStyles = {
       boxShadow: `inset -9px -9px 9px ${darkClr}, inset 3px 3px 10px ${darkClr}`,
-      borderRadius: '15px',
+      borderRadius: `${borderRadius}px`,
       // background: cardBg,
       // boxShadow: `inset 5px 5px 5px ${darkClrLighter}`,
    };
    return (
-      <>
+      <NeonShadow radius={`${borderRadius}px`}>
          <AnchorId id={'contact'} />
          <Box
             sx={{
@@ -152,6 +153,6 @@ export default function Contact() {
                }}
             />
          </Box>
-      </>
+      </NeonShadow>
    );
 }

@@ -146,7 +146,7 @@ export default function About() {
                            // marginLeft: 'auto',
                            // marginRight: 'auto',
                            borderRadius: '50%',
-                           boxShadow: `0 2px 7px ${mainClr}`,
+                           boxShadow: `2px 2px 0px 1px ${mainClr}`,
                            height: 190,
                            width: 190,
                            maxWidth: '100%',

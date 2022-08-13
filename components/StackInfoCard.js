@@ -22,29 +22,54 @@ export default function StackInfoCard({ stack }) {
    } = useTheme();
    const [longDescVisible, setLongDescVisible] = useState(false);
    const toggleLongDesc = () => setLongDescVisible((current) => !current);
-   // console.log(stack);
+   // Button
+   const ToggleDescBtn = () => {
+      return (
+         <CardActions sx={{ justifyContent: 'flex-end' }}>
+            <Button
+               onClick={toggleLongDesc}
+               // startIcon={<ExpandMoreIcon />}
+               endIcon={
+                  longDescVisible ? <ExpandLessIcon /> : <ExpandMoreIcon />
+               }
+               sx={{
+                  color: textClr,
+                  border: `none`,
+                  background: cardBg,
+                  borderRadius: `11px`,
+                  boxShadow: `-4px -4px 12px ${darkClr}, 1px 2px 6px ${mainClr}`,
+                  marginBottom: '5px',
+                  padding: '0.4rem 1.2rem',
+                  '&:hover': {
+                     border: `none`,
+                     background: darkClrLighter,
+                     background: cardBg,
+                     boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
+                  },
+               }}
+            >
+               {longDescVisible ? 'Hide ' : 'View '} longer description
+            </Button>
+         </CardActions>
+      );
+   };
+
    return (
       <Grid item>
          <NeonShadow radius={`${borderRadius}px`}>
             <Card
                sx={{
-                  padding: '0.2rem 0.4rem',
                   background: cardBg,
                }}
             >
-               <CardContent>
-                  <Typography
-                     sx={{ paddingBottom: '0.8rem' }}
-                     variant="h5"
-                     component="h2"
-                  >
+               {/* Title */}
+               <CardContent sx={{ padding: '1.5rem' }}>
+                  <Typography variant="h5" component="h2">
                      {stack.title}
                   </Typography>
 
-                  <Typography
-                     sx={{ fontSize: 14, paddingBottom: '0.8rem' }}
-                     color="text.secondary"
-                  >
+                  {/* Used tech */}
+                  <Typography sx={{ fontSize: 14 }} color="text.secondary">
                      Used:{' '}
                      {stack.usedTechnologies &&
                         stack.usedTechnologies.map((tech) => (
@@ -54,45 +79,23 @@ export default function StackInfoCard({ stack }) {
                         ))}
                   </Typography>
 
-                  <Typography>{stack.desc}</Typography>
+                  {/* Short desc */}
+                  <Typography sx={{ paddingBottom: '1rem' }}>
+                     {stack.desc}
+                  </Typography>
+                  {!longDescVisible && <ToggleDescBtn />}
+                  {longDescVisible ? (
+                     <>
+                        {/* Long desc */}
+                        <Typography sx={{ paddingBottom: '1rem' }}>
+                           {stack.longDesc}
+                        </Typography>
+                        {longDescVisible && <ToggleDescBtn />}
+                     </>
+                  ) : (
+                     ''
+                  )}
                </CardContent>
-               <CardActions sx={{ justifyContent: 'flex-end' }}>
-                  <Button
-                     onClick={toggleLongDesc}
-                     // startIcon={<ExpandMoreIcon />}
-                     endIcon={
-                        longDescVisible ? (
-                           <ExpandLessIcon />
-                        ) : (
-                           <ExpandMoreIcon />
-                        )
-                     }
-                     sx={{
-                        color: textClr,
-                        border: `none`,
-                        background: cardBg,
-                        borderRadius: `11px`,
-                        boxShadow: `-4px -4px 12px ${darkClr}, 1px 2px 6px ${mainClr}`,
-                        marginBottom: '5px',
-                        padding: '0.4rem 1.2rem',
-                        '&:hover': {
-                           border: `none`,
-                           background: darkClrLighter,
-                           background: cardBg,
-                           boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
-                        },
-                     }}
-                  >
-                     {longDescVisible ? 'Hide ' : 'View '} longer description
-                  </Button>
-               </CardActions>
-               {longDescVisible ? (
-                  <CardContent>
-                     <Typography>{stack.longDesc}</Typography>
-                  </CardContent>
-               ) : (
-                  ''
-               )}
             </Card>
          </NeonShadow>
       </Grid>

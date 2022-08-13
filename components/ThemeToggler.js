@@ -140,7 +140,7 @@ export default function ThemeToggler({ changeTheme }) {
                   animation: 'moveReflection 4s infinite alternate',
                   '@keyframes moveReflection': {
                      '0%': { top: '27%', left: '23%' },
-                     '50%': { left: '26%', top: '28%' },
+                     // '50%': { left: '26%', top: '28%' },
                      '100%': { top: '27%', left: '23%' },
                   },
                },
