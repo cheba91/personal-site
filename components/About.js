@@ -21,10 +21,13 @@ export default function About() {
    const [laserY, setLaserY] = useState(false);
 
    useEffect(() => {
-      window.addEventListener('scroll', (e) => handleLaser(e, false));
+      const delegate = (e) => handleLaser(e, false);
+      window.addEventListener('scroll', delegate);
+      return () => window.removeEventListener('scroll', delegate);
    }, []);
 
    const handleLaser = (e, setLaser) => {
+      console.log(e.target.id);
       if (e.type === 'scroll') return setLaserVisible(setLaser);
       if (e?.relatedTarget?.id === 'laser') return; //Prevent blinking on laser hover
       if (!setLaser) return setLaserVisible(setLaser);
@@ -88,7 +91,7 @@ export default function About() {
             {/* Text */}
             <Grid item xs={12} sm={7} padding=" 0 1.5rem 1.5rem 1.5rem">
                <Typography mb={2}>
-                  {`Hey, my name is Blaz and I'm good at reading docs ;)`}
+                  {`Hey, I'm good at reading docs ;)`}
                </Typography>
                <Typography>
                   {`I'm a self-taught web developer from Slovenia and I've been coding for roughly 5 years. 
