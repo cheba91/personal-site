@@ -4,7 +4,7 @@ export default function MetaHead({
    title = 'Cheba - Personal website',
    keywords = 'personal website, hire full-stack web developer, hire MERN stack developer, hire Next.js developer',
    description = `Hey, I'm Cheba, a self-taught web developer. I love learning new things and working on creative projects.`,
-   image = '/logo.svg', // link to image of current page
+   image = '/logo.jpg', // link to image of current page
    ogType = 'blog', // type of current page
 }) {
    const staticData = {
