@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import myImage from '../public/myImage.png';
 import AnchorId from './ui/AnchorId';
 import NeonHeading from './ui/NeonHeading';
-import { timeCoding } from '../utils/timeCoding';
+// import { timeCoding } from '../utils/timeCoding';
 
 export default function About() {
    const imgSize = 190;
@@ -87,9 +87,8 @@ export default function About() {
             </Grid>
             {/* Text */}
             <Grid item xs={12} sm={7} padding=" 0 1.5rem 1.5rem 1.5rem">
-               {/* ${timeCoding()} ;) */}
                <Typography mb={2}>
-                  {`Hey, I'm Cheba, a self-taught web developer from Slovenia and I've been coding for roughly 4 years`}
+                  {`Hey, I'm Cheba, a self-taught web developer from Slovenia and I've been coding for roughly 5 years.`}
                </Typography>
                <Typography>
                   {`My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
