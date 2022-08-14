@@ -28,7 +28,6 @@ export default function StackInfoCard({ stack }) {
          <CardActions sx={{ justifyContent: 'flex-end' }}>
             <Button
                onClick={toggleLongDesc}
-               // startIcon={<ExpandMoreIcon />}
                endIcon={
                   longDescVisible ? <ExpandLessIcon /> : <ExpandMoreIcon />
                }

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export default function Meta({
+export default function MetaHead({
    title = 'Cheba - Personal website',
    keywords = 'personal website, hire full-stack web developer, hire MERN stack developer, hire Next.js developer',
    description = `Hey, I'm Cheba, a self-taught web developer. I love learning new things and working on creative projects.`,
@@ -34,7 +34,7 @@ export default function Meta({
          <meta property="og:title" content={title} />
          <meta property="og:description" content={description} />
          <meta property="og:image" content={staticData.baseUrl + image} />
-         <meta property="og:url" content={staticData.baseUrl + slug} />
+         <meta property="og:url" content={staticData.baseUrl} />
       </Head>
    );
 }

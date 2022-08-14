@@ -5,6 +5,7 @@ import Header from '../components/layout/Header';
 import ScrollToTop from '../components/layout/ScrollToTop';
 import HomePage from './index';
 import { theme, primaryColor } from '../styles/theme';
+import MetaHead from '../components/MetaHead';
 
 export default function App() {
    //Setting default theme & generating theme
@@ -19,6 +20,7 @@ export default function App() {
    return (
       <ThemeProvider theme={changeTheme()}>
          <CssBaseline />
+         <MetaHead />
          <Header />
          <HomePage changeTheme={changeTheme} />
          <ScrollToTop />

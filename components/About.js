@@ -95,7 +95,7 @@ export default function About() {
                   {`My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
                </Typography>
                <Typography mt={2}>
-                  {` I love learning new things and working on creative projects.`}
+                  {`I love learning new things and working on creative projects.`}
                </Typography>
             </Grid>
             {/* Image Section */}
