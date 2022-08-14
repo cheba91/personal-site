@@ -20,7 +20,7 @@ export default function App() {
    return (
       <ThemeProvider theme={changeTheme()}>
          <CssBaseline />
-         {/* <MetaHead /> */}
+         <MetaHead />
          <Header />
          <HomePage changeTheme={changeTheme} />
          <ScrollToTop />

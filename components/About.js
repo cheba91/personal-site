@@ -1,6 +1,5 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
-import { useEffect, useRef } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import myImage from '../public/myImage.png';
 import AnchorId from './ui/AnchorId';
 import NeonHeading from './ui/NeonHeading';
@@ -21,9 +20,9 @@ export default function About() {
    const [laserX, setLaserX] = useState(false);
    const [laserY, setLaserY] = useState(false);
 
-   useEffect(() => {
-      window.addEventListener('scroll', (e) => handleLaser(e, false));
-   }, []);
+   // useEffect(() => {
+   //    window.addEventListener('scroll', (e) => handleLaser(e, false));
+   // }, []);
 
    const handleLaser = (e, setLaser) => {
       if (e.type === 'scroll') return setLaserVisible(setLaser);
