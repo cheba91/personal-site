@@ -153,7 +153,7 @@ export default function ThemeToggler({ changeTheme }) {
             sx={{
                zIndex: '3',
                position: 'absolute',
-               width: `${pinWidth}px`,
+               width: `3px`,
                height: `${pinWidth}px`,
                top: pinPosY + 'px',
                left: pinPosX + 'px',

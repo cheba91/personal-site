@@ -64,11 +64,18 @@ export default function Contact() {
             }}
          >
             <NeonHeading text={'Contact Me'}></NeonHeading>
-            <Typography variant="p" align="center" component="p" pb={3}>
-               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-               velit enim eaque sit cumque voluptate tempore quia vitae
-               perferendis esse.
+            <Typography variant="h6" align="center" component="h4">
+               {`Got an interesting project in mind? Let's make it happen together!`}
             </Typography>
+            <Typography
+               variant="p"
+               align="center"
+               component="p"
+               padding="1rem 0 1.5rem 0"
+            >
+               {`You can contact me at email@email.com or through the form below.`}
+            </Typography>
+
             <Grid
                container
                direction="column"

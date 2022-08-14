@@ -12,15 +12,14 @@ export default function HeroSection({ changeTheme }) {
       dark: { main: mainDarkClr },
    } = useTheme().palette;
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
-   const mainTransClr = editClrTransparency(darkMainClr1, 0.7);
    return (
       <>
          <Box
             className="outer"
             pt={11}
             sx={{
-               backgroundImage: `linear-gradient(to bottom right,  ${mainTransClr}, ${mainDarkClr} 70%)`,
-               // backgroundImage: `linear-gradient(to bottom, ${mainDarkClr} 20%, ${mainTransClr}, ${mainDarkClr})`,
+               // backgroundImage: `radial-gradient(circle at left,  ${darkMainClr1}, ${mainDarkClr})`,
+               backgroundImage: `linear-gradient(130deg,  ${darkMainClr1}, ${mainDarkClr} 70%)`,
                height: {
                   xs: '95vh', //phones have browser tab on top
                   sm: '100vh',

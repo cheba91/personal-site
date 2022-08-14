@@ -15,7 +15,7 @@ export default function App() {
       theme.palette.primary.main = mainClr;
       return createTheme(theme);
    };
-   console.log(createTheme(theme));
+   // console.log(createTheme(theme));
    return (
       <ThemeProvider theme={changeTheme()}>
          <CssBaseline />

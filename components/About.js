@@ -4,6 +4,7 @@ import { useState } from 'react';
 import myImage from '../public/myImage.png';
 import AnchorId from './ui/AnchorId';
 import NeonHeading from './ui/NeonHeading';
+import { timeCoding } from '../utils/timeCoding';
 
 export default function About() {
    const imgSize = 190;
@@ -20,15 +21,14 @@ export default function About() {
    const [laserX, setLaserX] = useState(false);
    const [laserY, setLaserY] = useState(false);
 
-   // const scroll = useRef(false);
    useEffect(() => {
-      window.addEventListener('scroll', handleLaser);
-      // return () => window.removeEventListener('scroll', handleLaser);
+      window.addEventListener('scroll', (e) => handleLaser(e, false));
    }, []);
 
    const handleLaser = (e, setLaser) => {
+      if (e.type === 'scroll') return setLaserVisible(setLaser);
+      if (e?.relatedTarget?.id === 'laser') return; //Prevent blinking on laser hover
       if (!setLaser) return setLaserVisible(setLaser);
-      if (e.relatedTarget.id === 'laser') return; //Prevent blinking on laser hover
       const rect = e.target.getBoundingClientRect();
       setLaserX(rect.left + imgSize / 2 - 10);
       setLaserY(rect.top + imgSize / 2 - 25);
@@ -87,18 +87,15 @@ export default function About() {
                <NeonHeading text={'About me'} />
             </Grid>
             {/* Text */}
-            <Grid item xs={12} sm={7}>
-               <Typography mb={3}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
-                  ducimus architecto quos fugiat quas? Libero, est? Culpa ut
-                  vitae quos?
+            <Grid item xs={12} sm={7} padding=" 0 1.5rem 1.5rem 1.5rem">
+               <Typography mb={2}>
+                  {`Hey, I'm Cheba, a self-taught web developer from Slovenia and I've been coding for roughly ${timeCoding()} ;)`}
                </Typography>
                <Typography>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Magnam ipsam, expedita labore sit officiis ex nesciunt numquam
-                  sapiente rem suscipit modi sed rerum ad! Enim velit nesciunt
-                  sit? Eum dolor libero amet. Eos, modi accusantium ipsa quo ad
-                  nesciunt reiciendis?
+                  {`My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
+               </Typography>
+               <Typography mt={2}>
+                  {` I love learning new things and working on creative projects.`}
                </Typography>
             </Grid>
             {/* Image Section */}
