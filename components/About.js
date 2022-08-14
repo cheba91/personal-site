@@ -88,13 +88,15 @@ export default function About() {
             {/* Text */}
             <Grid item xs={12} sm={7} padding=" 0 1.5rem 1.5rem 1.5rem">
                <Typography mb={2}>
-                  {`Hey, I'm Cheba, a self-taught web developer from Slovenia and I've been coding for roughly 5 years.`}
+                  {`Hey, my name is Blaz and I'm good at reading docs ;)`}
                </Typography>
                <Typography>
-                  {`My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
+                  {`I'm a self-taught web developer from Slovenia and I've been coding for roughly 5 years. 
+                  My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
                </Typography>
                <Typography mt={2}>
-                  {`I love learning new things and working on creative projects.`}
+                  {/* {`I love learning new things and working on creative projects.`} */}
+                  {`I enjoy working on creative projects and learning about new things. I always put performance and security first!`}
                </Typography>
             </Grid>
             {/* Image Section */}

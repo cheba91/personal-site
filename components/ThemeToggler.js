@@ -66,16 +66,16 @@ export default function ThemeToggler({ changeTheme }) {
 
       <Box
          sx={{
-            zIndex: 20,
+            // zIndex: 20,
             width: `${ballSize}px`,
             height: `${ballSize}px`,
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
             position: 'absolute',
             left: `51%`,
-            bottom: '15%',
+            bottom: '19%',
             transform: 'translate(-50%, 0)',
-            animation: 'moveBall 3s infinite alternate ease-in-out',
+            // animation: 'moveBall 3s infinite alternate ease-in-out',
             '@keyframes moveBall': {
                '100%': {
                   left: `50%`,
@@ -106,7 +106,7 @@ export default function ThemeToggler({ changeTheme }) {
                   left: '0',
                   height: '100%',
                   width: '100%',
-                  zIndex: '2',
+                  // zIndex: '2',
                },
                // White Reflection
                // '&::after': {
@@ -130,24 +130,24 @@ export default function ThemeToggler({ changeTheme }) {
             }}
          ></Box>
          <Box
-            className="flag"
+            // pole
             sx={{
-               zIndex: '3',
                position: 'absolute',
-               width: `3px`,
                height: `${pinWidth}px`,
-               top: pinPosY + 'px',
-               left: pinPosX + 'px',
+               width: `4px`,
+               top: `${pinPosY}px`,
+               left: `${pinPosX}px`,
+               background: 'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
-               // pole
+               // Shadow
                '&::after': {
                   content: "''",
                   position: 'absolute',
-                  height: `${pinWidth}px`,
-                  width: '4px',
-                  boxShadow: '0px 3px 3px #000',
-                  background:
-                     'linear-gradient( to left, #fff, rgb(60, 60, 60))',
+                  bottom: 0,
+                  left: '-2px',
+                  height: '2px',
+                  width: '8px',
+                  background: '#424242',
                },
                // flag
                '&::before': {
@@ -163,11 +163,12 @@ export default function ThemeToggler({ changeTheme }) {
                   position: 'absolute',
                   height: `${pinWidth / 2}px`,
                   width: `${pinWidth}px`,
-                  left: '1px',
-                  top: '2px',
+                  left: '3px',
+                  top: '1px',
                   background:
                      'linear-gradient( to left, #fff, rgb(60, 60, 60))',
-
+                  boxShadow: `1px 1px 0px 1px rgb(120, 120, 120)`,
+                  transformOrigin: 'top',
                   animation: 'moveFlag 0.7s infinite alternate',
                   '@keyframes moveFlag': {
                      '100%': {

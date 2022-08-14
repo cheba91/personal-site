@@ -167,26 +167,33 @@ export default function HeroSection({ changeTheme }) {
                justifyContent="space-between"
             >
                {/* TOP hero part */}
-               <Grid>
-                  <Container>
-                     <Typography
-                        textAlign="center"
-                        component="h1"
-                        sx={{
-                           fontWeight: 800,
-                           paddingTop: { xs: '3.7rem', sm: '5rem' },
-                           fontSize: {
-                              xs: '3rem',
-                              sm: '3.4rem',
-                              md: '4.2rem',
-                              textShadow: '4px 4px 1px #000',
-                           },
-                        }}
-                     >
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit.
-                     </Typography>
-                  </Container>
+               <Grid px={7}>
+                  <Typography
+                     component="h3"
+                     sx={{
+                        fontSize: { xs: '1.4rem', sm: '1.7rem' },
+                        paddingTop: { xs: '10rem', sm: '10rem' },
+                        paddingBottom: '0rem',
+                     }}
+                  >{`Hey, my name is Cheba and I'm a`}</Typography>
+                  <Typography
+                     // textAlign="center"
+                     component="h1"
+                     variant="h2"
+                     sx={{
+                        fontWeight: 800,
+                        fontSize: { xs: '3rem', sm: '3.75rem' },
+
+                        //    fontSize: {
+                        //       xs: '3rem',
+                        //       sm: '3.4rem',
+                        //       md: '4.2rem',
+                        //       textShadow: '4px 4px 1px #000',
+                        //    },
+                     }}
+                  >
+                     {`full-stack web developer.`}
+                  </Typography>
                </Grid>
 
                {/* BOTTOM hero part */}
@@ -196,7 +203,6 @@ export default function HeroSection({ changeTheme }) {
                   height="100%"
                   overflow="hidden"
                >
-                  {/* <NeonGridFlat /> */}
                   <ThemeToggler changeTheme={changeTheme} />
                </Grid>
             </Grid>
