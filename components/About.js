@@ -20,9 +20,9 @@ export default function About() {
    const [laserX, setLaserX] = useState(false);
    const [laserY, setLaserY] = useState(false);
 
-   // useEffect(() => {
-   //    window.addEventListener('scroll', (e) => handleLaser(e, false));
-   // }, []);
+   useEffect(() => {
+      window.addEventListener('scroll', (e) => handleLaser(e, false));
+   }, []);
 
    const handleLaser = (e, setLaser) => {
       if (e.type === 'scroll') return setLaserVisible(setLaser);
@@ -87,8 +87,9 @@ export default function About() {
             </Grid>
             {/* Text */}
             <Grid item xs={12} sm={7} padding=" 0 1.5rem 1.5rem 1.5rem">
+               {/* ${timeCoding()} ;) */}
                <Typography mb={2}>
-                  {`Hey, I'm Cheba, a self-taught web developer from Slovenia and I've been coding for roughly ${timeCoding()} ;)`}
+                  {`Hey, I'm Cheba, a self-taught web developer from Slovenia and I've been coding for roughly 4 years`}
                </Typography>
                <Typography>
                   {`My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
