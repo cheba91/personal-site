@@ -167,12 +167,12 @@ export default function HeroSection({ changeTheme }) {
                justifyContent="space-between"
             >
                {/* TOP hero part */}
-               <Grid px={7}>
+               <Grid px={8}>
                   <Typography
                      component="h3"
                      sx={{
                         fontSize: { xs: '1.4rem', sm: '1.7rem' },
-                        paddingTop: { xs: '10rem', sm: '8rem' },
+                        paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
                   >{`Hey, my name is Cheba and I'm a`}</Typography>
