@@ -1,10 +1,7 @@
 import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import imgBg from '../public/starsBg.png';
-import {
-   editClrTransparency,
-   lightenDarkenColor,
-} from '../utils/lightenDarkenColor';
+import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 
 export default function HeroSection({ changeTheme }) {
    const {
@@ -18,7 +15,6 @@ export default function HeroSection({ changeTheme }) {
             className="outer"
             pt={11}
             sx={{
-               // backgroundImage: `radial-gradient(circle at left,  ${darkMainClr1}, ${mainDarkClr})`,
                backgroundImage: `linear-gradient(130deg,  ${darkMainClr1}, ${mainDarkClr} 70%)`,
                height: {
                   xs: '95vh', //phones have browser tab on top

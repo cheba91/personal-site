@@ -18,8 +18,6 @@ export default function Contact() {
    const inputStyles = {
       boxShadow: `inset -9px -9px 9px ${darkClr}, inset 3px 3px 10px ${darkClr}`,
       borderRadius: `${borderRadius}px`,
-      // background: cardBg,
-      // boxShadow: `inset 5px 5px 5px ${darkClrLighter}`,
    };
    return (
       <NeonShadow radius={`${borderRadius}px`}>
@@ -33,34 +31,6 @@ export default function Contact() {
                width: '100%',
                height: '100%',
                overflow: 'hidden',
-               // borderRadius: '0 0 50% 50%',
-
-               // boxShadow: `inset -2px 0 15px ${mainClr}`,
-               // '&:before': {
-               //    position: 'absolute',
-               //    content: "''",
-               //    right: 0,
-               //    bottom: '-5%',
-               //    width: '30%',
-               //    height: '70%',
-               //    transformOrigin: '10% 90%',
-               //    transform: 'rotate(40deg)',
-               //    background: darkClr,
-               //    // boxShadow: `inset 10px 10px 10px 1px ${mainClr}`,
-               //    boxShadow: `inset -2px 0 15px ${mainClr}`,
-               // },
-               // '&:after': {
-               //    position: 'absolute',
-               //    content: "''",
-               //    left: 0,
-               //    bottom: '-5%',
-               //    height: '70%',
-               //    width: '30%',
-               //    transformOrigin: '90% 90%',
-               //    transform: 'rotate(-40deg)',
-               //    background: darkClr,
-               //    boxShadow: `inset 2px 0 15px ${mainClr}`,
-               // },
             }}
          >
             <NeonHeading text={'Contact Me'}></NeonHeading>

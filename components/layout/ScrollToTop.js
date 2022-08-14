@@ -39,9 +39,7 @@ export default function BackToTop() {
                   boxShadow: `
                     -1px -1px 2px 1px ${darkClr},
                      1px 1px 2px 1px rgba(255,255,255,0.2)`,
-                  // backdropFilter: 'saturate(180%) blur(2px)',
                   '&:hover': {
-                     // backdropFilter: 'saturate(180%) blur(2px)',
                      color: 'text.disabled',
                      background: darkClrLighter,
                   },
@@ -55,6 +53,3 @@ export default function BackToTop() {
       </Fade>
    );
 }
-
-// 2px 2px 5px 1px rgba(255,255,255,0.2),
-// -2px -2px 3px 1px rgba(0,0,0,0.3),

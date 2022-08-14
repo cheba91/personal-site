@@ -15,7 +15,6 @@ import { Link, useTheme } from '@mui/material';
 import SocialIcons from '../SocialIcons';
 
 const drawerWidth = 240;
-// const navItems = ['Home', 'About', 'Contact'];
 const navItems = [
    ['What I Do', 'whatIDo'],
    ['About', 'about'],
@@ -72,7 +71,6 @@ export default function Header({ window }) {
                background: 'rgba(40,40,40,0.2)',
                backdropFilter: 'saturate(180%) blur(5px)',
                boxShadow: `0px 4px 10px ${mainClr}`,
-               // boxShadow: `0px 1px 1px ${mainClr}, 0px 2px 5px ${mainClr}, 0px 4px 10px ${mainClr}`,
                borderRadius: '0 0 1rem 1rem',
             }}
          >

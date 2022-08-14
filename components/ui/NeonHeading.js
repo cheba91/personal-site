@@ -22,7 +22,8 @@ const Dot = () => {
 export default function NeonHeading({ text }) {
    return (
       <Typography
-         my={3}
+         mb={6}
+         mt={2}
          variant="h4"
          component="h2"
          sx={{

@@ -1,17 +1,16 @@
 import Head from 'next/head';
 
 export default function Meta({
-   title = 'Default page title', //Max 60chars
-   keywords = 'Default keywords',
-   description = 'Default page description', //Max 160chars
-   slug = '/home', // current slug
-   image = '/favicon.ico', // link to image of current page
-   ogType = 'post', // type of current page
+   title = 'Cheba - Personal website',
+   keywords = 'personal website, hire full-stack web developer, hire MERN stack developer, hire Next.js developer',
+   description = `Hey, I'm Cheba, a self-taught web developer. I love learning new things and working on creative projects.`,
+   image = '/logo.svg', // link to image of current page
+   ogType = 'blog', // type of current page
 }) {
    const staticData = {
-      baseUrl: 'https://my-site.com',
-      companyName: 'Company Name',
-      twitterHandle: '@twitterHandle',
+      baseUrl: 'https://www.cheba.me',
+      companyName: 'Cheba - Personal website',
+      twitterHandle: '@BlazCheba',
    };
    return (
       <Head>
@@ -27,7 +26,7 @@ export default function Meta({
          <meta name="twitter:description" content={description} />
          <meta name="twitter:image" content={staticData.baseUrl + image} />
          {/* //canonical link */}
-         <link rel="canonical" href={staticData.baseUrl + slug} />
+         <link rel="canonical" href={staticData.baseUrl} />
          {/* //open graph metadata */}
          <meta property="og:locale" content="en_US" />
          <meta property="og:site_name" content={staticData.companyName} />
