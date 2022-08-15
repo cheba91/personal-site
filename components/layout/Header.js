@@ -16,7 +16,7 @@ import SocialIcons from '../SocialIcons';
 
 const drawerWidth = 240;
 const navItems = [
-   ['What I Do', 'whatIDo'],
+   ['Skills', 'skills'],
    ['About', 'about'],
    ['Contact', 'contact'],
 ];
@@ -36,7 +36,7 @@ export default function Header({ window }) {
             paddingTop: '5rem',
          }}
       >
-         <List>
+         <List sx={{ marginBottom: '8px' }}>
             {navItems.map((item) => (
                <Link underline="none" key={item[1]} href={`#${item[1]}`}>
                   <ListItem key={item[1]} disablePadding>
@@ -105,6 +105,7 @@ export default function Header({ window }) {
                      <Link underline="none" key={item[1]} href={`#${item[1]}`}>
                         <Button
                            sx={{
+                              fontSize: '16px',
                               color: 'light.main',
                               '&:hover': {
                                  color: 'light.light',

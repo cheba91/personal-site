@@ -7,8 +7,8 @@ import AnchorId from './ui/AnchorId';
 export default function StackInfoList() {
    return (
       <>
-         <AnchorId id={'whatIDo'} />
-         <NeonHeading text={'What I Do'} />
+         <AnchorId id={'skills'} />
+         <NeonHeading text={'Skills'} />
          <Grid pb={10} rowSpacing={5} columns={1} direction="column" container>
             {stackData &&
                stackData.map((stack) => (
