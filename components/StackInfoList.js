@@ -8,7 +8,7 @@ export default function StackInfoList() {
    return (
       <>
          <AnchorId id={'whatIDo'} />
-         <NeonHeading text={'What I do'} />
+         <NeonHeading text={'What I Do'} />
          <Grid pb={10} rowSpacing={5} columns={1} direction="column" container>
             {stackData &&
                stackData.map((stack) => (

@@ -33,7 +33,7 @@ export default function Contact() {
                overflow: 'hidden',
             }}
          >
-            <NeonHeading text={'Contact Me'}></NeonHeading>
+            <NeonHeading text={'Get in Touch'}></NeonHeading>
             <Typography variant="h6" align="center" component="h4">
                {`Got an interesting project in mind? Let's make it happen together!`}
             </Typography>

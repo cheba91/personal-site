@@ -34,14 +34,13 @@ export default function BackToTop() {
          >
             <Fab
                sx={{
-                  color: 'text.disabled',
+                  color: darkClr,
                   background: cardBg,
-                  boxShadow: `
-                    -1px -1px 2px 1px ${darkClr},
-                     1px 1px 2px 1px rgba(255,255,255,0.2)`,
+                  border: 'none',
+                  // boxShadow: `-6px -6px 6px 1px #141414`,
                   '&:hover': {
-                     color: 'text.disabled',
-                     background: darkClrLighter,
+                     // color: 'text.disabled',
+                     // background: darkClrLighter,
                   },
                }}
                size="small"
