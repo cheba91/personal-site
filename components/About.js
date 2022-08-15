@@ -27,7 +27,6 @@ export default function About() {
    }, []);
 
    const handleLaser = (e, setLaser) => {
-      console.log(e.target.id);
       if (e.type === 'scroll') return setLaserVisible(setLaser);
       if (e?.relatedTarget?.id === 'laser') return; //Prevent blinking on laser hover
       if (!setLaser) return setLaserVisible(setLaser);
@@ -36,6 +35,27 @@ export default function About() {
       setLaserY(rect.top + imgSize / 2 - 25);
       setLaserVisible(setLaser);
    };
+   // useEffect(() => {
+   //    const delegate = (e) => handleLaser(e, 'scroll');
+   //    window.addEventListener('scroll', delegate);
+   //    return () => window.removeEventListener('scroll', delegate);
+   // }, []);
+
+   // const handleLaser = (e, isScroll) => {
+   //    if (isScroll === 'scroll') return setLaserVisible(false);
+   //    const targetId = e?.target?.id;
+   //    const relatedTaragetId = e?.relatedTarget?.id;
+   //    console.log(e.type);
+   //    console.log(e);
+   //    console.log(targetId, relatedTaragetId);
+   //    if (targetId === 'profilePic' || relatedTaragetId === 'laser') {
+   //       const rect = e.target.getBoundingClientRect();
+   //       setLaserX(rect.left + imgSize / 2 - 10);
+   //       setLaserY(rect.top + imgSize / 2 - 25);
+   //       return setLaserVisible(true);
+   //    }
+   //    return setLaserVisible(false);
+   // };
 
    return (
       <>
@@ -126,8 +146,11 @@ export default function About() {
                   >
                      {/* Profile Pic */}
                      <Box
+                        // onMouseEnter={handleLaser}
+                        // onMouseLeave={handleLaser}
                         onMouseEnter={(e) => handleLaser(e, true)}
                         onMouseLeave={(e) => handleLaser(e, false)}
+                        onClick={(e) => handleLaser(e, !laserVisible)}
                         id="profilePic"
                         component="img"
                         alt="My image"

@@ -9,7 +9,7 @@ export const stackData = [
    },
    {
       key: 2,
-      title: "API's",
+      title: "REST API's",
       usedTechnologies: ['MongoDB', 'React', 'Express'],
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus cumque asperiores, cupiditate placeat est vero praesentium reiciendis blanditiis ullam.',
       longDesc:
