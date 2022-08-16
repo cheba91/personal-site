@@ -72,14 +72,14 @@ export default function ThemeToggler({ changeTheme }) {
             display: 'inline-block',
             WebkitTapHighlightColor: 'transparent',
             position: 'absolute',
-            left: `51%`,
+            left: `50%`,
             bottom: '19%',
             transform: 'translate(-50%, 0)',
-            // animation: 'moveBall 3s infinite alternate ease-in-out',
+            animation: 'moveBall 3s infinite alternate ease-in-out',
             '@keyframes moveBall': {
                '100%': {
-                  left: `50%`,
-                  bottom: '14%',
+                  left: `49%`,
+                  bottom: '20%',
                },
             },
          }}
@@ -106,7 +106,6 @@ export default function ThemeToggler({ changeTheme }) {
                   left: '0',
                   height: '100%',
                   width: '100%',
-                  // zIndex: '2',
                },
                // White Reflection
                // '&::after': {
@@ -120,12 +119,12 @@ export default function ThemeToggler({ changeTheme }) {
                //    filter: 'blur(1px)',
                //    transform:
                //       'translateX(-80px) translateY(-90px) skewX(-20deg)',
-               //     animation: 'moveReflection 4s infinite alternate',
-               //    '@keyframes moveReflection': {
-               //       '0%': { top: '27%', left: '23%' },
-               //       // '50%': { left: '26%', top: '28%' },
-               //       '100%': { top: '27%', left: '23%' },
-               //    },
+               //  animation: 'moveShadow 4s infinite alternate',
+               // '@keyframes moveShadow': {
+               //    '0%': { top: '27%', left: '23%' },
+               //    // '50%': { left: '26%', top: '28%' },
+               //    '100%': { top: '27%', left: '23%' },
+               // },
                // },
             }}
          ></Box>
