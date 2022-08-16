@@ -2,6 +2,7 @@ import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import imgBg from '../public/starsBg.png';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
+import { invertRgb } from '../utils/invertColor';
 
 export default function HeroSection({ changeTheme }) {
    const {
@@ -9,6 +10,8 @@ export default function HeroSection({ changeTheme }) {
       dark: { main: mainDarkClr },
    } = useTheme().palette;
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
+   const oppositeClr =
+      lightenDarkenColor(-0.6, invertRgb(mainClr)) ?? darkMainClr1;
    return (
       <>
          <Box
@@ -36,65 +39,72 @@ export default function HeroSection({ changeTheme }) {
                   top: 0,
                   left: 0,
                   background: `transparent url(${imgBg.src})`,
+                  animation: 'moveImg 12s infinite alternate',
+                  '@keyframes moveImg': {
+                     '100%': { transform: 'scale(1.05)' },
+                  },
                }}
             />
-            {/* BALL 1 - primary clr */}
+            {/* BALL 1 - opposite clr */}
             <Box
                sx={{
                   zIndex: '-1',
                   position: 'absolute',
                   borderRadius: '50%',
-                  width: '20vh',
-                  height: '20vh',
-                  top: '-20vh',
-                  right: '20vh',
-                  background: `linear-gradient(to right, ${darkMainClr1} , #000)`,
+                  width: '100px',
+                  height: '100px',
+                  top: '-200px',
+                  left: '40%',
+                  background: `linear-gradient(to right, ${oppositeClr} , #000)`,
                   filter: `blur(10px)`,
+                  // animation: 'movePlanet1 2s infinite linear',
                   animation: 'movePlanet1 12s infinite linear',
                   '@keyframes movePlanet1': {
                      '100%': {
                         top: '125vh',
-                        right: '170vw',
-                        transform: 'scale(4)',
+                        left: '-400px',
+                        transform: 'scale(5)',
                      },
                   },
                }}
             />
-            {/* BALL 2 - big, fixed clr */}
+            {/* BALL 2 - big, main clr */}
             <Box
                sx={{
                   zIndex: '-1',
-                  width: '30vh',
-                  height: '30vh',
+                  width: '100px',
+                  height: '100px',
                   position: 'absolute',
-                  bottom: '40vh',
-                  right: '-45vh',
+                  bottom: '90%',
+                  left: '110vw',
                   borderRadius: '50%',
-                  background: `radial-gradient(#2c2206 , ${mainDarkClr})`,
-                  filter: `blur(11px)`,
-                  animation: 'movePlanet2 9s infinite linear',
+                  background: `linear-gradient( to left, #000, ${darkMainClr1})`,
+                  filter: `blur(5px)`,
+                  // animation: 'movePlanet2 2s infinite linear',
+                  animation: 'movePlanet2 8s infinite linear',
                   '@keyframes movePlanet2': {
                      '40%': {
-                        bottom: '40vh',
-                        right: '-45vh',
+                        bottom: '90%',
+                        left: '110vw',
                      },
                      '100%': {
-                        bottom: '-35vh',
-                        right: '15vh',
-                        transform: 'scale(1.3)',
+                        bottom: '-400px',
+                        left: '60%',
+                        transform: 'scale(5)',
                      },
                   },
-                  '&::before': {
-                     content: "''",
-                     position: 'absolute',
-                     width: '180%',
-                     height: '2.5rem',
-                     top: '45%',
-                     left: '-40%',
-                     background: `linear-gradient(#0c0c0c 60%, ${darkMainClr1})`,
-                     borderRadius: '45%',
-                     transform: 'skewY(12deg)',
-                  },
+                  // '&::before': {
+                  //    content: "''",
+                  //    position: 'absolute',
+                  //    width: '180%',
+                  //    height: '2.5rem',
+                  //    top: '45%',
+                  //    left: '-40%',
+                  //    // background: `linear-gradient(#0c0c0c 60%, ${darkMainClr1})`,
+                  //    background: '#0c0c0c',
+                  //    borderRadius: '45%',
+                  //    transform: 'skewY(12deg)',
+                  // },
                }}
             />
             {/* BALL 3 - small fixed clr */}

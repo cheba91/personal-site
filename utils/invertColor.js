@@ -1,22 +1,15 @@
-export function invertColor(hex) {
-   if (hex.indexOf('#') === 0) {
-      hex = hex.slice(1);
-   }
-   if (hex.length === 3) {
-      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-   }
-   if (hex.length !== 6) return '#fff';
-   let r = parseInt(hex.slice(0, 2), 16);
-   let g = parseInt(hex.slice(2, 4), 16);
-   let b = parseInt(hex.slice(4, 6), 16);
+export function invertRgb(rgb) {
+   rgb = rgb.replace(/[^\d,]/g, '').split(',');
+   if (!rgb) return false;
+   const inverted = rgb.map((clr) => {
+      let newClr = clr > 127.5 ? Number(clr) - 70 : Number(clr) + 70;
+      //dont want too dark
+      // let newClr = Number(clr) + 127.5;
+      // newClr = newClr > 170 ? 170 : newClr;
+      newClr = newClr > 255 ? 255 : newClr;
+      // newClr = newClr < 30 ? 30 : newClr;
+      return Math.round(newClr);
+   });
 
-   r = (255 - r).toString(16);
-   g = (255 - g).toString(16);
-   b = (255 - b).toString(16);
-   return '#' + padZero(r) + padZero(g) + padZero(b);
-}
-function padZero(str, len) {
-   len = len || 2;
-   let zeros = new Array(len).join('0');
-   return (zeros + str).slice(-len);
+   return `rgb(${inverted.join(',')})`;
 }

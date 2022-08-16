@@ -96,7 +96,7 @@ export default function About() {
                </Typography>
                <Typography mt={2}>
                   {/* {`I love learning new things and working on creative projects.`} */}
-                  {`I enjoy working on creative projects and learning about new things. I always put performance and security first!`}
+                  {`I enjoy working on creative projects and learning about new things. My code is clean and elegant, and I always prioritize security and performance.`}
                </Typography>
             </Grid>
             {/* Image Section */}
