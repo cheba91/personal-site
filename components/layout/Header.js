@@ -16,7 +16,7 @@ import SocialIcons from '../SocialIcons';
 
 const drawerWidth = 240;
 const navItems = [
-   ['Skills', 'skills'],
+   ['Experience', 'experience'],
    ['About', 'about'],
    ['Contact', 'contact'],
 ];

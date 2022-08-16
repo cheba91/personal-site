@@ -73,7 +73,7 @@ export default function StackInfoCard({ stack }) {
                      sx={{ fontSize: 14 }}
                      color="text.secondary"
                   >
-                     Used:{' '}
+                     {'Tools & Technologies: '}
                      {stack.usedTechnologies &&
                         stack.usedTechnologies.map((tech) => (
                            <Box component="span" key={tech}>
