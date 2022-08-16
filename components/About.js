@@ -91,7 +91,7 @@ export default function About() {
                   {`Hey, I'm good at reading docs ;)`}
                </Typography>
                <Typography>
-                  {`I'm a self-taught web developer from Slovenia and I've been coding for roughly 5 years. 
+                  {`I'm a self-taught web developer from Slovenia and I've been in web development for 4+ years. 
                   My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
                </Typography>
                <Typography mt={2}>
@@ -160,24 +160,22 @@ export default function About() {
                               '&::before': {
                                  content: '""',
                                  position: 'absolute',
-                                 width: '5px',
-                                 height: '5px',
-                                 background: '#fff',
-                                 boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
+                                 width: 0,
+                                 height: 0,
+                                 boxShadow: `0px 2px 10px 6px #fff, 2px 3px 15px 15px ${mainClr}`,
                                  borderRadius: '50%',
-                                 left: '-3px',
-                                 top: '1px',
+                                 left: '-2px',
+                                 top: '2px',
                               },
                               '&::after': {
                                  content: '""',
                                  position: 'absolute',
-                                 width: '5px',
-                                 height: '5px',
-                                 background: '#fff',
-                                 boxShadow: `0 0 20px 10px #fff, 0px 5px 10px 10px ${mainClr}`,
+                                 width: 0,
+                                 height: 0,
+                                 boxShadow: `0px 2px 10px 6px #fff, 2px 3px 15px 15px ${mainClr}`,
                                  borderRadius: '50%',
-                                 left: '18px',
-                                 top: '1px',
+                                 left: '20px',
+                                 top: '2px',
                               },
                            }}
                         />

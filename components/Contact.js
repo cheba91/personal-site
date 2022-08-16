@@ -34,17 +34,23 @@ export default function Contact() {
             }}
          >
             <NeonHeading text={'Get In Touch'}></NeonHeading>
-            <Typography variant="h6" align="center" component="h4">
-               {`Got an interesting project in mind? Let's make it happen together!`}
-            </Typography>
             <Typography
+               mb="1.4rem"
+               fontSize="1.1rem"
+               align="center"
+               component="h4"
+            >
+               {`I'm always interested in cool projects. 
+               You can reach me at email@email.com or using the form below if you have one in mind.`}
+            </Typography>
+            {/* <Typography
                variant="p"
                align="center"
                component="p"
                padding="1rem 0 1.5rem 0"
             >
                {`You can contact me at email@email.com or through the form below.`}
-            </Typography>
+            </Typography> */}
 
             <Grid
                container

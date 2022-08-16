@@ -15,11 +15,7 @@ const handleClick = () => {
    }
 };
 export default function BackToTop() {
-   const {
-      light: darkClrLighter,
-      main: darkClr,
-      cardBg,
-   } = useTheme().palette.dark;
+   const { main: darkClr, cardBg } = useTheme().palette.dark;
 
    const trigger = useScrollTrigger({
       disableHysteresis: true,
@@ -37,10 +33,9 @@ export default function BackToTop() {
                   color: darkClr,
                   background: cardBg,
                   border: 'none',
-                  // boxShadow: `-6px -6px 6px 1px #141414`,
+                  color: 'text.disabled',
                   '&:hover': {
-                     // color: 'text.disabled',
-                     // background: darkClrLighter,
+                     color: 'text.disabled',
                   },
                }}
                size="small"

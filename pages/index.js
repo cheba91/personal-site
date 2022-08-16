@@ -7,7 +7,7 @@ export default function HomePage({ changeTheme }) {
    return (
       <>
          <HeroSection changeTheme={changeTheme} />
-         <Container sx={{ py: 10 }} className="wrapContainer">
+         <Container sx={{ py: 7 }} className="wrapContainer">
             <StackInfoList />
             <About />
             <Contact />

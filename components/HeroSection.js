@@ -167,27 +167,35 @@ export default function HeroSection({ changeTheme }) {
                justifyContent="space-between"
             >
                {/* TOP hero part */}
-               <Grid>
+               <Grid sx={{ textAlign: 'left' }}>
                   <Typography
                      component="h3"
                      sx={{
-                        fontSize: { xs: '4vw', sm: '1.7rem' },
+                        fontWeight: 800,
+                        fontSize: { xs: '5vw', sm: '2rem' },
                         paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
-                  >{`Hey, I'm Cheba,`}</Typography>
+                  >{`Hello.`}</Typography>
+                  <Typography
+                     component="h3"
+                     sx={{
+                        fontWeight: 800,
+                        fontSize: { xs: '6vw', sm: '2.5rem' },
+                        // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
+                        paddingBottom: '0rem',
+                     }}
+                  >{`I am Cheba.`}</Typography>
                   <Typography
                      // textAlign="center"
                      component="h1"
                      variant="h2"
                      sx={{
                         fontWeight: 800,
-                        //  fontSize: { xs: '3rem', sm: '3.75rem' },
-                        fontSize: { xs: '9vw', sm: '3.75rem' },
-                        // fontSize: '5vw',
+                        fontSize: { xs: '8vw', sm: '3.75rem' },
                      }}
                   >
-                     {`web developer.`}
+                     {`Full-stack web dev.`}
                   </Typography>
                </Grid>
 
