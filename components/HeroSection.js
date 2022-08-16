@@ -2,7 +2,7 @@ import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import imgBg from '../public/starsBg.png';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
-import { invertRgb } from '../utils/invertColor';
+import { secondaryClr } from '../utils/invertColor';
 
 export default function HeroSection({ changeTheme }) {
    const {
@@ -11,7 +11,8 @@ export default function HeroSection({ changeTheme }) {
    } = useTheme().palette;
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
    const oppositeClr =
-      lightenDarkenColor(-0.6, invertRgb(mainClr)) ?? darkMainClr1;
+      lightenDarkenColor(-0.6, secondaryClr(mainClr)) ?? darkMainClr1;
+   console.log('opposite clr: ', oppositeClr);
    return (
       <>
          <Box
@@ -41,7 +42,8 @@ export default function HeroSection({ changeTheme }) {
                   background: `transparent url(${imgBg.src})`,
                   animation: 'moveImg 12s infinite alternate',
                   '@keyframes moveImg': {
-                     '100%': { transform: 'scale(1.05)' },
+                     // '100%': { transform: 'skewY(30deg)' },
+                     '100%': { transform: 'scale(1.1)' },
                   },
                }}
             />
@@ -53,7 +55,7 @@ export default function HeroSection({ changeTheme }) {
                   borderRadius: '50%',
                   width: '100px',
                   height: '100px',
-                  top: '-200px',
+                  top: '-100px',
                   left: '40%',
                   background: `linear-gradient(to right, ${oppositeClr} , #000)`,
                   filter: `blur(10px)`,
@@ -63,7 +65,7 @@ export default function HeroSection({ changeTheme }) {
                      '100%': {
                         top: '125vh',
                         left: '-400px',
-                        transform: 'scale(5)',
+                        transform: 'scale(4)',
                      },
                   },
                }}
@@ -75,8 +77,8 @@ export default function HeroSection({ changeTheme }) {
                   width: '100px',
                   height: '100px',
                   position: 'absolute',
-                  bottom: '90%',
-                  left: '110vw',
+                  top: '-100px',
+                  left: '100%',
                   borderRadius: '50%',
                   background: `linear-gradient( to left, #000, ${darkMainClr1})`,
                   filter: `blur(5px)`,
@@ -84,13 +86,13 @@ export default function HeroSection({ changeTheme }) {
                   animation: 'movePlanet2 8s infinite linear',
                   '@keyframes movePlanet2': {
                      '40%': {
-                        bottom: '90%',
                         left: '110vw',
+                        top: '-100px',
                      },
                      '100%': {
-                        bottom: '-400px',
+                        top: '125vh',
                         left: '60%',
-                        transform: 'scale(5)',
+                        transform: 'scale(4)',
                      },
                   },
                   // '&::before': {

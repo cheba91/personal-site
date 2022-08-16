@@ -1,8 +1,8 @@
-export function invertRgb(rgb) {
+export function secondaryClr(rgb) {
    rgb = rgb.replace(/[^\d,]/g, '').split(',');
    if (!rgb) return false;
    const inverted = rgb.map((clr) => {
-      let newClr = clr > 127.5 ? Number(clr) - 70 : Number(clr) + 70;
+      let newClr = Number(clr) + 70;
       //dont want too dark
       // let newClr = Number(clr) + 127.5;
       // newClr = newClr > 170 ? 170 : newClr;
