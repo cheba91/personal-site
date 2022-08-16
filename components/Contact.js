@@ -40,8 +40,8 @@ export default function Contact() {
                align="center"
                component="h4"
             >
-               {`I'm always interested in cool projects. 
-               You can reach me at email@email.com or using the form below if you have one in mind.`}
+               {`Got an interesting project in mind? Let's make it happen.
+               You can reach me at email@email.com or using the form below.`}
             </Typography>
             {/* <Typography
                variant="p"

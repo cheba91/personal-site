@@ -176,7 +176,7 @@ export default function HeroSection({ changeTheme }) {
                         paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
-                  >{`Hello.`}</Typography>
+                  >{`Hey.`}</Typography>
                   <Typography
                      component="h3"
                      sx={{
@@ -185,7 +185,7 @@ export default function HeroSection({ changeTheme }) {
                         // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
-                  >{`I am Cheba.`}</Typography>
+                  >{`I'm Cheba.`}</Typography>
                   <Typography
                      // textAlign="center"
                      component="h1"
