@@ -12,7 +12,6 @@ export default function HeroSection({ changeTheme }) {
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
    const oppositeClr =
       lightenDarkenColor(-0.6, secondaryClr(mainClr)) ?? darkMainClr1;
-   console.log('opposite clr: ', oppositeClr);
    return (
       <>
          <Box
@@ -117,21 +116,16 @@ export default function HeroSection({ changeTheme }) {
                   height: '9vh',
                   position: 'absolute',
                   borderRadius: '50%',
-                  top: '45vh',
-                  left: '65vw',
-
-                  // top: '45vh',
-                  // left: '65vw',
-                  // transform: 'scale(1.4)',
-
+                  top: '48vh',
+                  left: '55vw',
                   background: `radial-gradient(#663741, ${mainDarkClr}  70%)`,
-                  filter: `blur(5px)`,
+                  filter: `blur(3px)`,
                   animation: 'movePlanet3 7s infinite alternate ease-in-out',
 
                   '@keyframes movePlanet3': {
                      '100%': {
-                        top: '45vh',
-                        left: '60vw',
+                        top: '47vh',
+                        left: '55vw',
                         transform: 'scale(1.2)',
                      },
                   },

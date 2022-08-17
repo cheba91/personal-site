@@ -76,11 +76,11 @@ export default function ThemeToggler({ changeTheme }) {
             left: `50%`,
             bottom: '19%',
             transform: 'translate(-50%, 0)',
-            animation: 'moveBall 3s infinite alternate ease-in-out',
+            animation: 'moveBall 12s infinite alternate',
             '@keyframes moveBall': {
                '100%': {
-                  left: `49%`,
-                  bottom: '20%',
+                  transform: 'translate(-50%, 0) scale(1.05)',
+                  // transform: 'scale(1.01)',
                },
             },
          }}
