@@ -38,7 +38,7 @@ export default function About() {
       <>
          <AnchorId id={'about'} />
          <Grid
-            mb={7}
+            mb={10}
             container
             rows={2}
             sx={{

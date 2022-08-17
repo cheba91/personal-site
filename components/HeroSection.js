@@ -2,7 +2,7 @@ import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import imgBg from '../public/starsBg.png';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
-import { secondaryClr } from '../utils/invertColor';
+import { changeClr } from '../utils/changeClr';
 
 export default function HeroSection({ changeTheme }) {
    const {
@@ -11,7 +11,7 @@ export default function HeroSection({ changeTheme }) {
    } = useTheme().palette;
    const darkMainClr1 = lightenDarkenColor(-0.8, mainClr);
    const oppositeClr =
-      lightenDarkenColor(-0.6, secondaryClr(mainClr)) ?? darkMainClr1;
+      lightenDarkenColor(-0.6, changeClr(mainClr, 70)) ?? darkMainClr1;
    return (
       <>
          <Box

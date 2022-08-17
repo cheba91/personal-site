@@ -2,13 +2,13 @@ import { Container } from '@mui/material';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import HeroSection from '../components/HeroSection';
-import StackInfoList from '../components/StackInfoList';
+import Experience from '../components/Experience';
 export default function HomePage({ changeTheme }) {
    return (
       <>
          <HeroSection changeTheme={changeTheme} />
          <Container sx={{ py: 7 }} className="wrapContainer">
-            <StackInfoList />
+            <Experience />
             <About />
             <Contact />
          </Container>

@@ -16,8 +16,10 @@ export default function Contact() {
    } = useTheme();
 
    const inputStyles = {
-      boxShadow: `inset -9px -9px 9px ${darkClr}, inset 3px 3px 10px ${darkClr}`,
+      boxShadow: `inset -4px -4px 6px 0px rgb(45 45 45), inset 7px 7px 6px 0px rgb(10 10 10)`,
       borderRadius: `${borderRadius}px`,
+      outline: 'none',
+      border: 'none',
    };
    return (
       <NeonShadow radius={`${borderRadius}px`}>
@@ -36,11 +38,11 @@ export default function Contact() {
             <NeonHeading text={'Get In Touch'}></NeonHeading>
             <Typography
                mb="1.4rem"
-               fontSize="1.1rem"
+               // fontSize="1.1rem"
                align="center"
                component="h4"
             >
-               {`Got an interesting project in mind? Let's make it happen.
+               {`Have a great idea for a project and want to make it happen?
                You can reach me at email@email.com or using the form below.`}
             </Typography>
             {/* <Typography
