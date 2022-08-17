@@ -144,7 +144,6 @@ export default function About() {
                            id="laser"
                            sx={{
                               position: 'fixed',
-                              zIndex: 10000,
                               top: laserY,
                               left: laserX,
                               width: '28px',
