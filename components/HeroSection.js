@@ -38,11 +38,13 @@ export default function HeroSection({ changeTheme }) {
                   height: '100%',
                   top: 0,
                   left: 0,
-                  background: `transparent url(${imgBg.src})`,
-                  animation: 'moveImg 12s infinite alternate',
+                  background: `transparent url(${imgBg.src}) center center`,
+                  animation: 'moveImg 10s infinite alternate',
                   '@keyframes moveImg': {
                      // '100%': { transform: 'skewY(30deg)' },
-                     '100%': { transform: 'scale(1.1)' },
+                     '100%': {
+                        transform: 'scale(1.1)',
+                     },
                   },
                }}
             />

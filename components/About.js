@@ -48,9 +48,10 @@ export default function About() {
                overflow: 'hidden',
                padding: '2rem',
                '&::before': {
+                  overdlow: 'hidden',
                   content: "''",
                   position: 'absolute',
-                  zIndex: '-2',
+                  zIndex: '-1',
                   left: '-150%',
                   top: '-150%',
                   width: '400%',
@@ -67,6 +68,7 @@ export default function About() {
                '&::after': {
                   content: "''",
                   position: 'absolute',
+                  overflow: 'hidden',
                   zIndex: '-1',
                   left: '3px',
                   top: '3px',
