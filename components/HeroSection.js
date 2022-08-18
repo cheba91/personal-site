@@ -39,11 +39,18 @@ export default function HeroSection({ changeTheme }) {
                   top: 0,
                   left: 0,
                   background: `transparent url(${imgBg.src}) center center`,
-                  animation: 'moveImg 10s infinite alternate',
-                  '@keyframes moveImg': {
-                     // '100%': { transform: 'skewY(30deg)' },
+                  animation: {
+                     xs: 'moveImgSmallScreen 10s infinite alternate',
+                     sm: 'moveImgBigScreen 10s infinite alternate',
+                  },
+                  '@keyframes moveImgBigScreen': {
                      '100%': {
                         transform: 'scale(1.1)',
+                     },
+                  },
+                  '@keyframes moveImgSmallScreen': {
+                     '100%': {
+                        transform: 'scale(1.4)',
                      },
                   },
                }}
@@ -62,6 +69,7 @@ export default function HeroSection({ changeTheme }) {
                   filter: `blur(10px)`,
                   // animation: 'movePlanet1 2s infinite linear',
                   animation: 'movePlanet1 12s infinite linear',
+                  WebkitPerspective: 1000,
                   '@keyframes movePlanet1': {
                      '100%': {
                         top: '125vh',
