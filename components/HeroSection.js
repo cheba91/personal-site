@@ -188,7 +188,7 @@ export default function HeroSection({ changeTheme }) {
                      component="h3"
                      sx={{
                         fontWeight: 800,
-                        fontSize: { xs: '5vw', sm: '2rem' },
+                        fontSize: { xs: '4.3vw', sm: '1.8rem' },
                         paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
@@ -197,7 +197,7 @@ export default function HeroSection({ changeTheme }) {
                      component="h3"
                      sx={{
                         fontWeight: 800,
-                        fontSize: { xs: '6vw', sm: '2.5rem' },
+                        fontSize: { xs: '5.5vw', sm: '2.2rem' },
                         // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
@@ -213,6 +213,27 @@ export default function HeroSection({ changeTheme }) {
                   >
                      {`Full-stack web dev.`}
                   </Typography>
+                  <Typography
+                     component="h3"
+                     sx={{
+                        fontWeight: 800,
+                        fontSize: { xs: '5.5vw', sm: '2.2rem' },
+                        textAlign: 'right',
+                        // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
+                        paddingBottom: '0rem',
+                     }}
+                  >{`Changing the www.`}</Typography>
+                  <Typography
+                     component="h3"
+                     sx={{
+                        fontWeight: 800,
+                        fontSize: { xs: '4.3vw', sm: '1.8rem' },
+                        textAlign: 'right',
+
+                        // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
+                        paddingBottom: '0rem',
+                     }}
+                  >{`One </> at a time.`}</Typography>
                </Grid>
 
                {/* BOTTOM hero part */}
