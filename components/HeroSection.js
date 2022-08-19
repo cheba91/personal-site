@@ -222,7 +222,7 @@ export default function HeroSection({ changeTheme }) {
                         // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
                         paddingBottom: '0rem',
                      }}
-                  >{`Changing the www.`}</Typography>
+                  >{`Building the www.`}</Typography>
                   <Typography
                      component="h3"
                      sx={{
