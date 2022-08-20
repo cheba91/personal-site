@@ -1,5 +1,4 @@
-import ProjectCard from './ProjectCard';
-import { projectsData } from '../data/projects';
+import AllProjects from './AllProjects';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -71,8 +70,8 @@ export default function Experience() {
                   overflow: 'hidden',
                }}
             >
-               <AllTech />
                <NeonHeading text={'Experience'} />
+               <AllTech />
                {/* Short desc */}
                <Typography pb={4}>{`Short desc`}</Typography>
                {/* Long desc */}
@@ -88,12 +87,7 @@ export default function Experience() {
                )} */}
 
                {/* Projects */}
-               <Grid container spacing={4} mt={1}>
-                  {projectsData &&
-                     projectsData.map((project) => (
-                        <ProjectCard key={project.key} project={project} />
-                     ))}
-               </Grid>
+               <AllProjects />
             </Box>
          </NeonShadow>
       </>

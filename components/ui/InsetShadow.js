@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useTheme } from '@mui/material';
 import { lightenDarkenColor } from '../../utils/lightenDarkenColor';
 
-export default function InsetShadow({ children, radius }) {
+export default function InsetShadow({ children, radius = '15px' }) {
    const {
       palette: {
          primary: { main: mainClr },
@@ -13,7 +13,7 @@ export default function InsetShadow({ children, radius }) {
    return (
       <Box
          sx={{
-            background: 'radial-gradient(rgb(29, 29, 29), rgb(37, 37, 37))',
+            background: cardBg,
             borderRadius: radius,
             // border: 'none',
             boxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10)`,
