@@ -34,10 +34,10 @@ export default function AllProjects({ project }) {
                   <Grid item sm={12} md={6} key={project.key}>
                      <Box
                         sx={{
-                           padding: '1rem 2rem',
+                           padding: { xs: '0.5rem 1rem', sm: '1rem 2rem' },
                            borderRadius: `${borderRadius}px`,
                            background: cardBg,
-                           margin: '1rem',
+                           margin: { xs: '0.5rem 0rem', sm: '0.8rem' },
                            boxShadow: ` -1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
                         }}
                      >

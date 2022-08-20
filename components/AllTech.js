@@ -30,7 +30,7 @@ export default function AllTech() {
       <InsetShadow radius={`${borderRadius}px`}>
          <Box
             sx={{
-               padding: '1.5rem',
+               padding: { xs: '0.8rem', sm: '1.5rem' },
             }}
          >
             <Typography
@@ -55,10 +55,17 @@ export default function AllTech() {
                      item
                      key={tech}
                      sx={{
+                        fontSize: { xs: '0.9rem', sm: '1rem' },
                         padding: '1rem 2rem',
+                        padding: { xs: '0.7rem 1rem', sm: '1rem 2rem' },
                         borderRadius: `${borderRadius}px`,
                         background: cardBg,
-                        margin: '0 1rem 1rem 0',
+                        margin: {
+                           xs: '0 0.6rem 1rem 0',
+                           sm: '0 0.8rem 1rem 0',
+                        },
+
+                        margin: '0 0.6rem 1rem 0',
                         boxShadow: ` -1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
                      }}
                   >
