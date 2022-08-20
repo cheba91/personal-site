@@ -8,6 +8,7 @@ import { useTheme } from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
 import AnchorId from './ui/AnchorId';
 import NeonShadow from './ui/NeonShadow';
+import AllTech from './AllTech';
 export default function Experience() {
    const [longDescVisible, setLongDescVisible] = useState(false);
    const toggleLongDesc = () => setLongDescVisible((current) => !current);
@@ -70,6 +71,7 @@ export default function Experience() {
                   overflow: 'hidden',
                }}
             >
+               <AllTech />
                <NeonHeading text={'Experience'} />
                {/* Short desc */}
                <Typography pb={4}>{`Short desc`}</Typography>

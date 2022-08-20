@@ -126,7 +126,7 @@ export default function HeroSection({ changeTheme }) {
                   height: '9vh',
                   position: 'absolute',
                   borderRadius: '50%',
-                  top: '48vh',
+                  top: '16vh',
                   left: '55vw',
                   background: `radial-gradient(#663741, ${mainDarkClr}  70%)`,
                   filter: `blur(3px)`,
@@ -134,7 +134,7 @@ export default function HeroSection({ changeTheme }) {
 
                   '@keyframes movePlanet3': {
                      '100%': {
-                        top: '47vh',
+                        top: '15vh',
                         left: '55vw',
                         transform: 'scale(1.2)',
                      },

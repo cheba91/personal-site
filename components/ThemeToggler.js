@@ -1,11 +1,13 @@
 import Box from '@mui/material/Box';
 import { useState } from 'react';
+import monster from '../public/monster.svg';
 
 export default function ThemeToggler({ changeTheme }) {
-   const pinWidth = 40;
+   const pinWidth = 30;
    const ballSize = 170;
-   const [pinPosX, setPinPosX] = useState(98.5);
-   const [pinPosY, setPinPosY] = useState(-26);
+   const [bubbleVisible, setBubbleVisible] = useState(true);
+   const [pinPosX, setPinPosX] = useState(61.7);
+   const [pinPosY, setPinPosY] = useState(-9);
 
    const componentToHex = (c) => {
       let hex = c.toString(16);
@@ -59,8 +61,10 @@ export default function ThemeToggler({ changeTheme }) {
       // Edit Pin
       setPinPosY(e.clientY - rect.top - pinWidth - 2);
       setPinPosX(e.clientX - rect.left - 2);
+      console.log('pinPosX: ', pinPosX, 'pinPosY:', pinPosY);
       console.log('clr: ', `rgb(${color.r},${color.g},${color.b})`);
       changeTheme(`rgb(${color.r},${color.g},${color.b})`);
+      setBubbleVisible(false);
    };
    return (
       // Outer Ball
@@ -133,25 +137,25 @@ export default function ThemeToggler({ changeTheme }) {
             // pole
             sx={{
                position: 'absolute',
-               height: `${pinWidth}px`,
+               height: `${pinWidth + 5}px`,
                width: `4px`,
-               top: `${pinPosY}px`,
+               top: `${pinPosY - 5}px`,
                left: `${pinPosX}px`,
                background: 'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
                // Shadow
-               '&::after': {
-                  content: "''",
-                  position: 'absolute',
-                  bottom: 0,
-                  left: '-2px',
-                  height: '2px',
-                  width: '8px',
-                  background: '#424242',
-               },
+               // '&::after': {
+               //    content: "''",
+               //    position: 'absolute',
+               //    bottom: 0,
+               //    left: '-2px',
+               //    height: '2px',
+               //    width: '8px',
+               //    background: '#424242',
+               // },
                // flag
                '&::before': {
-                  content: '"👇"',
+                  content: '""',
                   borderTopRightRadius: '5px',
                   borderBottomRightRadius: '5px',
                   paddingLeft: '3px',
@@ -177,7 +181,55 @@ export default function ThemeToggler({ changeTheme }) {
                   },
                },
             }}
-         ></Box>
+         >
+            {/* Monster */}
+            <Box
+               sx={{
+                  position: 'absolute',
+                  left: `-${pinWidth + 16}px`,
+                  top: '-9px',
+                  background: `url(${monster.src})`,
+                  width: '50px',
+                  height: '50px',
+               }}
+            >
+               {/* Text bubble */}
+               {bubbleVisible && (
+                  <Box
+                     sx={{
+                        width: '70px',
+                        height: '40px',
+                        background: '#e9e9e9',
+                        padding: '0.3rem',
+                        color: '#000',
+                        fontSize: '13px',
+                        position: 'absolute',
+                        borderRadius: '15px',
+                        left: '-80px',
+                        top: '-30px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                     }}
+                  >
+                     Move me
+                     <Box
+                        sx={{
+                           width: '0',
+                           height: '0',
+                           borderLeft: '7px solid transparent',
+                           borderRight: '7px solid transparent',
+                           borderTop: '25px solid #e9e9e9',
+                           position: 'absolute',
+                           top: '50%',
+                           right: '-20%',
+                           transform: 'rotate(-60deg)',
+                        }}
+                     ></Box>
+                  </Box>
+               )}
+            </Box>
+         </Box>
       </Box>
    );
 }
