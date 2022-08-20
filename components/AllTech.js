@@ -30,17 +30,15 @@ export default function AllTech() {
       <InsetShadow radius={`${borderRadius}px`}>
          <Box
             sx={{
-               //    background: cardBg,
-               //    borderRadius: `${borderRadius}px`,
                padding: '1.5rem',
             }}
          >
             <Typography
-               component="h5"
+               component="h3"
                variant="h5"
                sx={{
                   textAlign: 'center',
-                  marginBottom: '1.5rem',
+                  marginBottom: '2rem',
                }}
             >
                {`Tools & Tech`}

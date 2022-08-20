@@ -19,11 +19,11 @@ export default function AllProjects({ project }) {
    return (
       <InsetShadow radius={`${borderRadius}px`}>
          <Typography
-            component="h5"
+            component="h3"
             variant="h5"
             sx={{
                textAlign: 'center',
-               paddingTop: '1.5rem',
+               paddingTop: '2rem',
             }}
          >
             {`Projects`}
@@ -43,7 +43,7 @@ export default function AllProjects({ project }) {
                      >
                         {/* Title */}
 
-                        <Typography variant="h5" component="h2">
+                        <Typography variant="h6" component="h4">
                            {project.title}
                         </Typography>
 

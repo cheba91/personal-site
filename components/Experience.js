@@ -72,8 +72,16 @@ export default function Experience() {
             >
                <NeonHeading text={'Experience'} />
                <AllTech />
-               {/* Short desc */}
-               <Typography pb={4}>{`Short desc`}</Typography>
+               <Box sx={{ padding: '1rem 2rem' }}>
+                  {/* Short desc */}
+                  <Typography
+                     pb={4}
+                  >{`Short desc...Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Sequi minus aspernatur, neque odit, rem similique accusantium
+                  delectus veritatis quisquam quibusdam perferendis ratione est?
+                  Nihil ad quia iure deleniti distinctio tenetur?`}</Typography>
+               </Box>
+
                {/* Long desc */}
                {/* {!longDescVisible && <ToggleDescBtn />}
                {longDescVisible ? (
