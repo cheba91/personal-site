@@ -18,44 +18,53 @@ export default function AllProjects({ project }) {
    } = useTheme();
    return (
       <InsetShadow radius={`${borderRadius}px`}>
-         <Grid container spacing={4} mt={1}>
+         <Typography
+            component="h5"
+            variant="h5"
+            sx={{
+               textAlign: 'center',
+               paddingTop: '1.5rem',
+            }}
+         >
+            {`Projects`}
+         </Typography>
+         <Grid container sx={{ padding: '1.5rem' }}>
             {projectsData &&
                projectsData.map((project) => (
                   <Grid item sm={12} md={6} key={project.key}>
-                     <Card
+                     <Box
                         sx={{
                            padding: '1rem 2rem',
                            borderRadius: `${borderRadius}px`,
                            background: cardBg,
-                           margin: '0 1rem 1rem 0',
+                           margin: '1rem',
                            boxShadow: ` -1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
                         }}
                      >
                         {/* Title */}
-                        <CardContent sx={{ padding: '1.5rem' }}>
-                           <Typography variant="h5" component="h2">
-                              {project.title}
-                           </Typography>
 
-                           {/* Used tech */}
-                           <Typography
-                              my={1}
-                              sx={{ fontSize: 14 }}
-                              color="text.secondary"
-                           >
-                              {'Stack: '}
-                              {project.usedTechnologies &&
-                                 project.usedTechnologies.map((tech) => (
-                                    <Box component="span" key={tech}>
-                                       {`${tech} `}
-                                    </Box>
-                                 ))}
-                           </Typography>
+                        <Typography variant="h5" component="h2">
+                           {project.title}
+                        </Typography>
 
-                           {/* Short desc */}
-                           <Typography pb={4}>{project.desc}</Typography>
-                        </CardContent>
-                     </Card>
+                        {/* Used tech */}
+                        <Typography
+                           my={1}
+                           sx={{ fontSize: 14 }}
+                           color="text.secondary"
+                        >
+                           {'Stack: '}
+                           {project.usedTechnologies &&
+                              project.usedTechnologies.map((tech) => (
+                                 <Box component="span" key={tech}>
+                                    {`${tech} `}
+                                 </Box>
+                              ))}
+                        </Typography>
+
+                        {/* Short desc */}
+                        <Typography pb={4}>{project.desc}</Typography>
+                     </Box>
                   </Grid>
                ))}
          </Grid>

@@ -48,7 +48,7 @@ export default function AllTech() {
             <Grid
                container
                sx={{
-                  rowSpacing: '1rem',
+                  //   rowSpacing: '1rem',
                   justifyContent: 'space-evenly',
                }}
             >
