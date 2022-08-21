@@ -1,8 +1,11 @@
+import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import monster from '../public/monster.svg';
+import Monster from './ui/Monster';
 
 export default function ThemeToggler({ changeTheme }) {
+   const mainClr = useTheme().palette.primary.main;
    const pinWidth = 30;
    const ballSize = 170;
    const [bubbleVisible, setBubbleVisible] = useState(true);
@@ -183,15 +186,25 @@ export default function ThemeToggler({ changeTheme }) {
             }}
          >
             {/* Monster */}
-            <Box
-               sx={{
+            <Monster
+               clr={mainClr}
+               customStyles={{
                   position: 'absolute',
                   left: `-${pinWidth + 16}px`,
                   top: '-9px',
-                  background: `url(${monster.src})`,
-                  width: '50px',
-                  height: '50px',
+                  width: '57px',
+                  height: '57px',
                }}
+            />
+            <Box
+            // sx={{
+            //    position: 'absolute',
+            //    left: `-${pinWidth + 16}px`,
+            //    top: '-9px',
+            //    width: '50px',
+            //    height: '50px',
+            //    background: `url(${monster.src})`,
+            // }}
             >
                {/* Text bubble */}
                {bubbleVisible && (
@@ -205,7 +218,7 @@ export default function ThemeToggler({ changeTheme }) {
                         fontSize: '13px',
                         position: 'absolute',
                         borderRadius: '15px',
-                        left: '-80px',
+                        left: '-125px',
                         top: '-30px',
                         display: 'flex',
                         justifyContent: 'center',
