@@ -60,6 +60,7 @@ export default function AllTech() {
                         margin: {
                            xs: '0 0.6rem 1rem 0',
                            sm: '0 0.8rem 1rem 0',
+                           textShadow: '3px 3px 4px #000',
                         },
                      }}
                   >

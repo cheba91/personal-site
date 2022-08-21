@@ -30,7 +30,11 @@ export default function AllProjects() {
                         }}
                      >
                         {/* Title */}
-                        <Typography variant="h6" component="h4">
+                        <Typography
+                           variant="h6"
+                           component="h4"
+                           sx={{ textShadow: '3px 3px 4px #000' }}
+                        >
                            {project.title}
                         </Typography>
                         {/* Used tech */}

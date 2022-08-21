@@ -117,9 +117,9 @@ export default function About() {
                            src={myImage.src}
                            sx={{
                               borderRadius: '50%',
-                              border: `5px solid rgb(78 78 78)`,
+                              border: `4px solid rgb(50, 50, 50)`,
                               // boxShadow: `1px 1px 15px 0px ${mainClr}`,
-                              boxShadow: `10px 7px 20px 5px rgb(10 10 10)`,
+                              boxShadow: `10px 7px 15px 5px rgb(20 20 20)`,
                               height: imgSize,
                               width: imgSize,
                               maxWidth: '100%',

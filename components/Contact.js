@@ -32,7 +32,7 @@ export default function Contact() {
             sx={{
                borderRadius: `${borderRadius}px`,
                background: cardBg,
-               padding: '1rem 1rem 0 1rem',
+               padding: { xs: '0.5rem 1rem', sm: '1rem 2rem' },
                position: 'relative',
                width: '100%',
                height: '100%',
@@ -40,13 +40,10 @@ export default function Contact() {
             }}
          >
             <NeonHeading text={'Get In Touch'}></NeonHeading>
-            <OutsetShadow>
-               <Typography
-                  mb="48px"
-                  // fontSize="1.1rem"
-                  align="center"
-                  component="h4"
-               >
+            <OutsetShadow
+               customStyles={{ padding: '2rem 2rem', marginBottom: '48px' }}
+            >
+               <Typography align="center" component="h4">
                   {`Have a great idea for a project and want to make it happen?
                You can reach me at email@email.com or using the form below.`}
                </Typography>
@@ -111,7 +108,7 @@ export default function Contact() {
                                  background: cardBg,
                                  color: textClr,
                                  border: `none`,
-                                 fontWeight: 'bold',
+                                 fontWeight: '600',
                                  boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 5px 0px ${mainClr}`,
                                  padding: '0.7rem 1.9rem',
                                  '&:hover': {
