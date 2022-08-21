@@ -1,6 +1,7 @@
 import { Box, Typography, useTheme } from '@mui/material';
 import { Grid } from '@mui/material';
 import InsetShadow from './ui/InsetShadow';
+import OutsetShadow from './ui/OutsetShadow';
 
 export default function AllTech() {
    const {
@@ -39,6 +40,7 @@ export default function AllTech() {
                sx={{
                   textAlign: 'center',
                   marginBottom: '2rem',
+                  textShadow: '3px 3px 4px #000',
                }}
             >
                {`Tools & Tech`}
@@ -51,26 +53,32 @@ export default function AllTech() {
                }}
             >
                {techs.map((tech) => (
-                  <Grid
-                     item
+                  <OutsetShadow
                      key={tech}
-                     sx={{
-                        fontSize: { xs: '0.9rem', sm: '1rem' },
-                        padding: '1rem 2rem',
-                        padding: { xs: '0.7rem 1rem', sm: '1rem 2rem' },
-                        borderRadius: `${borderRadius}px`,
-                        background: cardBg,
+                     radius={`${borderRadius}px`}
+                     customStyles={{
                         margin: {
                            xs: '0 0.6rem 1rem 0',
                            sm: '0 0.8rem 1rem 0',
                         },
-
-                        margin: '0 0.6rem 1rem 0',
-                        boxShadow: ` -1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
                      }}
                   >
-                     {tech}
-                  </Grid>
+                     <Grid
+                        item
+                        key={tech}
+                        sx={{
+                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                           padding: '1rem 2rem',
+                           padding: { xs: '0.7rem 1rem', sm: '1rem 2rem' },
+                           // borderRadius: `${borderRadius}px`,
+                           // background: cardBg,
+
+                           //    boxShadow: ` -1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
+                        }}
+                     >
+                        {tech}
+                     </Grid>
+                  </OutsetShadow>
                ))}
             </Grid>
          </Box>

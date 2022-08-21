@@ -4,6 +4,7 @@ import { useTheme } from '@mui/material';
 import AnchorId from './ui/AnchorId';
 import SocialIcons from './SocialIcons';
 import NeonShadow from './ui/NeonShadow';
+import OutsetShadow from './ui/OutsetShadow';
 
 export default function Contact() {
    const {
@@ -16,8 +17,11 @@ export default function Contact() {
    } = useTheme();
 
    const inputStyles = {
-      boxShadow: `inset -4px -4px 6px 0px rgb(45 45 45), inset 7px 7px 6px 0px rgb(10 10 10)`,
+      // boxShadow: `inset -4px -4px 6px 0px rgb(45 45 45), inset 7px 7px 6px 0px rgb(10 10 10)`,
       borderRadius: `${borderRadius}px`,
+      borderWidth: '0',
+      boxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10)`,
+
       outline: 'none',
       border: 'none',
    };
@@ -36,24 +40,17 @@ export default function Contact() {
             }}
          >
             <NeonHeading text={'Get In Touch'}></NeonHeading>
-            <Typography
-               mb="1.4rem"
-               // fontSize="1.1rem"
-               align="center"
-               component="h4"
-            >
-               {`Have a great idea for a project and want to make it happen?
+            <OutsetShadow>
+               <Typography
+                  mb="48px"
+                  // fontSize="1.1rem"
+                  align="center"
+                  component="h4"
+               >
+                  {`Have a great idea for a project and want to make it happen?
                You can reach me at email@email.com or using the form below.`}
-            </Typography>
-            {/* <Typography
-               variant="p"
-               align="center"
-               component="p"
-               padding="1rem 0 1.5rem 0"
-            >
-               {`You can contact me at email@email.com or through the form below.`}
-            </Typography> */}
-
+               </Typography>
+            </OutsetShadow>
             <Grid
                container
                direction="column"
@@ -115,7 +112,7 @@ export default function Contact() {
                                  color: textClr,
                                  border: `none`,
                                  fontWeight: 'bold',
-                                 boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 6px ${mainClr}`,
+                                 boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 5px 0px ${mainClr}`,
                                  padding: '0.7rem 1.9rem',
                                  '&:hover': {
                                     border: `none`,

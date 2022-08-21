@@ -13,7 +13,7 @@ export default function NeonShadow({ children, radius, customClr = false }) {
       <Box
          sx={{
             borderRadius: radius,
-            boxShadow: `-6px -6px 30px ${darkClr}, 3px 3px 0px 1px ${
+            boxShadow: `-6px -6px 30px ${darkClr}, 4px 4px 0px 1px ${
                customClr || mainClr
             }`,
          }}

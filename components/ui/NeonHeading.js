@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 const Dot = () => {
@@ -29,6 +29,7 @@ export default function NeonHeading({ text }) {
          sx={{
             whiteSpace: 'nowrap',
             textAlign: 'center',
+            textShadow: '3px 3px 4px #000',
          }}
       >
          <Dot />

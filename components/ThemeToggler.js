@@ -1,7 +1,6 @@
 import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
-import monster from '../public/monster.svg';
 import Monster from './ui/Monster';
 
 export default function ThemeToggler({ changeTheme }) {
@@ -143,10 +142,9 @@ export default function ThemeToggler({ changeTheme }) {
                height: `${pinWidth + 5}px`,
                width: `4px`,
                top: `${pinPosY - 5}px`,
-               left: `${pinPosX}px`,
+               left: `${pinPosX - 1}px`,
                background: 'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
-               // Shadow
                // '&::after': {
                //    content: "''",
                //    position: 'absolute',
@@ -191,57 +189,46 @@ export default function ThemeToggler({ changeTheme }) {
                customStyles={{
                   position: 'absolute',
                   left: `-${pinWidth + 16}px`,
-                  top: '-9px',
+                  top: '-6px',
                   width: '57px',
                   height: '57px',
                }}
             />
-            <Box
-            // sx={{
-            //    position: 'absolute',
-            //    left: `-${pinWidth + 16}px`,
-            //    top: '-9px',
-            //    width: '50px',
-            //    height: '50px',
-            //    background: `url(${monster.src})`,
-            // }}
-            >
-               {/* Text bubble */}
-               {bubbleVisible && (
+            {/* Text bubble */}
+            {bubbleVisible && (
+               <Box
+                  sx={{
+                     width: '70px',
+                     height: '40px',
+                     background: '#e9e9e9',
+                     padding: '0.3rem',
+                     color: '#000',
+                     fontSize: '13px',
+                     position: 'absolute',
+                     borderRadius: '15px',
+                     left: '-125px',
+                     top: '-30px',
+                     display: 'flex',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                  }}
+               >
+                  Move me
                   <Box
                      sx={{
-                        width: '70px',
-                        height: '40px',
-                        background: '#e9e9e9',
-                        padding: '0.3rem',
-                        color: '#000',
-                        fontSize: '13px',
+                        width: '0',
+                        height: '0',
+                        borderLeft: '7px solid transparent',
+                        borderRight: '7px solid transparent',
+                        borderTop: '25px solid #e9e9e9',
                         position: 'absolute',
-                        borderRadius: '15px',
-                        left: '-125px',
-                        top: '-30px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
+                        top: '50%',
+                        right: '-20%',
+                        transform: 'rotate(-60deg)',
                      }}
-                  >
-                     Move me
-                     <Box
-                        sx={{
-                           width: '0',
-                           height: '0',
-                           borderLeft: '7px solid transparent',
-                           borderRight: '7px solid transparent',
-                           borderTop: '25px solid #e9e9e9',
-                           position: 'absolute',
-                           top: '50%',
-                           right: '-20%',
-                           transform: 'rotate(-60deg)',
-                        }}
-                     ></Box>
-                  </Box>
-               )}
-            </Box>
+                  ></Box>
+               </Box>
+            )}
          </Box>
       </Box>
    );

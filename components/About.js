@@ -2,8 +2,10 @@ import { Box, Grid, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
 import myImage from '../public/myImage.png';
 import AnchorId from './ui/AnchorId';
+import InsetShadow from './ui/InsetShadow';
 import NeonHeading from './ui/NeonHeading';
 import NeonShadow from './ui/NeonShadow';
+import OutsetShadow from './ui/OutsetShadow';
 
 export default function About() {
    const imgSize = 190;
@@ -45,67 +47,46 @@ export default function About() {
                rows={2}
                sx={{
                   position: 'relative',
+                  justifyContent: 'space-between',
                   zIndex: '0',
                   borderRadius: `${borderRadius}px`,
                   overflow: 'hidden',
-                  padding: '2rem',
+                  padding: { xs: '1.5rem', md: '2rem' },
+
                   background: cardBg,
-                  // '&::before': {
-                  //    overdlow: 'hidden',
-                  //    content: "''",
-                  //    position: 'absolute',
-                  //    zIndex: '-1',
-                  //    left: '-150%',
-                  //    top: '-150%',
-                  //    width: '400%',
-                  //    height: '400%',
-                  //    backgroundRepeat: 'no-repeat',
-                  //    backgroundSize: '50% 50%, 50% 50%',
-                  //    backgroundPosition: '0 0, 100% 0, 100% 100%, 0 100%',
-                  //    backgroundImage: `linear-gradient(to  left, ${mainClr} 1%, rgba(0,0,0, 0) 5%),
-                  //    linear-gradient(transparent, transparent),
-                  //       linear-gradient(to right, ${mainClr} 1%, rgba(0,0,0,0) 5% ),
-                  //       linear-gradient(transparent, transparent)`,
-                  //    animation: 'rotate 8s linear infinite',
-                  // },
-                  // '&::after': {
-                  //    content: "''",
-                  //    position: 'absolute',
-                  //    overflow: 'hidden',
-                  //    zIndex: '-1',
-                  //    left: '3px',
-                  //    top: '3px',
-                  //    width: 'calc(100% - 6px)',
-                  //    height: 'calc(100% - 6px)',
-                  //    background: cardBg,
-                  //    borderRadius: `${borderRadius}px`,
-                  // },
-                  // '@keyframes rotate': {
-                  //    '100%': { transform: 'rotate(1turn)' },
-                  // },
-                  // borderRadius: `${borderRadius}px`,
-                  // padding: '1rem 1rem 1.5rem 1rem',
                }}
             >
-               <Grid width="100%">
+               <Grid item width="100%">
                   <NeonHeading text={'About me'} />
                </Grid>
                {/* Text */}
-               <Grid item xs={12} sm={7} padding=" 0 1.5rem 1.5rem 1.5rem">
-                  <Typography mb={2}>
-                     {`Hey, I'm good at reading docs ;)`}
-                  </Typography>
-                  <Typography>
-                     {`I'm a self-taught web developer from Slovenia and I've been in web development for 4+ years. 
+               <Grid item xs={12} md={7}>
+                  <OutsetShadow customStyles={{ padding: '1.5rem' }}>
+                     <Typography mb={2}>
+                        {`Hey, I'm good at reading docs ;)`}
+                     </Typography>
+                     <Typography>
+                        {`I'm a self-taught web developer from Slovenia and I've been in web development for 4+ years. 
                   My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
-                  </Typography>
-                  <Typography mt={2}>
-                     {/* {`I love learning new things and working on creative projects.`} */}
-                     {`I enjoy working on creative projects and learning about new things. My code is clean and elegant, and I always prioritize security and performance.`}
-                  </Typography>
+                     </Typography>
+                     <Typography mt={2}>
+                        {`I enjoy working on creative projects and learning about new things. My code is clean and elegant, and I always prioritize security and performance.`}
+                     </Typography>
+                  </OutsetShadow>
                </Grid>
                {/* Image Section */}
-               <Grid item xs={12} sm={5} textAlign="center">
+               <Grid
+                  item
+                  xs={12}
+                  md={4}
+                  textAlign="center"
+                  sx={{
+                     marginTop: { xs: '4rem', md: '0' },
+                     background: cardBg,
+                     borderRadius: `${borderRadius}px`,
+                     boxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10)`,
+                  }}
+               >
                   <Box
                      sx={{
                         width: '100%',
@@ -114,8 +95,7 @@ export default function About() {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        paddingTop: { xs: '2rem', sm: '0' },
-                        paddingLeft: { xs: '0', sm: '1rem' },
+                        padding: { xs: '1.5rem 0', md: '0' },
                      }}
                   >
                      {/* Pic wrap */}
@@ -137,7 +117,9 @@ export default function About() {
                            src={myImage.src}
                            sx={{
                               borderRadius: '50%',
-                              boxShadow: `3px 2px 0px 1px ${mainClr}`,
+                              border: `5px solid rgb(78 78 78)`,
+                              // boxShadow: `1px 1px 15px 0px ${mainClr}`,
+                              boxShadow: `10px 7px 20px 5px rgb(10 10 10)`,
                               height: imgSize,
                               width: imgSize,
                               maxWidth: '100%',

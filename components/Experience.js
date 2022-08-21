@@ -8,50 +8,15 @@ import NeonHeading from './ui/NeonHeading';
 import AnchorId from './ui/AnchorId';
 import NeonShadow from './ui/NeonShadow';
 import AllTech from './AllTech';
+import OutsetShadow from './ui/OutsetShadow';
 export default function Experience() {
-   const [longDescVisible, setLongDescVisible] = useState(false);
-   const toggleLongDesc = () => setLongDescVisible((current) => !current);
-
    const {
       palette: {
-         primary: { main: mainClr },
-         dark: { cardBg, main: darkClr, light: darkClrLighter },
-         text: { primary: textClr },
+         dark: { cardBg },
       },
       shape: { borderRadius },
    } = useTheme();
 
-   // Button
-   const ToggleDescBtn = () => {
-      return (
-         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button
-               onClick={toggleLongDesc}
-               endIcon={
-                  longDescVisible ? <ExpandLessIcon /> : <ExpandMoreIcon />
-               }
-               sx={{
-                  color: textClr,
-
-                  border: `none`,
-                  background: cardBg,
-                  borderRadius: `11px`,
-                  boxShadow: `-4px -4px 12px ${darkClr}, 1px 2px 6px ${mainClr}`,
-                  marginBottom: '5px',
-                  padding: '0.4rem 1.2rem',
-                  '&:hover': {
-                     border: `none`,
-                     background: darkClrLighter,
-                     background: cardBg,
-                     boxShadow: `-6px -6px 16px ${darkClr}, 2px 3px 7px ${mainClr}`,
-                  },
-               }}
-            >
-               {longDescVisible ? 'Show less' : 'View more'}
-            </Button>
-         </Box>
-      );
-   };
    return (
       <>
          <AnchorId id={'experience'} />
@@ -62,8 +27,7 @@ export default function Experience() {
                sx={{
                   borderRadius: `${borderRadius}px`,
                   background: cardBg,
-                  //   background: cardBg,
-                  padding: '2rem',
+                  padding: { xs: '1.5rem', sm: '2rem' },
                   position: 'relative',
                   width: '100%',
                   height: '100%',
@@ -71,29 +35,22 @@ export default function Experience() {
                }}
             >
                <NeonHeading text={'Experience'} />
-               <AllTech />
-               <Box sx={{ padding: '1rem 2rem' }}>
-                  {/* Short desc */}
+               {/* Short desc */}
+               <OutsetShadow
+                  customStyles={{
+                     paddingBottom: { xs: '1.5rem', sm: '2rem' },
+                     paddingTop: { xs: '1.5rem', sm: '2rem' },
+                     marginBottom: '4rem',
+                  }}
+               >
                   <Typography
-                     pb={4}
+                     sx={{ padding: '1.5rem' }}
                   >{`Short desc...Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Sequi minus aspernatur, neque odit, rem similique accusantium
                   delectus veritatis quisquam quibusdam perferendis ratione est?
                   Nihil ad quia iure deleniti distinctio tenetur?`}</Typography>
-               </Box>
-
-               {/* Long desc */}
-               {/* {!longDescVisible && <ToggleDescBtn />}
-               {longDescVisible ? (
-                  <>
-                     
-                     <Typography pb={4}>{`Long desc`}</Typography>
-                     {longDescVisible && <ToggleDescBtn />}
-                  </>
-               ) : (
-                  ''
-               )} */}
-
+               </OutsetShadow>
+               <AllTech />
                {/* Projects */}
                <AllProjects />
             </Box>

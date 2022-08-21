@@ -1,7 +1,8 @@
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
+import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import Fade from '@mui/material/Fade';
 import { useTheme } from '@mui/material';
 
@@ -41,7 +42,7 @@ export default function BackToTop() {
                size="small"
                aria-label="scroll back to top"
             >
-               <ArrowDropUpIcon id="icon" />
+               <ArrowDropUpRoundedIcon sx={{ fontSize: '1.8rem' }} id="icon" />
             </Fab>
          </Box>
       </Fade>
