@@ -46,9 +46,17 @@ export const theme = {
                {
                   WebkitTextFillColor: '#f1f1f1',
                   WebkitBoxShadow: 'none !important',
-                  transition: 'background-color 5000s ease-in-out 0s',
-                  // WebkitBoxShadow: '0 0 0px 100px rgb(30, 30, 30)',
+                  transition: 'background-color 600000s 0s, color 600000s 0s',
+                  backgroundColor: 'transparent !important',
+                  // WebkitBoxShadow: '0 0 0px 0px rgb(30, 30, 30) !important',
                },
+            'input:-internal-autofill-selected': {
+               backgroundColor: 'red !important',
+               color: 'red !important',
+            },
+            input: {
+               colorScheme: 'dark',
+            },
             fieldset: {
                border: 'none !important',
             },
@@ -59,9 +67,9 @@ export const theme = {
                },
                '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
                   borderRadius: 8,
-                  backgroundColor: '#6b6b6b',
+                  backgroundColor: 'rgb(30, 30, 30)',
                   minHeight: 24,
-                  border: '3px solid #2b2b2b',
+                  border: '2px solid #2b2b2b',
                },
                '&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus':
                   {

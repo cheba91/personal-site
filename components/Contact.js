@@ -8,9 +8,39 @@ import OutsetShadow from './ui/OutsetShadow';
 import { useState } from 'react';
 import { sanitizeString, validateEmail } from '../utils/sanitization';
 
+//Hide email
+const EmailBox = () => {
+   return (
+      <Box
+         inputProps={{
+            style: {
+               '&::after': {
+                  content: 'attr(data-name)@attr(data-domain).attr(data.tld)',
+               },
+            },
+         }}
+         // sx={{
+         //    display: 'inline-block',
+
+         // }}
+         data-name="hello"
+         data-domain="cheba"
+         data-tld="me"
+         onClick={
+            (window.location.href =
+               'mailto:' +
+               this.dataset.name +
+               '@' +
+               this.dataset.domain +
+               '.' +
+               this.dataset.tld)
+         }
+      />
+   );
+};
+
 export default function Contact() {
    const [formMsg, setFormMsg] = useState('');
-   console.log(formMsg);
 
    const {
       palette: {
@@ -22,29 +52,42 @@ export default function Contact() {
    } = useTheme();
 
    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const formData = {};
-      Array.from(e.currentTarget.elements).forEach((field) => {
-         if (!field.name) return;
-         if (field.name === 'email') {
-            return (
-               validateEmail(field.value) &&
-               (formData[field.name] = field.value)
-            );
+      try {
+         e.preventDefault();
+         const formData = {};
+         Array.from(e.currentTarget.elements).forEach((field) => {
+            if (!field.name) return;
+            if (field.name === 'email') {
+               return (
+                  validateEmail(field.value) &&
+                  (formData[field.name] = field.value)
+               );
+            }
+            formData[field.name] = sanitizeString(field.value);
+         });
+         // Check honeypots
+         if (formData.emailInput || formData.yourEmail) {
+            return setFormMsg('You entered a few too many fields.');
          }
-         formData[field.name] = sanitizeString(field.value);
-      });
-      if (!formData.name || !formData.message) {
-         return setFormMsg('Please provide all required info.');
+         //Light validation
+         if (!formData.name || !formData.message) {
+            return setFormMsg('Please provide all required info.');
+         }
+         if (!formData.email) {
+            return setFormMsg('Please provide valid email.');
+         }
+         const res = await fetch('/api/contactForm', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+         });
+         const data = await res.json();
+         if (data) setFormMsg(data.msg);
+         console.log(data);
+      } catch (err) {
+         setFormMsg(
+            `An error occured while trying to send message. Please use email address above.`
+         );
       }
-      if (!formData.email) {
-         return setFormMsg('Please provide valid email.');
-      }
-      fetch('/api/contactForm', {
-         method: 'POST',
-         body: JSON.stringify(formData),
-      });
-      console.log(formData);
    };
    const inputStyles = {
       borderRadius: `${borderRadius}px`,
@@ -70,13 +113,16 @@ export default function Contact() {
          >
             <NeonHeading text={'Get In Touch'}></NeonHeading>
             <OutsetShadow customStyles={{ marginBottom: '48px' }}>
+               {console.log(<EmailBox />)}
                <Typography
                   sx={{ padding: '2rem 1.5rem' }}
                   align="center"
                   component="h4"
                >
                   {`Have a great idea for a project and want to make it happen?
-                   You can reach me at email@email.com or using the form below.
+                   You can reach me at `}
+                  <EmailBox />
+                  {` or using the form below.
                     I'm usually online for about 12 hours a day, so you can expect a fast reply :)`}
                </Typography>
             </OutsetShadow>
@@ -91,9 +137,9 @@ export default function Contact() {
                      <Grid item>
                         <TextField
                            fullWidth
-                           required
-                           id="name"
                            label="Name"
+                           minLength="2"
+                           maxLength="100"
                            name="name"
                            margin="normal"
                            sx={{ ...inputStyles }}
@@ -101,9 +147,18 @@ export default function Contact() {
                      </Grid>
                      <Grid item>
                         <TextField
+                           autoComplete="new-password"
                            fullWidth
-                           required
-                           id="email"
+                           label="Email"
+                           name="yourEmail"
+                           margin="normal"
+                           sx={{ position: 'absolute', left: '-160vw' }}
+                        />
+                     </Grid>
+                     {/* The right email */}
+                     <Grid item>
+                        <TextField
+                           fullWidth
                            label="Email"
                            name="email"
                            margin="normal"
@@ -112,11 +167,21 @@ export default function Contact() {
                      </Grid>
                      <Grid item>
                         <TextField
+                           autoComplete="new-password"
                            fullWidth
-                           required
-                           id="message"
+                           label="Email"
+                           name="emailInput"
+                           margin="normal"
+                           sx={{ position: 'fixed', width: 0, height: 0 }}
+                        />
+                     </Grid>
+                     <Grid item>
+                        <TextField
+                           fullWidth
                            label="Message"
                            name="message"
+                           minLength="3"
+                           maxLength="2000"
                            margin="normal"
                            multiline
                            rowsmax="7"
@@ -124,6 +189,7 @@ export default function Contact() {
                            sx={{ ...inputStyles }}
                         />
                      </Grid>
+
                      <Grid
                         container
                         direction="row"
@@ -155,13 +221,29 @@ export default function Contact() {
                         </Grid>
                      </Grid>
                   </form>
+                  {/* Show form message */}
+                  {formMsg && (
+                     <>
+                        <Grid
+                           item
+                           sx={{
+                              marginTop: '2rem',
+                              textAlign: 'center',
+                              borderRadius: '15px',
+                              background: cardBg,
+                              boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
+
+                              padding: '1rem',
+                           }}
+                        >
+                           {formMsg}
+                           <Box sx={{ display: 'none' }}>
+                              {setTimeout(() => setFormMsg(''), 6000)}
+                           </Box>
+                        </Grid>
+                     </>
+                  )}
                </Grid>
-               {/* Show form message */}
-               {formMsg && (
-                  <Grid item sx={{ marginTop: '2rem' }}>
-                     {formMsg}
-                  </Grid>
-               )}
             </Grid>
 
             <SocialIcons
