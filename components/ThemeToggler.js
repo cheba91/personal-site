@@ -198,15 +198,15 @@ export default function ThemeToggler({ changeTheme }) {
             {bubbleVisible && (
                <Box
                   sx={{
-                     width: '70px',
+                     width: '85px',
                      height: '40px',
-                     background: '#e9e9e9',
+                     background: '#1e1e1e',
                      padding: '0.3rem',
-                     color: '#000',
+                     color: '#f1f1f1',
                      fontSize: '13px',
                      position: 'absolute',
                      borderRadius: '15px',
-                     left: '-125px',
+                     left: '-135px',
                      top: '-30px',
                      display: 'flex',
                      justifyContent: 'center',
@@ -220,10 +220,10 @@ export default function ThemeToggler({ changeTheme }) {
                         height: '0',
                         borderLeft: '7px solid transparent',
                         borderRight: '7px solid transparent',
-                        borderTop: '25px solid #e9e9e9',
+                        borderTop: '25px solid #1e1e1e',
                         position: 'absolute',
                         top: '50%',
-                        right: '-20%',
+                        right: '-10%',
                         transform: 'rotate(-60deg)',
                      }}
                   ></Box>

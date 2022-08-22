@@ -19,14 +19,14 @@ export default function AllProjects() {
          >
             {`Projects`}
          </Typography>
-         <Grid container sx={{ padding: '1.5rem' }}>
+         <Grid container sx={{ padding: { xs: '0.8rem', sm: '1rem' } }}>
             {projectsData &&
                projectsData.map((project) => (
                   <Grid item sm={12} md={6} key={project.key}>
                      <OutsetShadow
                         customStyles={{
                            padding: { xs: '0.5rem 1rem', sm: '1rem 2rem' },
-                           margin: { xs: '0.5rem 0rem', sm: '0.8rem' },
+                           margin: { xs: '0.6rem 0rem', sm: '0.8rem' },
                         }}
                      >
                         {/* Title */}
@@ -52,7 +52,9 @@ export default function AllProjects() {
                               ))}
                         </Typography>
                         {/* Project desc */}
-                        <Typography pb={4}>{project.desc}</Typography>
+                        <Typography sx={{ textAlign: 'justify' }} pb={4}>
+                           {project.desc}
+                        </Typography>
                      </OutsetShadow>
                   </Grid>
                ))}

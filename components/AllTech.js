@@ -26,12 +26,13 @@ export default function AllTech() {
       'jQuery',
       'HTML',
       'CSS',
+      'Git & Github',
    ];
    return (
       <InsetShadow radius={`${borderRadius}px`}>
          <Box
             sx={{
-               padding: { xs: '0.8rem', sm: '1.5rem' },
+               padding: { xs: '0.8rem', sm: '1rem' },
             }}
          >
             <Typography
@@ -40,10 +41,11 @@ export default function AllTech() {
                sx={{
                   textAlign: 'center',
                   marginBottom: '2rem',
+                  paddingTop: '1rem',
                   textShadow: '3px 3px 4px #000',
                }}
             >
-               {`Tools & Tech`}
+               {`Tools & Technologies`}
             </Typography>
             <Grid
                container
@@ -60,7 +62,7 @@ export default function AllTech() {
                         margin: {
                            xs: '0 0.6rem 1rem 0',
                            sm: '0 0.8rem 1rem 0',
-                           textShadow: '3px 3px 4px #000',
+                           textShadow: `3px 3px 4px #000`,
                         },
                      }}
                   >
@@ -70,7 +72,10 @@ export default function AllTech() {
                         sx={{
                            fontSize: { xs: '0.9rem', sm: '1rem' },
                            padding: '1rem 2rem',
-                           padding: { xs: '0.7rem 1rem', sm: '1rem 2rem' },
+                           padding: {
+                              xs: '0.7rem 0.8rem',
+                              sm: '0.8rem 1.6rem',
+                           },
                            // borderRadius: `${borderRadius}px`,
                            // background: cardBg,
 
