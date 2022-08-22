@@ -1,4 +1,4 @@
-import { Box, Button, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid, Link, TextField, Typography } from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
 import { useTheme } from '@mui/material';
 import AnchorId from './ui/AnchorId';
@@ -8,40 +8,35 @@ import OutsetShadow from './ui/OutsetShadow';
 import { useState } from 'react';
 import { sanitizeString, validateEmail } from '../utils/sanitization';
 
-//Hide email
-const EmailBox = () => {
-   return (
-      <Box
-         inputProps={{
-            style: {
-               '&::after': {
-                  content: 'attr(data-name)@attr(data-domain).attr(data.tld)',
-               },
-            },
-         }}
-         // sx={{
-         //    display: 'inline-block',
-
-         // }}
-         data-name="hello"
-         data-domain="cheba"
-         data-tld="me"
-         onClick={
-            (window.location.href =
-               'mailto:' +
-               this.dataset.name +
-               '@' +
-               this.dataset.domain +
-               '.' +
-               this.dataset.tld)
-         }
-      />
-   );
-};
-
 export default function Contact() {
-   const [formMsg, setFormMsg] = useState('');
-
+   //Hide email
+   const EmailBox = () => {
+      const name = 'hello';
+      const domain = 'cheba';
+      const tld = 'me';
+      return (
+         <Link
+            onClick={handleEmailLink}
+            underline="none"
+            sx={{
+               cursor: 'pointer',
+               '&::before': {
+                  content: `'${name}@'`,
+               },
+               '&::after': {
+                  content: `'${domain}.${tld}'`,
+               },
+            }}
+            data-name="hello"
+            data-domain="cheba"
+            data-tld="me"
+         />
+      );
+   };
+   const handleEmailLink = (e) => {
+      const { name, domain, tld } = e.target.dataset;
+      return (window.location.href = `mailto:${name}@${domain}.${tld}`);
+   };
    const {
       palette: {
          primary: { main: mainClr },
@@ -50,7 +45,9 @@ export default function Contact() {
       },
       shape: { borderRadius },
    } = useTheme();
-
+   // HAndling submit & message
+   const [formMsg, setFormMsg] = useState('');
+   const [isErr, setIsErr] = useState(true);
    const handleSubmit = async (e) => {
       try {
          e.preventDefault();
@@ -81,9 +78,12 @@ export default function Contact() {
             body: JSON.stringify(formData),
          });
          const data = await res.json();
-         if (data) setFormMsg(data.msg);
-         console.log(data);
+         if (data) {
+            setFormMsg(data.msg);
+            setIsErr(data.status !== 'ok' ? true : false);
+         }
       } catch (err) {
+         setIsErr(true);
          setFormMsg(
             `An error occured while trying to send message. Please use email address above.`
          );
@@ -126,6 +126,32 @@ export default function Contact() {
                     I'm usually online for about 12 hours a day, so you can expect a fast reply :)`}
                </Typography>
             </OutsetShadow>
+            {/* Show form message */}
+            {formMsg && (
+               <>
+                  <Grid
+                     item
+                     sx={{
+                        marginBottom: '2rem',
+                        textAlign: 'center',
+                        borderRadius: '15px',
+                        background: `${
+                           isErr
+                              ? 'linear-gradient( rgb(29, 29, 29), #380808)'
+                              : 'linear-gradient( rgb(29, 29, 29), #083a08)'
+                        }`,
+                        boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
+
+                        padding: '1rem',
+                     }}
+                  >
+                     {formMsg}
+                     <Box sx={{ display: 'none' }}>
+                        {setTimeout(() => setFormMsg(''), 6000)}
+                     </Box>
+                  </Grid>
+               </>
+            )}
             <Grid
                container
                direction="column"
@@ -221,28 +247,6 @@ export default function Contact() {
                         </Grid>
                      </Grid>
                   </form>
-                  {/* Show form message */}
-                  {formMsg && (
-                     <>
-                        <Grid
-                           item
-                           sx={{
-                              marginTop: '2rem',
-                              textAlign: 'center',
-                              borderRadius: '15px',
-                              background: cardBg,
-                              boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
-
-                              padding: '1rem',
-                           }}
-                        >
-                           {formMsg}
-                           <Box sx={{ display: 'none' }}>
-                              {setTimeout(() => setFormMsg(''), 6000)}
-                           </Box>
-                        </Grid>
-                     </>
-                  )}
                </Grid>
             </Grid>
 

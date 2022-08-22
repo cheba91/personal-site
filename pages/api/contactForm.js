@@ -52,7 +52,6 @@ export default async function (req, res) {
          html: emailMessage.replace(/\r\n/g, '<br>'),
       };
       const response = await mail.send(data);
-      console.log(typeof statusCode);
       if (response[0].statusCode === 202) {
          return res.status(200).json({
             status: 'ok',

@@ -114,25 +114,6 @@ export default function ThemeToggler({ changeTheme }) {
                   height: '100%',
                   width: '100%',
                },
-               // White Reflection
-               // '&::after': {
-               //    width: '100%',
-               //    height: '100%',
-               //    content: "''",
-               //    position: 'absolute',
-               //    top: '27%',
-               //    left: '23%',
-               //    borderRadius: '50%',
-               //    filter: 'blur(1px)',
-               //    transform:
-               //       'translateX(-80px) translateY(-90px) skewX(-20deg)',
-               //  animation: 'moveShadow 4s infinite alternate',
-               // '@keyframes moveShadow': {
-               //    '0%': { top: '27%', left: '23%' },
-               //    // '50%': { left: '26%', top: '28%' },
-               //    '100%': { top: '27%', left: '23%' },
-               // },
-               // },
             }}
          ></Box>
          <Box
@@ -145,15 +126,6 @@ export default function ThemeToggler({ changeTheme }) {
                left: `${pinPosX - 1}px`,
                background: 'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
-               // '&::after': {
-               //    content: "''",
-               //    position: 'absolute',
-               //    bottom: 0,
-               //    left: '-2px',
-               //    height: '2px',
-               //    width: '8px',
-               //    background: '#424242',
-               // },
                // flag
                '&::before': {
                   content: '""',
@@ -200,7 +172,7 @@ export default function ThemeToggler({ changeTheme }) {
                   sx={{
                      width: '85px',
                      height: '40px',
-                     background: '#1e1e1e',
+                     background: '#424242',
                      padding: '0.3rem',
                      color: '#f1f1f1',
                      fontSize: '13px',
@@ -220,7 +192,7 @@ export default function ThemeToggler({ changeTheme }) {
                         height: '0',
                         borderLeft: '7px solid transparent',
                         borderRight: '7px solid transparent',
-                        borderTop: '25px solid #1e1e1e',
+                        borderTop: '25px solid #424242',
                         position: 'absolute',
                         top: '50%',
                         right: '-10%',
