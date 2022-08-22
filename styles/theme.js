@@ -42,6 +42,13 @@ export const theme = {
       },
       MuiCssBaseline: {
          styleOverrides: {
+            'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus':
+               {
+                  WebkitTextFillColor: '#f1f1f1',
+                  WebkitBoxShadow: 'none !important',
+                  transition: 'background-color 5000s ease-in-out 0s',
+                  // WebkitBoxShadow: '0 0 0px 100px rgb(30, 30, 30)',
+               },
             fieldset: {
                border: 'none !important',
             },

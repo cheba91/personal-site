@@ -5,19 +5,48 @@ import AnchorId from './ui/AnchorId';
 import SocialIcons from './SocialIcons';
 import NeonShadow from './ui/NeonShadow';
 import OutsetShadow from './ui/OutsetShadow';
+import { useState } from 'react';
+import { sanitizeString, validateEmail } from '../utils/sanitization';
 
 export default function Contact() {
+   const [formMsg, setFormMsg] = useState('');
+   console.log(formMsg);
+
    const {
       palette: {
          primary: { main: mainClr },
-         dark: { cardBg, main: darkClr, lighter: darkClrLighter },
+         dark: { cardBg, main: darkClr },
          text: { primary: textClr },
       },
       shape: { borderRadius },
    } = useTheme();
 
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+      const formData = {};
+      Array.from(e.currentTarget.elements).forEach((field) => {
+         if (!field.name) return;
+         if (field.name === 'email') {
+            return (
+               validateEmail(field.value) &&
+               (formData[field.name] = field.value)
+            );
+         }
+         formData[field.name] = sanitizeString(field.value);
+      });
+      if (!formData.name || !formData.message) {
+         return setFormMsg('Please provide all required info.');
+      }
+      if (!formData.email) {
+         return setFormMsg('Please provide valid email.');
+      }
+      fetch('/api/contactForm', {
+         method: 'POST',
+         body: JSON.stringify(formData),
+      });
+      console.log(formData);
+   };
    const inputStyles = {
-      // boxShadow: `inset -4px -4px 6px 0px rgb(45 45 45), inset 7px 7px 6px 0px rgb(10 10 10)`,
       borderRadius: `${borderRadius}px`,
       borderWidth: '0',
       boxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10)`,
@@ -58,14 +87,14 @@ export default function Contact() {
                alignItems="center"
             >
                <Grid item>
-                  <form id="contact-form">
+                  <form id="contact-form" onSubmit={handleSubmit}>
                      <Grid item>
                         <TextField
                            fullWidth
                            required
                            id="name"
                            label="Name"
-                           name="userName"
+                           name="name"
                            margin="normal"
                            sx={{ ...inputStyles }}
                         />
@@ -127,7 +156,14 @@ export default function Contact() {
                      </Grid>
                   </form>
                </Grid>
+               {/* Show form message */}
+               {formMsg && (
+                  <Grid item sx={{ marginTop: '2rem' }}>
+                     {formMsg}
+                  </Grid>
+               )}
             </Grid>
+
             <SocialIcons
                addStyles={{
                   mt: '5rem',
