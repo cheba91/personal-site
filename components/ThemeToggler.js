@@ -8,8 +8,8 @@ export default function ThemeToggler({ changeTheme }) {
    const pinWidth = 30;
    const ballSize = 170;
    const [bubbleVisible, setBubbleVisible] = useState(true);
-   const [pinPosX, setPinPosX] = useState(61.7);
-   const [pinPosY, setPinPosY] = useState(-9);
+   const [pinPosX, setPinPosX] = useState(113);
+   const [pinPosY, setPinPosY] = useState(-9.2);
 
    const componentToHex = (c) => {
       let hex = c.toString(16);
@@ -70,7 +70,6 @@ export default function ThemeToggler({ changeTheme }) {
    };
    return (
       // Outer Ball
-
       <Box
          sx={{
             // zIndex: 20,
@@ -86,7 +85,6 @@ export default function ThemeToggler({ changeTheme }) {
             '@keyframes moveBall': {
                '100%': {
                   transform: 'translate(-50%, 0) scale(1.05)',
-                  // transform: 'scale(1.01)',
                },
             },
          }}
@@ -157,7 +155,6 @@ export default function ThemeToggler({ changeTheme }) {
          >
             {/* Monster */}
             <Monster
-               clr={mainClr}
                customStyles={{
                   position: 'absolute',
                   left: `-${pinWidth + 16}px`,
@@ -178,8 +175,8 @@ export default function ThemeToggler({ changeTheme }) {
                      fontSize: '13px',
                      position: 'absolute',
                      borderRadius: '15px',
-                     left: '-135px',
-                     top: '-30px',
+                     left: '-133px',
+                     top: '-27px',
                      display: 'flex',
                      justifyContent: 'center',
                      alignItems: 'center',

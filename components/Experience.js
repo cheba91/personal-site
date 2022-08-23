@@ -1,8 +1,5 @@
 import AllProjects from './AllProjects';
-import { Box, Button, Grid, Typography } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { useState } from 'react';
+import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
 import AnchorId from './ui/AnchorId';
@@ -38,13 +35,15 @@ export default function Experience() {
                {/* Short desc */}
                <OutsetShadow
                   customStyles={{
-                     // paddingBottom: { xs: '1.5rem', sm: '2rem' },
-                     // paddingTop: { xs: '1.5rem', sm: '2rem' },
                      marginBottom: '4rem',
                   }}
                >
                   <Typography
-                     sx={{ padding: '2rem 1.5rem', textAlign: 'justify' }}
+                     sx={{
+                        padding: '2rem 1.5rem',
+                        textAlign: 'justify',
+                        fontSize: { xs: '0.9rem', sm: '1rem' },
+                     }}
                   >{`Short desc...Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Sequi minus aspernatur, neque odit, rem similique accusantium
                   delectus veritatis quisquam quibusdam perferendis ratione est?

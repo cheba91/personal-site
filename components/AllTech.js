@@ -4,14 +4,6 @@ import InsetShadow from './ui/InsetShadow';
 import OutsetShadow from './ui/OutsetShadow';
 
 export default function AllTech() {
-   const {
-      palette: {
-         primary: { main: mainClr },
-         dark: { cardBg, main: darkClr, light: darkClrLighter },
-         text: { primary: textClr },
-      },
-      shape: { borderRadius },
-   } = useTheme();
    const techs = [
       'JavaScript',
       'Node',
@@ -29,7 +21,7 @@ export default function AllTech() {
       'Git & Github',
    ];
    return (
-      <InsetShadow radius={`${borderRadius}px`}>
+      <InsetShadow>
          <Box
             sx={{
                padding: { xs: '0.8rem', sm: '1rem' },
@@ -50,14 +42,12 @@ export default function AllTech() {
             <Grid
                container
                sx={{
-                  //   rowSpacing: '1rem',
                   justifyContent: 'space-evenly',
                }}
             >
                {techs.map((tech) => (
                   <OutsetShadow
                      key={tech}
-                     radius={`${borderRadius}px`}
                      customStyles={{
                         margin: {
                            xs: '0 0.6rem 1rem 0',
@@ -76,10 +66,6 @@ export default function AllTech() {
                               xs: '0.7rem 0.8rem',
                               sm: '0.8rem 1.6rem',
                            },
-                           // borderRadius: `${borderRadius}px`,
-                           // background: cardBg,
-
-                           //    boxShadow: ` -1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
                         }}
                      >
                         {tech}

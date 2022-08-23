@@ -46,6 +46,7 @@ export const theme = {
                {
                   WebkitTextFillColor: '#f1f1f1',
                   WebkitBoxShadow: 'none !important',
+                  boxShadow: 'none !important',
                   transition: 'background-color 600000s 0s, color 600000s 0s',
                   backgroundColor: 'transparent !important',
                   backgroundClip: 'content-box !important',

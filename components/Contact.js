@@ -115,8 +115,11 @@ export default function Contact() {
             <NeonHeading text={'Get In Touch'}></NeonHeading>
             <OutsetShadow customStyles={{ marginBottom: '48px' }}>
                <Typography
-                  sx={{ padding: '2rem 1.5rem' }}
-                  align="center"
+                  sx={{
+                     padding: '2rem 1.5rem',
+                     fontSize: { xs: '0.9rem', sm: '1rem' },
+                     textAlign: { xs: 'justify', sm: 'center' },
+                  }}
                   component="h4"
                >
                   {`Have a great idea for a project and want to make it happen?
@@ -244,6 +247,7 @@ export default function Contact() {
                                  fontWeight: '600',
                                  boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 5px 0px ${mainClr}`,
                                  padding: '0.7rem 1.9rem',
+                                 fontSize: { xs: '0.9rem', sm: '1rem' },
                                  '&:hover': {
                                     border: `none`,
                                     background: cardBg,

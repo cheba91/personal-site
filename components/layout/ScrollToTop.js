@@ -2,7 +2,6 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import Fade from '@mui/material/Fade';
 import { useTheme } from '@mui/material';
 

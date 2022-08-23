@@ -30,6 +30,7 @@ export default function NeonHeading({ text }) {
             whiteSpace: 'nowrap',
             textAlign: 'center',
             textShadow: '3px 3px 4px #000',
+            fontSize: { xs: '1.7rem', sm: '2rem' },
          }}
       >
          <Dot />

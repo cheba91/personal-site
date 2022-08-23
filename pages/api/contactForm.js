@@ -9,7 +9,6 @@ const sanitizeString = (str) => {
 };
 
 export default async function (req, res) {
-   console.log(req.body);
    try {
       const { name, email, message, yourEmail, emailInput } = JSON.parse(
          req.body

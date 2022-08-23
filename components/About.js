@@ -2,7 +2,6 @@ import { Box, Grid, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
 import myImage from '../public/myImage.png';
 import AnchorId from './ui/AnchorId';
-import InsetShadow from './ui/InsetShadow';
 import NeonHeading from './ui/NeonHeading';
 import NeonShadow from './ui/NeonShadow';
 import OutsetShadow from './ui/OutsetShadow';
@@ -61,15 +60,33 @@ export default function About() {
                </Grid>
                {/* Text */}
                <Grid item xs={12} md={7}>
-                  <OutsetShadow customStyles={{ padding: '1.5rem' }}>
-                     <Typography mb={2}>
+                  <OutsetShadow
+                     customStyles={{
+                        padding: '1.5rem',
+                     }}
+                  >
+                     <Typography
+                        mb={2}
+                        sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}
+                     >
                         {`Hey, I'm good at reading docs ;)`}
                      </Typography>
-                     <Typography sx={{ textAlign: 'justify' }}>
+                     <Typography
+                        sx={{
+                           textAlign: 'justify',
+                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                        }}
+                     >
                         {`I'm a self-taught web developer from Slovenia and I've been in web development for 4+ years. 
                   My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
                      </Typography>
-                     <Typography sx={{ textAlign: 'justify' }} mt={2}>
+                     <Typography
+                        sx={{
+                           textAlign: 'justify',
+                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                        }}
+                        mt={2}
+                     >
                         {`I enjoy working on creative projects and learning about new things. My code is clean and elegant, and I always prioritize security and performance.`}
                      </Typography>
                   </OutsetShadow>
@@ -117,8 +134,6 @@ export default function About() {
                            src={myImage.src}
                            sx={{
                               borderRadius: '50%',
-                              // border: `4px solid rgb(50, 50, 50)`,
-                              // boxShadow: `1px 1px 15px 0px ${mainClr}`,
                               boxShadow: `-1px -2px 7px 0px rgb(120 120 120), 10px 7px 15px 5px rgb(20 20 20)`,
                               height: imgSize,
                               width: imgSize,

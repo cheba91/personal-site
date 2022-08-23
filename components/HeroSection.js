@@ -1,4 +1,4 @@
-import { Grid, Typography, Box, Container, useTheme } from '@mui/material';
+import { Grid, Typography, Box, useTheme } from '@mui/material';
 import ThemeToggler from './ThemeToggler';
 import imgBg from '../public/starsBg.png';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
@@ -67,7 +67,6 @@ export default function HeroSection({ changeTheme }) {
                   left: '40%',
                   background: `linear-gradient(to right, ${oppositeClr} , #000)`,
                   filter: `blur(10px)`,
-                  // animation: 'movePlanet1 2s infinite linear',
                   animation: 'movePlanet1 12s infinite linear',
                   WebkitPerspective: 1000,
                   '@keyframes movePlanet1': {
@@ -91,7 +90,6 @@ export default function HeroSection({ changeTheme }) {
                   borderRadius: '50%',
                   background: `linear-gradient( to left, #000, ${darkMainClr1})`,
                   filter: `blur(5px)`,
-                  // animation: 'movePlanet2 2s infinite linear',
                   animation: 'movePlanet2 8s infinite linear',
                   '@keyframes movePlanet2': {
                      '40%': {
@@ -104,18 +102,6 @@ export default function HeroSection({ changeTheme }) {
                         transform: 'scale(4)',
                      },
                   },
-                  // '&::before': {
-                  //    content: "''",
-                  //    position: 'absolute',
-                  //    width: '180%',
-                  //    height: '2.5rem',
-                  //    top: '45%',
-                  //    left: '-40%',
-                  //    // background: `linear-gradient(#0c0c0c 60%, ${darkMainClr1})`,
-                  //    background: '#0c0c0c',
-                  //    borderRadius: '45%',
-                  //    transform: 'skewY(12deg)',
-                  // },
                }}
             />
             {/* BALL 3 - small fixed clr */}

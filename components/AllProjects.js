@@ -25,7 +25,7 @@ export default function AllProjects() {
                   <Grid item sm={12} md={6} key={project.key}>
                      <OutsetShadow
                         customStyles={{
-                           padding: { xs: '0.5rem 1rem', sm: '1rem 2rem' },
+                           padding: { xs: '1rem', sm: '2rem' },
                            margin: { xs: '0.6rem 0rem', sm: '0.8rem' },
                         }}
                      >
@@ -52,7 +52,12 @@ export default function AllProjects() {
                               ))}
                         </Typography>
                         {/* Project desc */}
-                        <Typography sx={{ textAlign: 'justify' }} pb={4}>
+                        <Typography
+                           sx={{
+                              textAlign: 'justify',
+                              fontSize: { xs: '0.9rem', sm: '1rem' },
+                           }}
+                        >
                            {project.desc}
                         </Typography>
                      </OutsetShadow>
