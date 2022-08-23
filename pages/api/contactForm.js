@@ -9,8 +9,19 @@ const sanitizeString = (str) => {
 };
 
 export default async function (req, res) {
+   console.log(req.body);
    try {
-      const { name, email, message } = JSON.parse(req.body);
+      const { name, email, message, yourEmail, emailInput } = JSON.parse(
+         req.body
+      );
+      //   Honeypots
+      if (emailInput || yourEmail) {
+         return res.status(500).json({
+            status: 'fail',
+            msg: `You entered a few too many fields.`,
+         });
+      }
+
       if (
          !name ||
          !sanitizeString(name) ||

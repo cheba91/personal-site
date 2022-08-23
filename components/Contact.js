@@ -83,6 +83,7 @@ export default function Contact() {
             setIsErr(data.status !== 'ok' ? true : false);
          }
       } catch (err) {
+         console.log(err);
          setIsErr(true);
          setFormMsg(
             `An error occured while trying to send message. Please use email address above.`
@@ -113,7 +114,6 @@ export default function Contact() {
          >
             <NeonHeading text={'Get In Touch'}></NeonHeading>
             <OutsetShadow customStyles={{ marginBottom: '48px' }}>
-               {console.log(<EmailBox />)}
                <Typography
                   sx={{ padding: '2rem 1.5rem' }}
                   align="center"
@@ -178,7 +178,11 @@ export default function Contact() {
                            label="Email"
                            name="yourEmail"
                            margin="normal"
-                           sx={{ position: 'absolute', left: '-160vw' }}
+                           inputProps={{ tabIndex: '-1' }}
+                           sx={{
+                              position: 'absolute',
+                              left: '-160vw',
+                           }}
                         />
                      </Grid>
                      {/* The right email */}
@@ -198,7 +202,12 @@ export default function Contact() {
                            label="Email"
                            name="emailInput"
                            margin="normal"
-                           sx={{ position: 'fixed', width: 0, height: 0 }}
+                           inputProps={{ tabIndex: '-1' }}
+                           sx={{
+                              position: 'fixed',
+                              width: 0,
+                              height: 0,
+                           }}
                         />
                      </Grid>
                      <Grid item>

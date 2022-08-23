@@ -48,12 +48,13 @@ export const theme = {
                   WebkitBoxShadow: 'none !important',
                   transition: 'background-color 600000s 0s, color 600000s 0s',
                   backgroundColor: 'transparent !important',
+                  backgroundClip: 'content-box !important',
                   // WebkitBoxShadow: '0 0 0px 0px rgb(30, 30, 30) !important',
                },
-            'input:-internal-autofill-selected': {
-               backgroundColor: 'red !important',
-               color: 'red !important',
-            },
+            // 'input:-internal-autofill-selected': {
+            //    backgroundColor: 'red !important',
+            //    color: 'red !important',
+            // },
             input: {
                colorScheme: 'dark',
             },
@@ -61,6 +62,7 @@ export const theme = {
                border: 'none !important',
             },
             body: {
+               // Scroll bar
                scrollbarColor: '#6b6b6b #2b2b2b',
                '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
                   backgroundColor: '#2b2b2b',
