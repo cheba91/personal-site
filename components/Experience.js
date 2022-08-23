@@ -44,10 +44,10 @@ export default function Experience() {
                         textAlign: 'left',
                         fontSize: { xs: '0.95rem', sm: '1rem' },
                      }}
-                  >{`Short desc...Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sequi minus aspernatur, neque odit, rem similique accusantium
-                  delectus veritatis quisquam quibusdam perferendis ratione est?
-                  Nihil ad quia iure deleniti distinctio tenetur?`}</Typography>
+                  >{`I've been in web development for the past 4+ years. I began with WordPress, 
+                  but lately, the MERN stack and Next.js have gotten most of my attention. I have primarily 
+                  worked as a freelancer on projects for a small number of web development studios, either from 
+                  scratch, or to optimise, fix, or upgrade already existing projects.`}</Typography>
                </OutsetShadow>
                <AllTech />
                {/* Projects */}
