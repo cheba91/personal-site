@@ -41,8 +41,8 @@ export default function Experience() {
                   <Typography
                      sx={{
                         padding: '2rem 1.5rem',
-                        textAlign: 'justify',
-                        fontSize: { xs: '0.9rem', sm: '1rem' },
+                        textAlign: 'left',
+                        fontSize: { xs: '0.95rem', sm: '1rem' },
                      }}
                   >{`Short desc...Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Sequi minus aspernatur, neque odit, rem similique accusantium

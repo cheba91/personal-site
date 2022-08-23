@@ -67,14 +67,14 @@ export default function About() {
                   >
                      <Typography
                         mb={2}
-                        sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}
+                        sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}
                      >
                         {`Hey, I'm good at reading docs ;)`}
                      </Typography>
                      <Typography
                         sx={{
-                           textAlign: 'justify',
-                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                           textAlign: 'left',
+                           fontSize: { xs: '0.95rem', sm: '1rem' },
                         }}
                      >
                         {`I'm a self-taught web developer from Slovenia and I've been in web development for 4+ years. 
@@ -82,8 +82,8 @@ export default function About() {
                      </Typography>
                      <Typography
                         sx={{
-                           textAlign: 'justify',
-                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                           textAlign: 'left',
+                           fontSize: { xs: '0.95rem', sm: '1rem' },
                         }}
                         mt={2}
                      >

@@ -117,8 +117,8 @@ export default function Contact() {
                <Typography
                   sx={{
                      padding: '2rem 1.5rem',
-                     fontSize: { xs: '0.9rem', sm: '1rem' },
-                     textAlign: { xs: 'justify', sm: 'center' },
+                     fontSize: { xs: '0.95rem', sm: '1rem' },
+                     textAlign: 'center',
                   }}
                   component="h4"
                >
@@ -247,7 +247,7 @@ export default function Contact() {
                                  fontWeight: '600',
                                  boxShadow: `-4px -4px 12px ${darkClr}, 2px 2px 5px 0px ${mainClr}`,
                                  padding: '0.7rem 1.9rem',
-                                 fontSize: { xs: '0.9rem', sm: '1rem' },
+                                 fontSize: { xs: '0.95rem', sm: '1rem' },
                                  '&:hover': {
                                     border: `none`,
                                     background: cardBg,

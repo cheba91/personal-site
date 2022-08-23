@@ -54,8 +54,8 @@ export default function AllProjects() {
                         {/* Project desc */}
                         <Typography
                            sx={{
-                              textAlign: 'justify',
-                              fontSize: { xs: '0.9rem', sm: '1rem' },
+                              textAlign: 'left',
+                              fontSize: { xs: '0.95rem', sm: '1rem' },
                            }}
                         >
                            {project.desc}

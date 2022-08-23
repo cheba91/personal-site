@@ -60,7 +60,7 @@ export default function AllTech() {
                         item
                         key={tech}
                         sx={{
-                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                           fontSize: { xs: '0.95rem', sm: '1rem' },
                            padding: '1rem 2rem',
                            padding: {
                               xs: '0.7rem 0.8rem',

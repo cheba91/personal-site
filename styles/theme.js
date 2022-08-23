@@ -62,6 +62,7 @@ export const theme = {
             fieldset: {
                border: 'none !important',
             },
+            '*:focus': { outline: 'none' },
             body: {
                // Scroll bar
                scrollbarColor: '#6b6b6b #2b2b2b',
