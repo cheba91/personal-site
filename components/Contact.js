@@ -27,9 +27,9 @@ export default function Contact() {
                   content: `'${domain}.${tld}'`,
                },
             }}
-            data-name="hello"
-            data-domain="cheba"
-            data-tld="me"
+            data-name={name}
+            data-domain={domain}
+            data-tld={tld}
          />
       );
    };
@@ -73,7 +73,7 @@ export default function Contact() {
          if (!formData.email) {
             return setFormMsg('Please provide valid email.');
          }
-         const res = await fetch('/api/contactForm', {
+         const res = await fetch('/api/contact-form', {
             method: 'POST',
             body: JSON.stringify(formData),
          });
@@ -129,32 +129,7 @@ export default function Contact() {
                     I'm usually online for about 12 hours a day, so you can expect a fast reply :)`}
                </Typography>
             </OutsetShadow>
-            {/* Show form message */}
-            {formMsg && (
-               <>
-                  <Grid
-                     item
-                     sx={{
-                        marginBottom: '2rem',
-                        textAlign: 'center',
-                        borderRadius: '15px',
-                        background: `${
-                           isErr
-                              ? 'linear-gradient( rgb(29, 29, 29), #380808)'
-                              : 'linear-gradient( rgb(29, 29, 29), #083a08)'
-                        }`,
-                        boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
 
-                        padding: '1rem',
-                     }}
-                  >
-                     {formMsg}
-                     <Box sx={{ display: 'none' }}>
-                        {setTimeout(() => setFormMsg(''), 6000)}
-                     </Box>
-                  </Grid>
-               </>
-            )}
             <Grid
                container
                direction="column"
@@ -260,6 +235,32 @@ export default function Contact() {
                         </Grid>
                      </Grid>
                   </form>
+                  {/* Show form message */}
+                  {formMsg && (
+                     <>
+                        <Grid
+                           item
+                           sx={{
+                              marginTop: '2rem',
+                              textAlign: 'center',
+                              borderRadius: '15px',
+                              background: `${
+                                 isErr
+                                    ? 'linear-gradient( rgb(29, 29, 29), #380808)'
+                                    : 'linear-gradient( rgb(29, 29, 29), #083a08)'
+                              }`,
+                              boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
+
+                              padding: '1rem',
+                           }}
+                        >
+                           {formMsg}
+                           <Box sx={{ display: 'none' }}>
+                              {setTimeout(() => setFormMsg(''), 6000)}
+                           </Box>
+                        </Grid>
+                     </>
+                  )}
                </Grid>
             </Grid>
 

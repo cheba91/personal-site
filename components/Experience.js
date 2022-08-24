@@ -45,9 +45,10 @@ export default function Experience() {
                         fontSize: { xs: '0.95rem', sm: '1rem' },
                      }}
                   >{`I've been in web development for the past 4+ years. I began with WordPress, 
-                  but lately, the MERN stack and Next.js have gotten most of my attention. I have primarily 
-                  worked as a freelancer on projects for a small number of web development studios, either from 
-                  scratch, or to optimise, fix, or upgrade already existing projects.`}</Typography>
+                  but lately, the MERN stack and Next.js have gotten most of my attention. I have 
+                  primarily worked as a freelancer for a couple of web development studios, 
+                  either by starting from scratch or optimizing, fixing, or upgrading already 
+                  existing projects.`}</Typography>
                </OutsetShadow>
                <AllTech />
                {/* Projects */}

@@ -1,12 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
-
+import { sanitizeString, validateEmail } from '../../utils/sanitization';
 const mail = require('@sendgrid/mail');
 mail.setApiKey(process.env.SENDGRID_API_KEY);
-const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
-const sanitizeString = (str) => {
-   str = str.replace(/[^a-z0-9áéíóúñüčšćžđ \.,_-]/gim, '');
-   return str.trim();
-};
+// const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+// const sanitizeString = (str) => {
+//    str = str.replace(/[^a-z0-9áéíóúñüčšćžđ \.,_-]/gim, '');
+//    return str.trim();
+// };
 
 export default async function (req, res) {
    try {

@@ -43,9 +43,11 @@ export default function About() {
             <Grid
                mb={10}
                container
+               // spacing={4}
                rows={2}
                sx={{
                   position: 'relative',
+
                   justifyContent: 'space-between',
                   zIndex: '0',
                   borderRadius: `${borderRadius}px`,
@@ -59,7 +61,7 @@ export default function About() {
                   <NeonHeading text={'About me'} />
                </Grid>
                {/* Text */}
-               <Grid item xs={12} md={7}>
+               <Grid item xs={12} md={7.5}>
                   <OutsetShadow
                      customStyles={{
                         padding: '1.5rem',
@@ -75,19 +77,32 @@ export default function About() {
                         sx={{
                            textAlign: 'left',
                            fontSize: { xs: '0.95rem', sm: '1rem' },
+                           marginBottom: '1rem',
                         }}
                      >
-                        {`I'm a self-taught web developer from Slovenia and I've been in web development for 4+ years. 
-                  My journey began with WordPress, but I soon shifted to the Javascript ecosystem and my current favorite framework Next.js.`}
+                        {`I'm a self-taught web developer from Slovenia. I've been in the military for 10 years 
+                        and I started in web development 4+ years ago. I freelance,  sometimes work out, and 
+                        always drink coffee.`}
+                     </Typography>
+                     <Typography
+                        sx={{
+                           textAlign: 'left',
+                           fontSize: { xs: '0.95rem', sm: '1rem' },
+                           marginBottom: '1rem',
+                        }}
+                     >
+                        {`Most of the time, my role is being the “outsource guy” who's going to fix or create 
+                        stuff on the web. I love being in this role because it exposes me to a wide range of 
+                        issues and technologies, which allows me to continuously learn new things.`}
                      </Typography>
                      <Typography
                         sx={{
                            textAlign: 'left',
                            fontSize: { xs: '0.95rem', sm: '1rem' },
                         }}
-                        mt={2}
                      >
-                        {`I enjoy working on creative projects and learning about new things. My code is clean and elegant, and I always prioritize security and performance.`}
+                        {`I enjoy working on innovative projects that aim for the highest quality rather than just fast delivery.
+`}
                      </Typography>
                   </OutsetShadow>
                </Grid>
