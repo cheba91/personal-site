@@ -42,16 +42,27 @@ export const theme = {
       },
       MuiCssBaseline: {
          styleOverrides: {
-            'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus':
+            'input:-webkit-autofill,input:-webkit-autofill:hover, input:-webkit-autofill:focus,input:-webkit-autofill:active, textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus':
                {
                   WebkitTextFillColor: '#f1f1f1',
                   WebkitBoxShadow: 'none !important',
                   boxShadow: 'none !important',
-                  transition: 'background-color 600000s 0s, color 600000s 0s',
+                  transition: 'background-color 5000s ease-in-out 0s',
                   backgroundColor: 'transparent !important',
                   backgroundClip: 'content-box !important',
                   // WebkitBoxShadow: '0 0 0px 0px rgb(30, 30, 30) !important',
                },
+            '@-webkit-keyframes autofill': {
+               '0%,100%': {
+                  color: '#f1f1f1 !important',
+                  background: 'transparent !important',
+               },
+            },
+            'input:-webkit-autofill': {
+               WebkitAnimationDelay: '1s',
+               WebkitAnimationName: 'autofill',
+               WebkitAnimationFillMode: 'both',
+            },
             // 'input:-internal-autofill-selected': {
             //    backgroundColor: 'red !important',
             //    color: 'red !important',
