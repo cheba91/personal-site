@@ -1,6 +1,5 @@
 import AllProjects from './AllProjects';
-import { Box, Typography } from '@mui/material';
-import { useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
 import AnchorId from './ui/AnchorId';
 import NeonShadow from './ui/NeonShadow';
@@ -41,7 +40,7 @@ export default function Experience() {
                   <Typography
                      sx={{
                         padding: '2rem 1.5rem',
-                        textAlign: 'left',
+                        textAlign: 'center',
                         fontSize: { xs: '0.95rem', sm: '1rem' },
                      }}
                   >{`I've been in web development for the past 4+ years. I began with WordPress, 

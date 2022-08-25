@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
-import myImage from '../public/myImage.png';
+import myImage from '../public/myImage.jpg';
 import AnchorId from './ui/AnchorId';
 import NeonHeading from './ui/NeonHeading';
 import NeonShadow from './ui/NeonShadow';
@@ -149,7 +149,7 @@ export default function About() {
                            src={myImage.src}
                            sx={{
                               borderRadius: '50%',
-                              boxShadow: `-1px -2px 7px 0px rgb(120 120 120), 10px 7px 15px 5px rgb(20 20 20)`,
+                              boxShadow: `6px 5px 15px 5px rgb(20 20 20)`,
                               height: imgSize,
                               width: imgSize,
                               maxWidth: '100%',

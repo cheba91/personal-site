@@ -4,22 +4,18 @@ import { Grid } from '@mui/material';
 import InsetShadow from './ui/InsetShadow';
 import { projectsData } from '../data/projects';
 import OutsetShadow from './ui/OutsetShadow';
+import SubHeading from './ui/SubHeading';
 
 export default function AllProjects() {
    return (
-      <InsetShadow customStyles={{ marginTop: '4rem' }}>
-         <Typography
-            component="h3"
-            variant="h5"
-            sx={{
-               textAlign: 'center',
-               paddingTop: '2rem',
-               textShadow: '3px 3px 4px #000',
-            }}
-         >
-            {`Projects`}
-         </Typography>
-         <Grid container sx={{ padding: { xs: '0.8rem', sm: '1rem' } }}>
+      <InsetShadow
+         customStyles={{
+            marginTop: '4rem',
+            padding: { xs: '0.8rem', sm: '1rem' },
+         }}
+      >
+         <SubHeading text={'Projects'} />
+         <Grid container>
             {projectsData &&
                projectsData.map((project) => (
                   <Grid item sm={12} md={6} key={project.key}>

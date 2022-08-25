@@ -1,5 +1,6 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import { Grid } from '@mui/material';
+import SubHeading from './ui/SubHeading';
 import InsetShadow from './ui/InsetShadow';
 import OutsetShadow from './ui/OutsetShadow';
 
@@ -27,18 +28,7 @@ export default function AllTech() {
                padding: { xs: '0.8rem', sm: '1rem' },
             }}
          >
-            <Typography
-               component="h3"
-               variant="h5"
-               sx={{
-                  textAlign: 'center',
-                  marginBottom: '2rem',
-                  paddingTop: '1rem',
-                  textShadow: '3px 3px 4px #000',
-               }}
-            >
-               {`Tools & Technologies`}
-            </Typography>
+            <SubHeading text={'Tools & Tech'} />
             <Grid
                container
                sx={{

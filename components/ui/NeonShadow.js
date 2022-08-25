@@ -1,5 +1,4 @@
-import { Box } from '@mui/material';
-import { useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 
 export default function NeonShadow({ children, radius, customClr = false }) {
    const {

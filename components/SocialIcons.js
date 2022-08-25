@@ -1,7 +1,6 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Grid, Link } from '@mui/material';
-import { useTheme } from '@mui/material';
+import { Grid, Link, useTheme } from '@mui/material';
 
 const IconLink = ({ link, children }) => {
    const textClr = useTheme().palette.text.primary;

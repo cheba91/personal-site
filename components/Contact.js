@@ -1,6 +1,13 @@
-import { Box, Button, Grid, Link, TextField, Typography } from '@mui/material';
+import {
+   Box,
+   Button,
+   Grid,
+   Link,
+   TextField,
+   Typography,
+   useTheme,
+} from '@mui/material';
 import NeonHeading from './ui/NeonHeading';
-import { useTheme } from '@mui/material';
 import AnchorId from './ui/AnchorId';
 import SocialIcons from './SocialIcons';
 import NeonShadow from './ui/NeonShadow';
@@ -125,7 +132,7 @@ export default function Contact() {
                   {`Have a great idea for a project and want to make it happen?
                    You can reach me at `}
                   <EmailBox />
-                  {` or using the form below.
+                  {` or by using the form below.
                     I'm usually online for about 12 hours a day, so you can expect a fast reply :)`}
                </Typography>
             </OutsetShadow>

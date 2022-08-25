@@ -1,5 +1,4 @@
-import { Button } from '@mui/material';
-import { useTheme } from '@mui/material';
+import { Button, useTheme } from '@mui/material';
 
 export default function CustomButton({ text, btnType }) {
    const {

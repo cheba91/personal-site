@@ -1,19 +1,21 @@
 import { Typography, useTheme } from '@mui/material';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import HeadingLine from './HeadingLine';
 
-const Dot = () => {
-   const { main: mainClr } = useTheme().palette.primary;
+const Dot = ({ side }) => {
+   const mainClr = useTheme().palette.primary.main;
    return (
       <FiberManualRecordIcon
          sx={{
-            fontSize: 'medium',
+            fontSize: 'small',
             verticalAlign: 'middle',
-            marginRight: '0.8rem',
-            marginLeft: '0.8rem',
+            marginLeft: side === 'right' ? '0.8rem' : '',
+            marginRight: side === 'left' ? '0.8rem' : '',
             border: 'none',
             borderRadius: '50%',
-            animation: 'pulseDot 1s infinite alternate ease-in',
-            boxShadow: `1px 1px 0px 0px ${mainClr}`,
+            boxShadow: `${
+               side === 'right' ? 'inset' : ''
+            } 1px 0px 1px 0px ${mainClr}`,
          }}
       />
    );
@@ -33,9 +35,11 @@ export default function NeonHeading({ text }) {
             fontSize: { xs: '1.7rem', sm: '2rem' },
          }}
       >
-         <Dot />
+         <HeadingLine direction={'right'} />
+         <Dot side={'left'} />
          {text}
-         <Dot />
+         <Dot side={'right'} />
+         <HeadingLine direction={'left'} />
       </Typography>
    );
 }
