@@ -46,8 +46,8 @@ export default function Experience() {
                   >{`I've been in web development for the past 4+ years. I began with WordPress, 
                   but lately, the MERN stack and Next.js have gotten most of my attention. I have 
                   primarily worked as a freelancer for a couple of web development studios, 
-                  either by starting from scratch or optimizing, fixing, or upgrading already 
-                  existing projects.`}</Typography>
+                  either by starting from scratch or optimizing, fixing or upgrading already 
+                  existing projects. Please note that I won't be linking to any of the projects I worked on for them.`}</Typography>
                </OutsetShadow>
                <AllTech />
                {/* Projects */}

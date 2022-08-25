@@ -26,5 +26,9 @@ export const projectsData = [
       GitHub, it automatically deploys to Vercel. It does not have a typical server-side 
       to it and handles the contact form using a serverless function. As of this writing, 
       the score on GTmetrix is 245ms for the largest contentful paint and 641ms for time to interactive.`,
+      points: [
+         `You can change the website's color`,
+         'Hover/click my profile picture ;)',
+      ],
    },
 ];

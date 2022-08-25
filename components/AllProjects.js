@@ -45,7 +45,7 @@ export default function AllProjects() {
                         <Typography
                            sx={{
                               fontSize: { xs: '0.95rem', sm: '1rem' },
-                              marginBottom: '0.5rem',
+                              // marginBottom: '0.5rem',
                            }}
                            // color="text.secondary"
                         >
@@ -96,7 +96,7 @@ export default function AllProjects() {
                            {project.desc}
                         </Typography>
                         {/* Points */}
-                        {project.points && (
+                        {project.points?.length > 0 && (
                            <>
                               <Typography
                                  sx={{
