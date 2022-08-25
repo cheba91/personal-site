@@ -119,9 +119,9 @@ export default function ThemeToggler({ changeTheme }) {
             sx={{
                position: 'absolute',
                height: `${pinWidth + 5}px`,
-               width: `4px`,
-               top: `${pinPosY - 5}px`,
-               left: `${pinPosX - 1}px`,
+               width: `2px`,
+               top: `${pinPosY - 6}px`,
+               left: `${pinPosX - 3}px`,
                background: 'linear-gradient( to left, #fff, rgb(60, 60, 60))',
 
                // flag
@@ -138,16 +138,16 @@ export default function ThemeToggler({ changeTheme }) {
                   position: 'absolute',
                   height: `${pinWidth / 2}px`,
                   width: `${pinWidth}px`,
-                  left: '3px',
+                  left: '2px',
                   top: '1px',
                   background:
                      'linear-gradient( to left, #fff, rgb(60, 60, 60))',
                   boxShadow: `1px 1px 0px 1px rgb(120, 120, 120)`,
-                  transformOrigin: 'top',
+                  transformOrigin: 'left',
                   animation: 'moveFlag 0.7s infinite alternate',
                   '@keyframes moveFlag': {
                      '100%': {
-                        transform: 'skewX(9deg)',
+                        transform: 'skewY(4deg)',
                      },
                   },
                },
@@ -157,10 +157,10 @@ export default function ThemeToggler({ changeTheme }) {
             <Monster
                customStyles={{
                   position: 'absolute',
-                  left: `-${pinWidth + 16}px`,
-                  top: '-6px',
-                  width: '57px',
-                  height: '57px',
+                  left: `-39px`,
+                  top: '-5px',
+                  width: '45px',
+                  height: '45px',
                }}
             />
             {/* Text bubble */}

@@ -19,7 +19,7 @@ export default function AllTech() {
       'jQuery',
       'HTML',
       'CSS',
-      'Git & Github',
+      'Git & GitHub',
    ];
    return (
       <InsetShadow>

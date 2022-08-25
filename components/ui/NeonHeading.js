@@ -15,7 +15,7 @@ const Dot = ({ side }) => {
             borderRadius: '50%',
             boxShadow: `${
                side === 'right' ? 'inset' : ''
-            } 1px 0px 1px 0px ${mainClr}`,
+            } 2px 0px 1px 0px ${mainClr}`,
          }}
       />
    );
