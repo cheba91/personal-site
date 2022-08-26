@@ -24,8 +24,6 @@ const Dot = ({ side }) => {
 export default function NeonHeading({ text }) {
    return (
       <Typography
-         mb={6}
-         mt={2}
          variant="h4"
          component="h2"
          sx={{
@@ -33,6 +31,7 @@ export default function NeonHeading({ text }) {
             textAlign: 'center',
             textShadow: '3px 3px 4px #000',
             fontSize: { xs: '1.7rem', sm: '2rem' },
+            marginBottom: '2.2rem',
          }}
       >
          <HeadingLine direction={'right'} />

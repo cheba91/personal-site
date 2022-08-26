@@ -154,16 +154,18 @@ export default function Contact() {
                            maxLength="100"
                            name="name"
                            margin="normal"
-                           sx={{ ...inputStyles }}
+                           sx={{
+                              ...inputStyles,
+                           }}
                         />
                      </Grid>
                      <Grid item>
                         <TextField
-                           autoComplete="new-password"
                            fullWidth
                            label="Email"
                            name="yourEmail"
                            margin="normal"
+                           autoComplete="new-password"
                            inputProps={{ tabIndex: '-1' }}
                            sx={{
                               position: 'absolute',
@@ -183,11 +185,11 @@ export default function Contact() {
                      </Grid>
                      <Grid item>
                         <TextField
-                           autoComplete="new-password"
                            fullWidth
                            label="Email"
                            name="emailInput"
                            margin="normal"
+                           autoComplete="new-password"
                            inputProps={{ tabIndex: '-1' }}
                            sx={{
                               position: 'fixed',

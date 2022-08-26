@@ -20,7 +20,10 @@ export default function AllProjects() {
             padding: { xs: '0.8rem', sm: '1rem' },
          }}
       >
-         <SubHeading text={'Projects'} />
+         <SubHeading
+            text={'Projects'}
+            customStyles={{ marginBottom: '1.3rem' }}
+         />
          <Grid container>
             {projectsData &&
                projectsData.map((project) => (

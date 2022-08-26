@@ -7,11 +7,11 @@ export default function SubHeading({ text, customStyles }) {
          component="h3"
          variant="h5"
          sx={{
-            ...customStyles,
             textAlign: 'center',
-            marginBottom: '2rem',
-            paddingTop: '1rem',
+            marginBottom: '1.8rem',
+            marginTop: '1rem',
             textShadow: `3px 3px 4px #000`,
+            ...customStyles,
          }}
       >
          <HeadingLine
