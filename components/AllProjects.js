@@ -112,7 +112,7 @@ export default function AllProjects() {
                            <>
                               <Typography
                                  sx={{
-                                    marginBottom: '0.5rem',
+                                    marginBottom: '0.6rem',
                                     fontSize: {
                                        xs: '0.95rem',
                                        sm: '1rem',
@@ -125,7 +125,7 @@ export default function AllProjects() {
                                  <Typography
                                     key={point}
                                     sx={{
-                                       marginBottom: '0.5rem',
+                                       marginBottom: '0.6rem',
                                        fontSize: {
                                           xs: '0.9rem',
                                           sm: '0.95rem',
@@ -137,6 +137,8 @@ export default function AllProjects() {
                                        sx={{
                                           verticalAlign: 'middle',
                                           color: darkerMainClr,
+                                          marginLeft: '-5px',
+                                          marginRight: '-2px',
                                        }}
                                     />
                                     {point}
