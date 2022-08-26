@@ -8,7 +8,7 @@ import SubHeading from './ui/SubHeading';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
 export default function AllProjects() {
    const mainClr = useTheme().palette.primary.main;
@@ -132,9 +132,12 @@ export default function AllProjects() {
                                        },
                                     }}
                                  >
-                                    <ArrowRightIcon
-                                       fontSize="small"
-                                       sx={{ verticalAlign: 'middle' }}
+                                    <ArrowRightRoundedIcon
+                                       fontSize="medium"
+                                       sx={{
+                                          verticalAlign: 'middle',
+                                          color: darkerMainClr,
+                                       }}
                                     />
                                     {point}
                                  </Typography>
