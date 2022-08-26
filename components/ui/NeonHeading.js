@@ -32,6 +32,7 @@ export default function NeonHeading({ text }) {
             textShadow: '3px 3px 4px #000',
             fontSize: { xs: '1.7rem', sm: '2rem' },
             marginBottom: '2.2rem',
+            marginTop: '0.9rem',
          }}
       >
          <HeadingLine direction={'right'} />
