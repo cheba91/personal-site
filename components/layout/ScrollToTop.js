@@ -15,8 +15,6 @@ const handleClick = () => {
    }
 };
 export default function BackToTop() {
-   const { main: darkClr, cardBg } = useTheme().palette.dark;
-
    const trigger = useScrollTrigger({
       disableHysteresis: true,
       threshold: 100,
@@ -30,18 +28,20 @@ export default function BackToTop() {
          >
             <Fab
                sx={{
-                  color: darkClr,
-                  background: cardBg,
-                  border: 'none',
-                  color: 'text.disabled',
+                  background: 'rgb(75, 75, 75)',
+                  // border: 'none',
+                  color: 'primary.main',
+                  boxShadow: 'inset 0px 0px 20px 8px rgb(20, 20, 20)',
                   '&:hover': {
-                     color: 'text.disabled',
+                     background: 'rgb(75, 75, 75)',
+                     color: 'primary.main',
+                     boxShadow: 'inset 0px 0px 20px 4px rgb(30, 30, 30)',
                   },
                }}
-               size="small"
+               size="medium"
                aria-label="scroll back to top"
             >
-               <ArrowDropUpRoundedIcon sx={{ fontSize: '1.8rem' }} id="icon" />
+               <ArrowDropUpRoundedIcon sx={{ fontSize: '2rem' }} id="icon" />
             </Fab>
          </Box>
       </Fade>
