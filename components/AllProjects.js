@@ -6,6 +6,9 @@ import { projectsData } from '../data/projects';
 import OutsetShadow from './ui/OutsetShadow';
 import SubHeading from './ui/SubHeading';
 import { lightenDarkenColor } from '../utils/lightenDarkenColor';
+import LaunchIcon from '@mui/icons-material/Launch';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 export default function AllProjects() {
    const mainClr = useTheme().palette.primary.main;
@@ -34,22 +37,49 @@ export default function AllProjects() {
                            component="h4"
                            sx={{
                               textShadow: '3px 3px 4px #000',
-                              marginBottom: '0.4rem',
-                              // display: 'inline-block',
+                              marginBottom: '0.5rem',
+                              display: 'inline-block',
                            }}
                         >
                            {project.title}
                         </Typography>
-
+                        {/* Link */}
+                        {project.link && (
+                           <Link
+                              target={'_blank'}
+                              href={project.link}
+                              color={darkerMainClr}
+                              sx={{
+                                 verticalAlign: 'middle',
+                                 marginLeft: '0.5rem',
+                              }}
+                           >
+                              <LaunchIcon fontSize="small" />
+                           </Link>
+                        )}
+                        {/* Github */}
+                        {project.github && (
+                           <Link
+                              textAlign={'center'}
+                              target={'_blank'}
+                              href={project.github}
+                              color={darkerMainClr}
+                              sx={{
+                                 verticalAlign: 'middle',
+                                 marginLeft: '0.5rem',
+                              }}
+                           >
+                              <GitHubIcon fontSize="small" />
+                           </Link>
+                        )}
                         {/* Used stack */}
                         <Typography
                            sx={{
-                              fontSize: { xs: '0.95rem', sm: '1rem' },
-                              // marginBottom: '0.5rem',
+                              fontSize: { xs: '0.9rem', sm: '0.95rem' },
+                              marginBottom: '0.5rem',
                            }}
                            // color="text.secondary"
                         >
-                           {'Stack: '}
                            {project.stack &&
                               project.stack.map((tech, i) => (
                                  <Box
@@ -65,32 +95,14 @@ export default function AllProjects() {
                                  </Box>
                               ))}
                         </Typography>
-                        {/* Link */}
-                        {project.link && (
-                           <Box
-                              sx={{
-                                 fontSize: { xs: '0.95rem', sm: '1rem' },
-                                 marginBottom: '0.5rem',
-                              }}
-                           >
-                              {`Link: `}
-                              <Link
-                                 underline="none"
-                                 textAlign={'center'}
-                                 target={'_blank'}
-                                 href={project.link}
-                                 color={darkerMainClr}
-                              >
-                                 {project.link}
-                              </Link>
-                           </Box>
-                        )}
+
                         {/* Project desc */}
                         <Typography
                            sx={{
                               textAlign: 'left',
                               fontSize: { xs: '0.95rem', sm: '1rem' },
                               marginBottom: '1rem',
+                              lineHeight: '1.6rem',
                            }}
                         >
                            {project.desc}
@@ -100,7 +112,11 @@ export default function AllProjects() {
                            <>
                               <Typography
                                  sx={{
-                                    marginBottom: '0.2rem',
+                                    marginBottom: '0.5rem',
+                                    fontSize: {
+                                       xs: '0.95rem',
+                                       sm: '1rem',
+                                    },
                                  }}
                               >
                                  {`Few interesting details:`}
@@ -109,13 +125,19 @@ export default function AllProjects() {
                                  <Typography
                                     key={point}
                                     sx={{
-                                       marginBottom: '0.2rem',
+                                       marginBottom: '0.5rem',
                                        fontSize: {
                                           xs: '0.9rem',
                                           sm: '0.95rem',
                                        },
                                     }}
-                                 >{`- ${point}`}</Typography>
+                                 >
+                                    <ArrowRightIcon
+                                       fontSize="small"
+                                       sx={{ verticalAlign: 'middle' }}
+                                    />
+                                    {point}
+                                 </Typography>
                               ))}
                            </>
                         )}

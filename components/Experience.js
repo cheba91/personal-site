@@ -23,7 +23,7 @@ export default function Experience() {
                sx={{
                   borderRadius: `${borderRadius}px`,
                   background: cardBg,
-                  padding: { xs: '1.5rem', sm: '2rem' },
+                  padding: { xs: '1rem', sm: '2rem' },
                   position: 'relative',
                   width: '100%',
                   height: '100%',
@@ -41,6 +41,7 @@ export default function Experience() {
                      sx={{
                         padding: '2rem 1.5rem',
                         textAlign: 'center',
+                        lineHeight: '1.6rem',
                         fontSize: { xs: '0.95rem', sm: '1rem' },
                      }}
                   >{`I've been in web development for the past 4+ years. I began with WordPress, 

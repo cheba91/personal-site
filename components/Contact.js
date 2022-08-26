@@ -112,7 +112,7 @@ export default function Contact() {
             sx={{
                borderRadius: `${borderRadius}px`,
                background: cardBg,
-               padding: { xs: '1.5rem', sm: '2rem' },
+               padding: { xs: '1rem', sm: '2rem' },
                position: 'relative',
                width: '100%',
                height: '100%',
@@ -126,6 +126,7 @@ export default function Contact() {
                      padding: '2rem 1.5rem',
                      fontSize: { xs: '0.95rem', sm: '1rem' },
                      textAlign: 'center',
+                     lineHeight: '1.6rem',
                   }}
                   component="h4"
                >

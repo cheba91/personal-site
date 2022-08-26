@@ -52,7 +52,7 @@ export default function About() {
                   zIndex: '0',
                   borderRadius: `${borderRadius}px`,
                   overflow: 'hidden',
-                  padding: { xs: '1.5rem', md: '2rem' },
+                  padding: { xs: '1rem', md: '2rem' },
 
                   background: cardBg,
                }}
@@ -69,7 +69,13 @@ export default function About() {
                   >
                      <Typography
                         mb={2}
-                        sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}
+                        sx={{
+                           fontSize: {
+                              xs: '0.95rem',
+                              sm: '1rem',
+                              lineHeight: '1.6rem',
+                           },
+                        }}
                      >
                         {`Hey, I'm good at reading docs ;)`}
                      </Typography>
@@ -78,6 +84,7 @@ export default function About() {
                            textAlign: 'left',
                            fontSize: { xs: '0.95rem', sm: '1rem' },
                            marginBottom: '1rem',
+                           lineHeight: '1.6rem',
                         }}
                      >
                         {`I'm a self-taught web developer from Slovenia. I've been in the military for 10 years 
@@ -89,6 +96,7 @@ export default function About() {
                            textAlign: 'left',
                            fontSize: { xs: '0.95rem', sm: '1rem' },
                            marginBottom: '1rem',
+                           lineHeight: '1.6rem',
                         }}
                      >
                         {`Most of the time, my role is being the “outsource guy” who's going to fix or create 
@@ -98,7 +106,11 @@ export default function About() {
                      <Typography
                         sx={{
                            textAlign: 'left',
-                           fontSize: { xs: '0.95rem', sm: '1rem' },
+                           fontSize: {
+                              xs: '0.95rem',
+                              sm: '1rem',
+                              lineHeight: '1.6rem',
+                           },
                         }}
                      >
                         {`I enjoy working on innovative projects that aim for the highest quality rather than just fast delivery.
