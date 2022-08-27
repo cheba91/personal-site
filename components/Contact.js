@@ -52,7 +52,7 @@ export default function Contact() {
       },
       shape: { borderRadius },
    } = useTheme();
-   // HAndling submit & message
+   // Handling submit & message
    const [formMsg, setFormMsg] = useState('');
    const [isErr, setIsErr] = useState(true);
    const handleSubmit = async (e) => {

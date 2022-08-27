@@ -20,7 +20,7 @@ export default function HeroSection({ changeTheme }) {
             sx={{
                backgroundImage: `linear-gradient(130deg,  ${darkMainClr1}, ${mainDarkClr} 70%)`,
                height: {
-                  xs: '95vh', //phones have browser tab on top
+                  xs: '95vh', //some phones have browser tab on top / bottom / both
                   sm: '100vh',
                   zIndex: '1',
                   position: 'relative',

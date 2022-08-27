@@ -43,7 +43,6 @@ export default function About() {
             <Grid
                mb={10}
                container
-               // spacing={4}
                rows={2}
                sx={{
                   position: 'relative',
@@ -147,7 +146,6 @@ export default function About() {
                         sx={{
                            height: imgSize,
                            width: imgSize,
-                           // margin: '0 auto',
                         }}
                      >
                         {/* Profile Pic */}

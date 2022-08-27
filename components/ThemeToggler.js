@@ -1,22 +1,13 @@
-import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useState } from 'react';
 import Monster from './ui/Monster';
 
 export default function ThemeToggler({ changeTheme }) {
-   const mainClr = useTheme().palette.primary.main;
    const pinWidth = 30;
    const ballSize = 170;
    const [bubbleVisible, setBubbleVisible] = useState(true);
    const [pinPosX, setPinPosX] = useState(113);
    const [pinPosY, setPinPosY] = useState(-9.2);
-
-   const componentToHex = (c) => {
-      let hex = c.toString(16);
-      return hex.length == 1 ? '0' + hex : hex;
-   };
-   const rgbToHex = (r, g, b) =>
-      '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
 
    const colors = [
       { r: 0xe4, g: 0x3f, b: 0x00 },
@@ -59,7 +50,6 @@ export default function ThemeToggler({ changeTheme }) {
       color.r = Math.round(color.r * cw + 255 * ww);
       color.g = Math.round(color.g * cw + 255 * ww);
       color.b = Math.round(color.b * cw + 255 * ww);
-      // const finalColor = rgbToHex(color.r, color.g, color.b);
       // Edit Pin
       setPinPosY(e.clientY - rect.top - pinWidth - 2);
       setPinPosX(e.clientX - rect.left - 2);
@@ -72,7 +62,6 @@ export default function ThemeToggler({ changeTheme }) {
       // Outer Ball
       <Box
          sx={{
-            // zIndex: 20,
             width: `${ballSize}px`,
             height: `${ballSize}px`,
             display: 'inline-block',

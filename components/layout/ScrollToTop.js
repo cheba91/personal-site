@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import Fade from '@mui/material/Fade';
-import { useTheme } from '@mui/material';
 
 const handleClick = () => {
    const anchor = document.querySelector('#top');
