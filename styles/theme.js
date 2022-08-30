@@ -42,17 +42,16 @@ export const theme = {
       },
       MuiCssBaseline: {
          styleOverrides: {
-            'input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus':
+            'input,input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active,textarea:-webkit-autofill,textarea:-webkit-autofill:hover,textarea:-webkit-autofill:focus,select:-webkit-autofill,select:-webkit-autofill:hover,select:-webkit-autofill:focus':
                {
                   WebkitTextFillColor: '#f1f1f1 !important',
-                  WebkitBoxShadow:
-                     'inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10) !important',
-                  boxShadow:
-                     'inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10) !important',
+                  WebkitBoxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10) !important`,
+                  boxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10) !important`,
                   transition:
                      'background-color 5000s ease-in-out 0s !important',
                   backgroundColor: 'transparent !important',
                   backgroundClip: 'text !important',
+                  borderRadius: '15px',
                   WebkitBackgroundClip: 'text !important',
                },
 

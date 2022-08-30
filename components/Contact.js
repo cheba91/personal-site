@@ -101,7 +101,6 @@ export default function Contact() {
       borderRadius: `${borderRadius}px`,
       borderWidth: '0',
       boxShadow: `inset -4px -6px 6px 1px rgb(42 42 42), inset 6px 6px 6px 0px rgb(10 10 10)`,
-
       outline: 'none',
       border: 'none',
    };
