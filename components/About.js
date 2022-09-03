@@ -98,7 +98,7 @@ export default function About() {
                            lineHeight: '1.6rem',
                         }}
                      >
-                        {`Most of the time, my role is being the “outsource guy” who's going to fix or create 
+                        {`Most of the time, my role is being the “outsource guy” who fixes or creates 
                         stuff on the web. I love being in this role because it exposes me to a wide range of 
                         issues and technologies, which allows me to continuously learn new things.`}
                      </Typography>
