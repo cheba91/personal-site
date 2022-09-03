@@ -53,9 +53,11 @@ export default function Contact() {
       shape: { borderRadius },
    } = useTheme();
    // Handling submit & message
+   const [isSending, setIsSendeing] = useState(false);
    const [formMsg, setFormMsg] = useState('');
    const [isErr, setIsErr] = useState(true);
    const handleSubmit = async (e) => {
+      setIsSendeing(true);
       try {
          e.preventDefault();
          const formData = {};
@@ -71,13 +73,19 @@ export default function Contact() {
          });
          // Check honeypots
          if (formData.emailInput || formData.yourEmail) {
+            setIsErr(true);
+            setIsSendeing(false);
             return setFormMsg('You entered a few too many fields.');
          }
          //Light validation
          if (!formData.name || !formData.message) {
+            setIsErr(true);
+            setIsSendeing(false);
             return setFormMsg('Please provide all required info.');
          }
          if (!formData.email) {
+            setIsErr(true);
+            setIsSendeing(false);
             return setFormMsg('Please provide valid email.');
          }
          const res = await fetch('/api/contact-form', {
@@ -86,6 +94,7 @@ export default function Contact() {
          });
          const data = await res.json();
          if (data) {
+            setIsSendeing(false);
             setFormMsg(data.msg);
             setIsErr(data.status !== 'ok' ? true : false);
          }
@@ -239,28 +248,38 @@ export default function Contact() {
                                  },
                               }}
                            >
-                              Send
+                              {isSending ? 'Sending...' : 'Send'}
                            </Button>
                         </Grid>
                      </Grid>
                   </form>
                   {/* Show form message */}
                   {formMsg && (
-                     <>
+                     <Box
+                        sx={{
+                           position: 'fixed',
+                           bottom: 0,
+                           width: '100%',
+                           left: 0,
+                           display: 'flex',
+                           justifyContent: 'center',
+                           alignItems: 'center',
+                           zIndex: 10,
+                        }}
+                     >
                         <Grid
                            item
                            sx={{
-                              marginTop: '2rem',
                               textAlign: 'center',
-                              borderRadius: '15px',
+                              padding: '1.5rem 0',
+                              width: '500px',
+                              borderRadius: '15px 15px 0 0',
+                              boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
                               background: `${
                                  isErr
                                     ? 'linear-gradient( rgb(29, 29, 29), #380808)'
                                     : 'linear-gradient( rgb(29, 29, 29), #083a08)'
                               }`,
-                              boxShadow: `-1px -1px 6px 1px rgb(42 42 42),  6px 6px 6px 0px rgb(10 10 10)`,
-
-                              padding: '1rem',
                            }}
                         >
                            {formMsg}
@@ -268,7 +287,7 @@ export default function Contact() {
                               {setTimeout(() => setFormMsg(''), 6000)}
                            </Box>
                         </Grid>
-                     </>
+                     </Box>
                   )}
                </Grid>
             </Grid>

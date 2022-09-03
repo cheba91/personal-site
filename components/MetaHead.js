@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
 export default function MetaHead({
-   title = 'Cheba - Personal website',
-   keywords = 'personal website, hire full-stack web developer, hire MERN stack developer, hire Next.js developer',
-   description = `Hey, I'm Cheba, a self-taught web developer. I love learning new things and working on creative projects.`,
+   title = 'Cheba - Web Developer',
+   keywords = 'full stack web developer, personal website, hire full-stack web developer, hire MERN stack developer, hire Next.js developer',
+   description = `Hey, I'm Cheba, a full-stack web developer. I enjoy working on innovative projects that aim for the highest quality rather than just fast delivery.`,
    image = '/logo.jpg', // link to image of current page
    ogType = 'blog', // type of current page
 }) {
