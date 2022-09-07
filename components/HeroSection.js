@@ -167,6 +167,7 @@ export default function HeroSection({ changeTheme }) {
                height="100%"
                alignItems="center"
                justifyContent="space-between"
+               pb={2}
             >
                {/* TOP hero part */}
                <Grid sx={{ textAlign: 'left' }}>
@@ -175,8 +176,10 @@ export default function HeroSection({ changeTheme }) {
                      sx={{
                         fontWeight: 800,
                         fontSize: { xs: '4.3vw', sm: '1.8rem' },
-                        paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
-                        paddingBottom: '0rem',
+                        // paddingTop: { xs: '4rem', sm: '5rem', md: '6rem' },
+                        paddingTop: '7rem',
+                        // paddingTop: '10vh',
+                        paddingBottom: '0',
                      }}
                   >{`Hey.`}</Typography>
                   <Typography
@@ -185,7 +188,7 @@ export default function HeroSection({ changeTheme }) {
                         fontWeight: 800,
                         fontSize: { xs: '5.5vw', sm: '2.2rem' },
                         // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
-                        paddingBottom: '0rem',
+                        paddingBottom: '0',
                      }}
                   >{`I'm Cheba.`}</Typography>
                   <Typography
@@ -206,7 +209,7 @@ export default function HeroSection({ changeTheme }) {
                         fontSize: { xs: '5.5vw', sm: '2.2rem' },
                         textAlign: 'right',
                         // paddingTop: { xs: '7rem', sm: '8rem', md: '10rem' },
-                        paddingBottom: '0rem',
+                        paddingBottom: '0',
                      }}
                   >{`Building the www.`}</Typography>
                   <Typography
