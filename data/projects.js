@@ -24,7 +24,7 @@ export const projectsData = [
       stack: ['Node', 'Express', 'MongoDB', 'Puppeteer'],
       desc: `API with all known animals that have gone extinct in the last 11.650 years. 
       Data was gathered by scraping Wikipedia using Puppeteer. 
-      I made a {https://cheba-apis.vercel.app/|simple dashboard} from which you can call 
+      I made a simple {https://cheba-apis.vercel.app/|dashboard} from which you can call 
       it and have data visually presented.
       API goes to sleep after 30 minutes of inactivity, so the first call you make might take a bit longer.`,
       points: [
