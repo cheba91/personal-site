@@ -10,6 +10,36 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 
+const descWithUrl = (string, darkerMainClr) => {
+   const posStarting = string.indexOf('{');
+   const posEnding = string.indexOf('}');
+   if (posStarting < 0 || posEnding < 0) return string;
+   const seperator = string.indexOf('|', posStarting);
+   const url = string.slice(posStarting + 1, seperator);
+   const text = string.slice(seperator + 1, posEnding);
+   const firstPart = string.slice(0, posStarting);
+   const secondPart = string.slice(posEnding + 1, -1);
+   const aEl = (
+      <a
+         style={{ color: darkerMainClr, textDecoration: 'none' }}
+         href={url}
+         target="_blank"
+         rel="noreferrer"
+      >
+         {text}
+      </a>
+   );
+   return (
+      <>
+         {[firstPart, aEl, secondPart].map((part, i) => (
+            <span key={i}>{part}</span>
+         ))}
+      </>
+   );
+   // console.log(firstPart + <a href="#">text</a> + secondPart);
+   // return `${{<Link}}`
+};
+
 export default function AllProjects() {
    const mainClr = useTheme().palette.primary.main;
    const darkerMainClr = lightenDarkenColor(-0.4, mainClr);
@@ -24,7 +54,7 @@ export default function AllProjects() {
             text={'Projects'}
             customStyles={{ marginBottom: '1.3rem' }}
          />
-         <Grid container>
+         <Grid container sx={{ justifyContent: 'space-evenly' }}>
             {projectsData &&
                projectsData.map((project) => (
                   <Grid item sm={12} md={6} key={project.key}>
@@ -100,16 +130,19 @@ export default function AllProjects() {
                         </Typography>
 
                         {/* Project desc */}
-                        <Typography
-                           sx={{
-                              textAlign: 'left',
-                              fontSize: { xs: '0.95rem', sm: '1rem' },
-                              marginBottom: '1rem',
-                              lineHeight: '1.6rem',
-                           }}
-                        >
-                           {project.desc}
-                        </Typography>
+                        {project.desc && (
+                           <Typography
+                              sx={{
+                                 textAlign: 'left',
+                                 fontSize: { xs: '0.95rem', sm: '1rem' },
+                                 marginBottom: '1rem',
+                                 lineHeight: '1.6rem',
+                              }}
+                           >
+                              {descWithUrl(project.desc, darkerMainClr)}
+                           </Typography>
+                        )}
+
                         {/* Points */}
                         {project.points?.length > 0 && (
                            <>

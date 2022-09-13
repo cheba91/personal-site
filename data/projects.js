@@ -17,6 +17,24 @@ export const projectsData = [
       ],
    },
    {
+      key: 3,
+      title: 'Extinct API',
+      link: 'https://extinct-api.herokuapp.com/api/v1/animal',
+      github: 'https://github.com/cheba91/extinct-api',
+      stack: ['Node', 'Express', 'MongoDB', 'Puppeteer'],
+      desc: `API with all known animals that have gone extinct in the last 11.650 years. 
+      Data was gathered by scraping Wikipedia using Puppeteer. 
+      I made a {https://cheba-apis.vercel.app/|simple dashboard} from which you can call 
+      it and have data visually presented.
+      API goes to sleep after 30 minutes of inactivity, so the first call you make might take a bit longer.`,
+      points: [
+         `Can GET one random animal, or a specified number`,
+         `Scraped tables had from 2 to 6 columns per row`,
+         `Returns 7 different properties of animal`,
+         'An optional parameter, if animal image is required',
+      ],
+   },
+   {
       key: 2,
       title: 'Cheba.me',
       github: 'https://github.com/cheba91/personal-site',
