@@ -36,8 +36,6 @@ const descWithUrl = (string, darkerMainClr) => {
          ))}
       </>
    );
-   // console.log(firstPart + <a href="#">text</a> + secondPart);
-   // return `${{<Link}}`
 };
 
 export default function AllProjects() {

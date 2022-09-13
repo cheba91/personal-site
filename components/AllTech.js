@@ -20,6 +20,7 @@ export default function AllTech() {
       'HTML',
       'CSS',
       'Git & GitHub',
+      'Puppeteer',
    ];
    return (
       <InsetShadow>
