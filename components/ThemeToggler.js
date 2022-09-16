@@ -19,6 +19,7 @@ export default function ThemeToggler({ changeTheme }) {
       { r: 0xe4, g: 0x3f, b: 0x00 },
    ];
    const handleChangeTheme = (e) => {
+      console.log('Handle theme:', e);
       let rect = e.target.getBoundingClientRect();
       //Compute cartesian coordinates as if the circle radius was 1
       let x = (2 * (e.clientX - rect.left)) / (rect.right - rect.left) - 1;
@@ -50,14 +51,20 @@ export default function ThemeToggler({ changeTheme }) {
       color.r = Math.round(color.r * cw + 255 * ww);
       color.g = Math.round(color.g * cw + 255 * ww);
       color.b = Math.round(color.b * cw + 255 * ww);
-      // Edit Pin
       setPinPosY(e.clientY - rect.top - pinWidth - 2);
       setPinPosX(e.clientX - rect.left - 2);
       console.log('pinPosX: ', pinPosX, 'pinPosY:', pinPosY);
       console.log('clr: ', `rgb(${color.r},${color.g},${color.b})`);
-      changeTheme(`rgb(${color.r},${color.g},${color.b})`);
       setBubbleVisible(false);
+      changeTheme(`rgb(${color.r},${color.g},${color.b})`);
    };
+   // const movePin = (e) => {
+   //    let rect = e.target.getBoundingClientRect();
+   //    setPinPosY(e.clientY - rect.top - pinWidth - 2);
+   //    setPinPosX(e.clientX - rect.left - 2);
+   //    console.log('pinPosX: ', pinPosX, 'pinPosY:', pinPosY);
+   //    setBubbleVisible(false);
+   // };
    return (
       // Outer Ball
       <Box
@@ -81,6 +88,8 @@ export default function ThemeToggler({ changeTheme }) {
          {/* Inner ball, coloring etc. */}
          <Box
             onClick={handleChangeTheme}
+            // onDrag={handleChangeTheme}
+            // onMouseUp={movePin}
             sx={{
                display: 'inline-block',
                cursor: 'crosshair',
