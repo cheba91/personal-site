@@ -18,7 +18,7 @@ const descWithUrl = (string, darkerMainClr) => {
    const url = string.slice(posStarting + 1, seperator);
    const text = string.slice(seperator + 1, posEnding);
    const firstPart = string.slice(0, posStarting);
-   const secondPart = string.slice(posEnding + 1, -1);
+   const secondPart = string.slice(posEnding + 1);
    const aEl = (
       <a
          style={{ color: darkerMainClr, textDecoration: 'none' }}
