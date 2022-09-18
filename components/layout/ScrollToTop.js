@@ -2,9 +2,13 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Fab from '@mui/material/Fab';
 import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 import Fade from '@mui/material/Fade';
-import { Link } from '@mui/material';
+import { Link, useTheme } from '@mui/material';
 
 export default function ScrollToTop() {
+   const {
+      primary: { main: primaryColor },
+      dark: { cardBg: darkColor },
+   } = useTheme().palette;
    const trigger = useScrollTrigger({
       disableHysteresis: true,
       threshold: 100,
@@ -14,13 +18,13 @@ export default function ScrollToTop() {
          <Link href="#top" sx={{ position: 'fixed', bottom: 16, right: 16 }}>
             <Fab
                sx={{
-                  background: 'rgb(75, 75, 75)',
-                  color: 'primary.main',
-                  boxShadow: 'inset 0px 0px 20px 8px rgb(20, 20, 20)',
+                  background: darkColor,
+                  color: primaryColor,
+                  boxShadow: `1px 1px 1px 2px rgb(10 10 10)`,
                   '&:hover': {
-                     background: 'rgb(75, 75, 75)',
-                     color: 'primary.main',
-                     boxShadow: 'inset 0px 0px 20px 4px rgb(30, 30, 30)',
+                     background: darkColor,
+                     color: primaryColor,
+                     boxShadow: `1px 1px 1px 2px rgb(10 10 10)`,
                   },
                }}
                size="medium"
