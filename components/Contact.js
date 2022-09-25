@@ -153,7 +153,12 @@ export default function Contact() {
                alignItems="center"
             >
                <Grid item>
-                  <form id="contact-form" onSubmit={handleSubmit}>
+                  <Box
+                     component="form"
+                     id="contact-form"
+                     onSubmit={handleSubmit}
+                     sx={{ width: { xs: '25ch', sm: '35ch' } }}
+                  >
                      <Grid item>
                         <TextField
                            fullWidth
@@ -252,7 +257,7 @@ export default function Contact() {
                            </Button>
                         </Grid>
                      </Grid>
-                  </form>
+                  </Box>
                   {/* Show form message */}
                   {formMsg && (
                      <Box
