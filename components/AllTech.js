@@ -21,6 +21,7 @@ export default function AllTech() {
       'CSS',
       'Git & GitHub',
       'Puppeteer',
+      'Webflow',
    ];
    return (
       <InsetShadow>
